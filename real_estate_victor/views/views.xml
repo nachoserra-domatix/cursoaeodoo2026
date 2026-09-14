@@ -1,0 +1,77 @@
+<odoo>
+    <data>
+        <record id="view_real_estate_form" model="ir.ui.view">
+            <field name="name">view.real.chestate.form</field>
+            <field name="model">real.cestate</field>
+            <field name="arch" type="xml">
+                <form string="Propiedad">
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <p>
+                                    Datos principales
+                                </p><br />
+                                <field name="name"/>
+                                <field name="size"/>
+                            </group>
+                            <group name="group_right">
+                                <p>
+                                    Detalles
+                                </p><br />
+                                <field name="desc"/>
+                            </group>
+                        </group>
+                        <hr />
+
+                    </sheet>
+                </form>    
+            </field>
+        </record>
+
+        <record id="view_real_estate_tree" model="ir.ui.view">
+            <field name="name">view.real.estate.tree</field>
+            <field name="model">real.restate</field>
+            <field name="arch" type="xml">
+                <tree string="Propiedades">
+                    <field name="name"/>
+                    <field name="size"/>
+                    <field name="desc"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_real_estate_search" model="ir.ui.view">
+            <field name="name">view.real.estate.search</field>
+            <field name="model">real.estate</field>
+            <field name="arch" type="xml">
+                <search string="Filtrar viviendas">
+                    <field name="name"/>
+                    <field name="size"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_real_estate_view" model="ir.actions.act_window">
+            <field name="name">Viviendas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">real.estate</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Viviendas
+                </p>
+                <p>
+                    Click 'Nuevo' para añadir nuevos elementos
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_real_root" name="Inmobiliaria" sequence="10"/>
+
+        <menuitem id="menu_real_general_categ" name="General" parent="menu_real_root" sequence="0"/>
+
+        <menuitem id="menu_real_estate" name="Viviendas" parent="menu_real_general_categ" sequence="1"
+                  action="action_real_estate_view"/>
+
+    </data>
+</odoo>
