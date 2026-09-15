@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <menuitem id="menu_real_estate_root" name="Real Estate" sequence="10"/>
+        <menuitem id="menu_real_estate_properties" action="action_realestate_property" name="Properties" parent="menu_real_estate_root" sequence="20"/>
+        <menuitem name="Settings" id="menu_administration" parent="menu_real_estate_root" sequence="50"/>
+        <menuitem id="menu_real_estate_domains" action="action_realestate_domains" name="Domains" parent="menu_administration" sequence="60"/>
+        <menuitem id="menu_real_estate_domain_types" action="action_realestate_domain_type" name="Domain Types" parent="menu_administration" sequence="70"/>
+    </data>
+</odoo>
