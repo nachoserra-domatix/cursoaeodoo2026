@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <menuitem id="realestate_menu_root" name="Real Estate" web_icon="real_estate_david,static/description/icon.png"/>
+  <menuitem id="realestate_property_menu" name="Properties" action="realestate_property_action" parent="realestate_menu_root" sequence="10"/>
+</odoo>
