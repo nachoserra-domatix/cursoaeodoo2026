@@ -42,4 +42,14 @@ class EstateProperty(models.Model):
     @api.depends("price")
     def _compute_best_price(self):
         for record in self:
-            record.best_price = 0.0 
+            record.best_price = 0.0
+
+    @api.onchange("availability_state")
+    def _onchange_availability_state(self):
+        if not self.availability_state:
+            self.action_mark_reserved()
+
+    def action_mark_reserved(self):
+        for record in self:
+            record.availability_state = False
+        return True 
