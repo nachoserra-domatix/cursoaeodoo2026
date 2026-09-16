@@ -10,5 +10,11 @@
                   parent="estate_menu_root"
                   action="estate_property_action"
                   sequence="10"/>
+
+        <menuitem id="estate_menu_visits"
+                  name="Visits"
+                  parent="estate_menu_root"
+                  action="estate_property_visit_action"
+                  sequence="20"/>
     </data>
 </odoo>

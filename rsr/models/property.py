@@ -27,6 +27,13 @@ class EstateProperty(models.Model):
         compute="_compute_best_price", store=True, string="Best Offer"
     )
 
+    availability_state = fields.Boolean(string="Available", default=True)
+
+    id_user = fields.Many2one(
+        comodel_name="res.users",
+        string="User",
+    )
+
     @api.depends("living_area", "garden_area")
     def _compute_total_area(self):
         for record in self:
@@ -35,4 +42,4 @@ class EstateProperty(models.Model):
     @api.depends("price")
     def _compute_best_price(self):
         for record in self:
-            record.best_price = 0.0
+            record.best_price = 0.0 
