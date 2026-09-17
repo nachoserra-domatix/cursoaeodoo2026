@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <!-- Action -->
+   <record id="realestate_visit_action" model="ir.actions.act_window">
+      <field name="name">Visits</field>
+      <field name="res_model">realestate.visit</field>
+      <field name="view_mode">list,form</field>
+      <field name="help" type="html">
+         <p class="o_view_nocontent_smiling_face">Create a new visit</p>
+         <p>Fill in the details of the visit you want to create.</p>
+      </field>
+   </record>
+
+
+   <!-- List View -->
+   <record id="realestate_visit_list_view" model="ir.ui.view">
+      <field name="name">realestate.visit.list</field>
+      <field name="model">realestate.visit</field>
+      <field name="arch" type="xml">
+         <list string="Visits" multi_edit="1">
+            <field name="property_id" optional="show" />
+            <field name="date" optional="show" />
+            <field name="partner_id" optional="show" />
+            <field name="user_id" optional="show" />
+            <field name="state" widget="boolean_toggle" optional="show" />
+         </list>
+      </field>
+   </record>
+
+   <!-- Form View -->
+   <record id="realestate_visit_form_view" model="ir.ui.view">
+      <field name="name">realestate.visit.form</field>
+      <field name="model">realestate.visit</field>
+      <field name="arch" type="xml">
+         <form string="Visit">
+            <header>
+               <field name="state" widget="statusbar" options="{'clickable': True}" />
+            </header>
+            <sheet>
+               <group>
+                  <group>
+                     <field name="property_id" />
+                     <field name="user_id" />
+                  </group>
+                  <group>
+                     <field name="date" />
+                     <field name="partner_id" />
+                  </group>
+               </group>
+            </sheet>
+         </form>
+      </field>
+   </record>
+
+</odoo>
