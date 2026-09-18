@@ -1,0 +1,89 @@
+<odoo>
+    <data>
+
+        <record id="view_realestate_contract_form" model="ir.ui.view">
+            <field name="name">view.realestate.contract.form</field>
+            <field name="model">realestate.contract</field>
+            <field name="arch" type="xml">
+                <form string="Contract">
+                    <header>
+                        <button name="action_draft" string="Return to draft" type="object" class="oe_highlight" invisible="status == 'D'"/>
+                        <button name="action_ongoing" string="Ongoing" type="object" class="oe_highlight" invisible="status == 'O'"/>
+                        <button name="action_canceled" string="Cancel" type="object" class="oe_highlight" invisible="status == 'C'"/>
+                        <button name="action_ended" string="End" type="object" class="oe_highlight" invisible="status == 'E'"/>
+                        <field name="status" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <widget name="web_ribbon" title="Reserved" bg_color="text-bg-success" invisible="status != 'R'"/>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <p>
+                                    Main data
+                                </p><br />
+                                <field name="name"/>
+                                <field name="type"/>
+                                <field name="property_id"/>
+                                <field name="partner_id"/>
+                                
+                            </group>
+                            <group name="group_right">
+                                <p>
+                                    Details
+                                </p><br />
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                                <field name="rent"/>
+                                <field name="bail"/>
+                                <field name="status"/>
+                            </group>
+                        </group>
+                        <hr />
+
+                    </sheet>
+                </form>    
+            </field>
+        </record>
+
+        <record id="view_realestate_contract_tree" model="ir.ui.view">
+            <field name="name">view.realestate.contract.tree</field>
+            <field name="model">realestate.contract</field>
+            <field name="arch" type="xml">
+                <list string="Contracts">
+                    <field name="name"/>
+                    <field name="property_id"/>
+                    <field name="partner_id"/>
+                    <field name="status"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_realestate_contract_search" model="ir.ui.view">
+            <field name="name">view.realestate.contract.search</field>
+            <field name="model">realestate.contract</field>
+            <field name="arch" type="xml">
+                <search string="Foñter contracts">
+                    <field name="name"/>
+                    <field name="name"/>
+                    <field name="property_id"/>
+                    <field name="partner_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_realestate_contract_view" model="ir.actions.act_window">
+            <field name="name">Contracts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">realestate.contract</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Contracts
+                </p>
+                <p>
+                    Click 'New' to add new elements
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

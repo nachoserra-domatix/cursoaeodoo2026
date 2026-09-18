@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+
+        <menuitem id="menu_realestate_root" name="Inmobiliaria" sequence="10"/>
+
+        <menuitem id="menu_realestate_general_categ" name="General" parent="menu_realestate_root" sequence="0"/>
+
+        <menuitem id="menu_realestate_property" name="Propiedades" parent="menu_realestate_general_categ" sequence="1"
+                  action="action_realestate_property_view"/>
+        <menuitem id="menu_realestate_visit" name="Visitas" parent="menu_realestate_general_categ" sequence="2"
+                  action="action_realestate_visit_view"/>
+        <menuitem id="menu_realestate_category" name="Categorías" parent="menu_realestate_general_categ" sequence="2"
+                  action="action_realestate_category_view"/>
+        <menuitem id="menu_realestate_offer" name="Ofertas" parent="menu_realestate_general_categ" sequence="2"
+                  action="action_realestate_offer_view"/>
+        <menuitem id="menu_realestate_contract" name="Contratos" parent="menu_realestate_general_categ" sequence="2"
+                  action="action_realestate_contract_view"/>
+
+    </data>
+</odoo>

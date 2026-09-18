@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+
+        <record id="view_realestate_property_form" model="ir.ui.view">
+            <field name="name">view.realestate.property.form</field>
+            <field name="model">realestate.property</field>
+            <field name="arch" type="xml">
+                <form string="Property">
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <p>
+                                    Main data
+                                </p><br />
+                                <field name="name"/>
+                                <field name="size"/>
+                                <field name="category_id"/>
+                                <field name="status"/>
+                            </group>
+                            <group name="group_right">
+                                <p>
+                                    Details
+                                </p><br />
+                                <field name="desc"/>
+                            </group>
+                        </group>
+                        <hr />
+
+                    </sheet>
+                </form>    
+            </field>
+        </record>
+
+        <record id="view_realestate_property_tree" model="ir.ui.view">
+            <field name="name">view.realestate.property.tree</field>
+            <field name="model">realestate.property</field>
+            <field name="arch" type="xml">
+                <list string="Properties">
+                    <field name="name"/>
+                    <field name="size"/>
+                    <field name="desc"/>
+                </list>
+            </field>
+        </record>
+
+
+        <record id="view_realestate_property_search" model="ir.ui.view">
+            <field name="name">view.realestate.property.search</field>
+            <field name="model">realestate.property</field>
+            <field name="arch" type="xml">
+                <search string="Filter properties">
+                    <field name="name"/>
+                    <field name="size"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_realestate_property_view" model="ir.actions.act_window">
+            <field name="name">Properties</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">realestate.property</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Properties
+                </p>
+                <p>
+                    Click 'New' to add new elements
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

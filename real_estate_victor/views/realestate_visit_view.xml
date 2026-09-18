@@ -1,0 +1,83 @@
+<odoo>
+    <data>
+
+        <record id="view_realestate_visit_form" model="ir.ui.view">
+            <field name="name">view.realestate.visit.form</field>
+            <field name="model">realestate.visit</field>
+            <field name="arch" type="xml">
+                <form string="Visit">
+                    <header>
+                        <button name="action_reserve" string="Reserve" type="object" class="oe_highlight" invisible="status == 'R'"/>
+                        <field name="status" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <widget name="web_ribbon" title="Reserved" bg_color="text-bg-success" invisible="status != 'R'"/>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <p>
+                                    Main data
+                                </p><br />
+                                <field name="name"/>
+                                <field name="property"/>
+                                
+                            </group>
+                            <group name="group_right">
+                                <p>
+                                    Details
+                                </p><br />
+                                <field name="date"/>
+                                <field name="partner_id"/>
+                                <field name="status"/>
+                            </group>
+                        </group>
+                        <hr />
+
+                    </sheet>
+                </form>    
+            </field>
+        </record>
+
+        <record id="view_realestate_visit_tree" model="ir.ui.view">
+            <field name="name">view.realestate.visit.tree</field>
+            <field name="model">realestate.visit</field>
+            <field name="arch" type="xml">
+                <list string="Visits">
+                    <field name="name"/>
+                    <field name="property"/>
+                    <field name="date"/>
+                    <field name="partner_id"/>
+                    <field name="status"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_realestate_visit_search" model="ir.ui.view">
+            <field name="name">view.realestate.visit.search</field>
+            <field name="model">realestate.visit</field>
+            <field name="arch" type="xml">
+                <search string="Foñter visits">
+                    <field name="name"/>
+                    <field name="property"/>
+                    <field name="partner_id"/>
+                    <field name="status"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_realestate_visit_view" model="ir.actions.act_window">
+            <field name="name">Visits</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">realestate.visit</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Visits
+                </p>
+                <p>
+                    Click 'New' to add new elements
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>
