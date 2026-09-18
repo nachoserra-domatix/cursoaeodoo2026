@@ -1,0 +1,270 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* rsr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-16 21:36+0000\n"
+"PO-Revision-Date: 2026-09-16 21:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_form
+msgid "Area (m²)"
+msgstr "Área (m²)"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__availability_state
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_search
+msgid "Available"
+msgstr "Disponible"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__date_availability
+msgid "Available from"
+msgstr "Disponible desde"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__best_price
+msgid "Best Offer"
+msgstr "Mejor oferta"
+
+#. module: rsr
+#: model:ir.model.fields.selection,name:rsr.selection__estate_property_visit__state__cancelled
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property_visit__contact_id
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__create_uid
+#: model:ir.model.fields,field_description:rsr.field_estate_property_visit__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__create_date
+#: model:ir.model.fields,field_description:rsr.field_estate_property_visit__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property_visit__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__description
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__display_name
+#: model:ir.model.fields,field_description:rsr.field_estate_property_visit__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: rsr
+#: model:ir.model.fields.selection,name:rsr.selection__estate_property_visit__state__done
+msgid "Done"
+msgstr "Hecho"
+
+#. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_list
+msgid "Estate Properties"
+msgstr "Propiedades inmobiliarias"
+
+#. module: rsr
+#: model:ir.model,name:rsr.model_estate_property
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_form
+msgid "Estate Property"
+msgstr "Propiedad"
+
+#. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_form
+msgid "Reserved"
+msgstr "Reservada"
+
+#. module: rsr
+#: model:ir.model,name:rsr.model_estate_property_visit
+msgid "Estate Property Visit"
+msgstr "Visita de propiedad"
+
+#. module: rsr
+#: model:ir.actions.act_window,name:rsr.estate_property_action
+msgid "Estate property action"
+msgstr "Acción de propiedades"
+
+#. module: rsr
+#: model:ir.actions.act_window,name:rsr.estate_property_visit_action
+msgid "Estate property visit action"
+msgstr "Acción de visitas de propiedades"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__price
+msgid "Expected Price"
+msgstr "Precio esperado"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__garden_area
+msgid "Garden Area (m²)"
+msgstr "Área del jardín (m²)"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__id
+#: model:ir.model.fields,field_description:rsr.field_estate_property_visit__id
+msgid "ID"
+msgstr "ID"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__write_uid
+#: model:ir.model.fields,field_description:rsr.field_estate_property_visit__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__write_date
+#: model:ir.model.fields,field_description:rsr.field_estate_property_visit__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__living_area
+msgid "Living Area (m²)"
+msgstr "Superficie habitable (m²)"
+
+#. module: rsr
+#: model:res.groups,name:rsr.group_real_estate_manager
+msgid "Manage"
+msgstr "Gestionar"
+
+#. module: rsr
+#: model:ir.model.fields.selection,name:rsr.selection__estate_property_visit__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: rsr
+#: model:ir.model.fields.selection,name:rsr.selection__estate_property_visit__state__new
+msgid "New"
+msgstr "Nuevo"
+
+#. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_search
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: rsr
+#: model:ir.model.fields.selection,name:rsr.selection__estate_property_visit__state__planned
+msgid "Planned"
+msgstr "Planificado"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__postcode
+msgid "Postcode"
+msgstr "Código postal"
+
+#. module: rsr
+#: model:ir.ui.menu,name:rsr.estate_menu_properties
+msgid "Properties"
+msgstr "Propiedades"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property_visit__property_id
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_visit_view_search
+msgid "Property"
+msgstr "Propiedad"
+
+#. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_form
+msgid "Property Title"
+msgstr "Título de la propiedad"
+
+#. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_visit_view_form
+msgid "Property Visit"
+msgstr "Visita de propiedad"
+
+#. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_visit_view_form
+msgid "Mark as Done"
+msgstr "Terminada"
+
+#. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_visit_view_list
+msgid "Property Visits"
+msgstr "Visitas de propiedades"
+
+#. module: rsr
+#: model:ir.module.category,name:rsr.module_category_real_estate
+#: model:ir.ui.menu,name:rsr.estate_menu_root
+#: model:res.groups.privilege,name:rsr.res_groups_privilege_real_estate
+msgid "Real Estate"
+msgstr "Inmobiliaria"
+
+#. module: rsr
+#: model:res.groups,comment:rsr.group_real_estate_manager
+msgid "Real Estate Manager Group"
+msgstr "Grupo de gestor inmobiliario"
+
+#. module: rsr
+#: model:res.groups,comment:rsr.group_real_estate_user
+msgid "Real Estate User Group"
+msgstr "Grupo de usuarios inmobiliarios"
+
+#. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_form
+msgid "Sale Information"
+msgstr "Información de venta"
+
+#. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_search
+msgid "Search Estate Properties"
+msgstr "Buscar propiedades"
+
+#. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_visit_view_search
+msgid "Search Property Visits"
+msgstr "Buscar visitas de propiedades"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__selling_price
+msgid "Selling Price"
+msgstr "Precio de venta"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property_visit__state
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_visit_view_search
+msgid "State"
+msgstr "Estado"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__name
+msgid "Title"
+msgstr "Título"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__total_area
+msgid "Total Area (m²)"
+msgstr "Superficie total (m²)"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__id_user
+#: model:res.groups,name:rsr.group_real_estate_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: rsr
+#: model:ir.ui.menu,name:rsr.estate_menu_visits
+msgid "Visits"
+msgstr "Visitas"
