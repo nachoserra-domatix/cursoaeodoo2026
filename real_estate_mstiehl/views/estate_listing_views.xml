@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View estate.listing View List -->
+    <record id="view_estate_listing_list" model="ir.ui.view">
+        <field name="name">view.estate.listing.list</field>
+        <field name="model">estate.listing</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="listing_ref_code" />
+                <field name="property_id" />
+                <field name="type_id" />
+                <field name="seller_id" />
+                <field name="agent_id" />
+                <field name="expected_price" />
+                <field name="state" widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- View estate.listing form -->
+    <record id="view_estate_listing_form" model="ir.ui.view">
+        <field name="name">view.estate.listing.form</field>
+        <field name="model">estate.listing</field>
+        <field name="arch" type="xml">
+            <form string="Estate Listing">
+                <header>
+                    <button name="action_reserved" type="object" string="Reserved" class="btn-primary"
+                            invisible="state != 'offer_accepted'"/>
+                    <button name="action_sold" type="object" string="Sold" class="btn-primary"
+                            invisible="state != 'reserved'"/>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}" />
+                </header>
+                <sheet readonly="state == 'sold'">
+                    <widget name="web_ribbon" title="Sold" invisible="state != 'sold'"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_contract" type="object" class="oe_stat_button" icon="fa-file-text-o"
+                                invisible="contract_count == 0">
+                            <field name="contract_count" widget="statinfo" string="Contract"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="listing_ref_code"/>
+                        </h1>
+                    </div>
+                    <group> <field name="tags_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_edit_color': True}"/>  </group>
+                    <group col="2">
+                        <group string="Listing Details">
+                            <field name="listing_ref_code" />
+                            <field name="property_id" />
+                            <field name="type_id" />
+                            <field name="seller_id" widget="many2one_avatar_user"/>
+                            <field name="agent_id"  widget="many2one_avatar_user"/>
+                            <field name="expected_price" />
+                            <field name="selling_price" />
+                        </group>
+                        <group string="Listing Prices">
+                            <field name="date_published" />
+                            <field name="date_offer_accepted" />
+                            <field name="date_reserved" />
+                            <field name="date_sold" />
+                            <field name="date_canceled" />
+                        </group>
+                    </group>
+                    <group> <field name="description" /> </group>
+                    <notebook>
+                        <page name="Offers" string="Offers">
+                            <field name="offer_ids" >
+                                <list editable="bottom">
+                                    <field name="partner_id"  widget="many2one_avatar_user"/>
+                                    <field name="price" />
+                                    <field name="state" widget="badge"      />
+                                    <button name="action_accepted" type="object" icon="fa-check"
+                                            string="Accept" class="text-success" title="Accept this field"
+                                            confirm="Are you sure you want to accept this offer?"
+                                            invisible="state in ('accepted', 'refused', 'expired')"/>
+                                    <button name="action_refused" type="object" icon="fa-times"
+                                            string="Reject" class="text-danger" title="Reject this field"
+                                            invisible="state in ('accepted', 'refused', 'expired')"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Action estate.listing -->
+    <record id="estate_listing_view_action" model="ir.actions.act_window">
+        <field name="name">Estate Listing</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">estate.listing</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Estate Listing.
+            </p>
+        </field>
+    </record>
+
+</odoo>

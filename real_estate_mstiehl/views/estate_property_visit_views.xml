@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- ###### property_visit -->  
+
+        <record id="estate_property_visit_view_list" model="ir.ui.view">
+            <field name="name">estate.property.visit.view.list</field>
+            <field name="model">estate.property.visit</field>
+            <field name="arch" type="xml">
+                <list string="Real Estate Property Visit" default_order="name desc">
+                    <field name="listing_id" />
+                    <field name="property_id" />
+                    <field name="visitor_id" widget="many2one_avatar_user"/>
+                    <field name="agent_id" widget="many2one_avatar_user" />
+                    <field name="date" />
+                    <field name="state" widget="badge" />
+                </list>
+            </field>
+        </record>
+
+        <record id="estate_property_visit_view_form" model="ir.ui.view">
+            <field name="name">estate.property.visit.view.form</field>
+            <field name="model">estate.property.visit</field>
+            <field name="arch" type="xml">
+                <form string="Real Estate Property Visit">
+                <header>
+                    <button string="Draft" name="action_draft" type="object" class="oe_highlight" invisible="state in ('draft','done', 'cancelled')"/>
+                    <button string="Cancel" name="action_canceled" type="object" class="oe_highlight btn-danger" invisible="state in ('canceled','draft', 'done')"/>
+                    <button string="Confirm" name="action_confirmed" type="object" class="oe_highlight" invisible="state in ('confirmed','canceled', 'done')" />
+                    <button string="Done" name="action_done" type="object" class="oe_highlight btn-success" invisible="state in ('done','draft', 'canceled')"/>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}" />
+                </header>
+                    <sheet>
+                    <widget name="web_ribbon"
+                        title="Done" 
+                        bg_color="text-bg-success" 
+                        invisible="not state == 'done'"/>
+                        <group>
+                            <field name="listing_id" />
+                            <field name="property_id"/>
+                            <field name="visitor_id" widget="many2one_avatar_user" />
+                            <field name="agent_id" widget="many2one_avatar_user" />
+                            <field name="date" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Action -->
+        <record id="estate_property_visit_view_action" model="ir.actions.act_window">
+            <field name="name">Estate property.visits</field>
+            <field name="res_model">estate.property.visit</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+    </data>
+</odoo>

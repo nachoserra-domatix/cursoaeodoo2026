@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <!-- ###### Properties -->
+
+        <record id="estate_listing_offer_view_list" model="ir.ui.view">
+            <field name="name">estate.listing.offer.view.list</field>
+            <field name="model">estate.listing.offer</field>
+            <field name="arch" type="xml">
+                <list string="Offers" default_order="create_date desc">
+                    <field name="listing_id" widget="many2one_avatar" />
+                    <field name="partner_id" />
+                    <field name="price" />
+                    <field name="state" widget="badge"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="estate_listing_offer_view_form" model="ir.ui.view">
+            <field name="name">estate.listing.offer.view.form</field>
+            <field name="model">estate.listing.offer</field>
+            <field name="arch" type="xml">
+                <form string="Real Estate Listing Offer">
+                    <header>
+                        <button string="Analyse" name="action_in_analysis" type="object" class="oe_highlight" invisible="state != 'submitted'"/>
+                        <button string="Accept" name="action_accepted" type="object" class="oe_highlight btn-success" invisible="state != 'in_analysis'"/>
+                        <button string="Refuse" name="action_refused" type="object" class="oe_highlight btn-danger" invisible="state != 'in_analysis'"/>
+                        <field name="state" widget="statusbar" statusbar_visible="submitted,in_analysis,accepted,refused,expired"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="listing_id" />
+                            <field name="partner_id" widget="many2one_avatar" />
+                            <field name="price" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Action -->
+        <record id="estate_listing_offer_view_action" model="ir.actions.act_window">
+            <field name="name">Property Offers</field>
+            <field name="res_model">estate.listing.offer</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+    </data>
+</odoo>

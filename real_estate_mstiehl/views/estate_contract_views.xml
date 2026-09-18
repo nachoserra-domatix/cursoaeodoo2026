@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View estate.contract View List -->
+    <record id="view_estate_contract_list" model="ir.ui.view">
+        <field name="name">view.estate.contract.list</field>
+        <field name="model">estate.contract</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="property_id"/>
+                <field name="buyer_ids" widget="many2many_tags"/>
+                <field name="type_id"/>
+                <field name="price"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- View estate.contract form -->
+    <record id="view_estate_contract_form" model="ir.ui.view">
+        <field name="name">view.estate.contract.form</field>
+        <field name="model">estate.contract</field>
+        <field name="arch" type="xml">
+            <form string="Estate Contract">
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}" />
+                </header>  
+                <sheet>
+                    <widget name="web_ribbon"
+                        title="Signed" 
+                        bg_color="text-bg-success" 
+                        invisible="not state == 'signed'"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="contract_ref_code"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group String="Contract Details">
+                            <field name="listing_id" />
+                            <field name="property_id" />
+                            <field name="agent_id" />
+                            <field name="type_id" />
+                            <field name="price" />
+                        </group>
+                        <group string="Dates">
+                            <field name="date_start" />
+                            <field name="date_end" />
+                            <field name="date_register" />
+                            <field name="date_published" />
+                            <field name="date_signed" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="Buyers" string="Buyers">
+                            <field name="buyer_ids">
+                                <list editable="bottom">
+                                    <field name="partner_id"/>
+                                    <field name="notes"/>
+                                    <field name="numerator"/>
+                                    <field name="denominator"/>
+                                    <field name="total_share" widget="percent"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action estate.contract -->
+    <record id="estate_contract_view_action" model="ir.actions.act_window">
+        <field name="name">Estate Contracts</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">estate.contract</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Estate Contract.
+            </p>
+        </field>
+    </record>
+</odoo>
