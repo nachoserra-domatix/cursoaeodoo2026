@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="estate_offer_view_form" model="ir.ui.view">
+        <field name="name">realestate.offer.form</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <form string="Property Offer">
+                <header>
+                    <button name="action_mark_sent" invisible="state != 'draft'" type="object" string="Mark as Sent" class="btn-secondary"/>
+                    <button name="action_mark_accepted" invisible="state != 'sent'" type="object" string="Accept" class="btn-primary"/>
+                    <button name="action_mark_rejected" invisible="state != 'sent'" type="object" string="Reject" class="btn-secondary"/>
+                    <button name="action_mark_draft" invisible="state not in ['accepted', 'rejected']" type="object" string="Reset to Draft" class="btn-secondary"/>
+                    <field name="state" widget="statusbar" options="{'clickable': True}" statusbar_visible="draft,sent,accepted,rejected"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="property_id"/>
+                            <field name="buyer_id"/>
+                            <field name="amount"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="notes"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="estate_offer_view_list" model="ir.ui.view">
+        <field name="name">realestate.offer.list</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <list string="Property Offers">
+                <field name="property_id"/>
+                <field name="buyer_id"/>
+                <field name="amount"/>
+                <field name="date"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+    <record id="estate_offer_view_search" model="ir.ui.view">
+        <field name="name">realestate.offer.search</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <search string="Search Property Offers">
+                <field name="property_id"/>
+                <field name="buyer_id"/>
+                <field name="state"/>
+                <group>
+                    <filter string="Property" name="group_by_property" context="{'group_by': 'property_id'}"/>
+                    <filter string="State" name="group_by_state" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

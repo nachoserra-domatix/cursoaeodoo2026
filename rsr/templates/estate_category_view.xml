@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="estate_category_view_form" model="ir.ui.view">
+        <field name="name">realestate.category.form</field>
+        <field name="model">realestate.category</field>
+        <field name="arch" type="xml">
+            <form string="Property Category">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="estate_category_view_list" model="ir.ui.view">
+        <field name="name">realestate.category.list</field>
+        <field name="model">realestate.category</field>
+        <field name="arch" type="xml">
+            <list string="Property Categories">
+                <field name="name"/>
+                <field name="description"/>
+            </list>
+        </field>
+    </record>
+</odoo>

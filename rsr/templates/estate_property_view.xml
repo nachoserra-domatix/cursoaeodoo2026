@@ -16,6 +16,7 @@
                     <group>
                         <group string="Description">
                             <field name="description"/>
+                            <field name="category_id"/>
                             <field name="postcode"/>
                             <field name="date_availability"/>
                             <field name="availability_state" widget="boolean_toggle" options="{'terminology': {'on': 'Available', 'off': 'Not Available'}}"/>
@@ -46,6 +47,7 @@
         <field name="arch" type="xml">
             <list string="Estate Properties">
                 <field name="name"/>
+                <field name="category_id"/>
                 <field name="postcode"/>
                 <field name="price"/>
                 <field name="date_availability"/>

@@ -11,6 +11,24 @@
                   action="estate_property_action"
                   sequence="10"/>
 
+        <menuitem id="estate_menu_categories"
+              name="Categories"
+              parent="estate_menu_root"
+              action="estate_category_action"
+              sequence="15"/>
+
+          <menuitem id="estate_menu_offers"
+                name="Offers"
+                parent="estate_menu_root"
+                action="estate_offer_action"
+                sequence="18"/>
+
+        <menuitem id="estate_menu_contracts"
+              name="Contracts"
+              parent="estate_menu_root"
+              action="estate_contract_action"
+              sequence="19"/>
+
         <menuitem id="estate_menu_visits"
                   name="Visits"
                   parent="estate_menu_root"

@@ -1,6 +1,5 @@
 from odoo import _, api, fields, models
 
-
 class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "Estate Property"
@@ -32,6 +31,10 @@ class EstateProperty(models.Model):
     id_user = fields.Many2one(
         comodel_name="res.users",
         string="User",
+    )
+    category_id = fields.Many2one(
+        comodel_name="realestate.category",
+        string="Category",
     )
 
     @api.depends("living_area", "garden_area")
