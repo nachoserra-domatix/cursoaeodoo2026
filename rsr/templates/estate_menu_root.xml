@@ -17,6 +17,12 @@
               action="estate_category_action"
               sequence="15"/>
 
+          <menuitem id="estate_menu_property_stages"
+              name="Property Stages"
+              parent="estate_menu_root"
+              action="estate_property_stage_action"
+              sequence="16"/>
+
           <menuitem id="estate_menu_offers"
                 name="Offers"
                 parent="estate_menu_root"

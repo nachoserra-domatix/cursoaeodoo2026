@@ -47,12 +47,82 @@
             <search string="Search Property Visits">
                 <field name="property_id"/>
                 <field name="contact_id"/>
+                <field name="user_id"/>
+                <field name="date"/>
                 <field name="state"/>
+                <filter string="Planned" name="filter_planned" domain="[('state', '=', 'planned')]"/>
+                <filter string="Done" name="filter_done" domain="[('state', '=', 'done')]"/>
+                <filter string="Cancelled" name="filter_cancelled" domain="[('state', '=', 'cancelled')]"/>
                 <group>
                     <filter string="Property" name="group_by_property" context="{'group_by': 'property_id'}"/>
                     <filter string="State" name="group_by_state" context="{'group_by': 'state'}"/>
+                    <filter string="User" name="group_by_user" context="{'group_by': 'user_id'}"/>
+                    <filter string="Date" name="group_by_date" context="{'group_by': 'date'}"/>
                 </group>
             </search>
+        </field>
+    </record>
+    <record id="estate_property_visit_view_kanban" model="ir.ui.view">
+        <field name="name">estate.property.visit.kanban</field>
+        <field name="model">estate.property.visit</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" default_order="sequence asc">
+                <field name="sequence"/>
+                <field name="property_id"/>
+                <field name="date"/>
+                <field name="contact_id"/>
+                <field name="user_id"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <strong class="text-truncate"><field name="property_id"/></strong>
+                            <span class="text-muted small">#<field name="sequence"/></span>
+                            <field name="state" widget="label_selection" options="{'classes': {'draft': 'info', 'new': 'primary', 'planned': 'warning', 'done': 'success', 'cancelled': 'danger'}}"/>
+                        </div>
+                        <div class="text-muted small">
+                            <field name="date"/>
+                            <span class="mx-1">·</span>
+                            <field name="contact_id"/>
+                        </div>
+                        <div class="mt-2">
+                            <field name="user_id" widget="many2one_avatar_user"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="estate_property_visit_view_pivot" model="ir.ui.view">
+        <field name="name">estate.property.visit.pivot</field>
+        <field name="model">estate.property.visit</field>
+        <field name="arch" type="xml">
+            <pivot string="Property Visits">
+                <field name="state" type="row"/>
+                <field name="date" type="col" interval="month"/>
+            </pivot>
+        </field>
+    </record>
+    <record id="estate_property_visit_view_graph" model="ir.ui.view">
+        <field name="name">estate.property.visit.graph</field>
+        <field name="model">estate.property.visit</field>
+        <field name="arch" type="xml">
+            <graph string="Property Visits" type="bar">
+                <field name="state" type="row"/>
+                <field name="date" type="col" interval="month"/>
+            </graph>
+        </field>
+    </record>
+    <record id="estate_property_visit_view_calendar" model="ir.ui.view">
+        <field name="name">estate.property.visit.calendar</field>
+        <field name="model">estate.property.visit</field>
+        <field name="arch" type="xml">
+            <calendar string="Property Visits" date_start="date" color="state">
+                <field name="property_id"/>
+                <field name="contact_id"/>
+                <field name="user_id"/>
+                <field name="state"/>
+            </calendar>
         </field>
     </record>
 </odoo>

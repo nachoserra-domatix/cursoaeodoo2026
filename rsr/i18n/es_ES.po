@@ -38,6 +38,7 @@ msgstr "Mejor oferta"
 
 #. module: rsr
 #: model:ir.model.fields.selection,name:rsr.selection__estate_property_visit__state__cancelled
+#: model:ir.model.fields.selection,name:rsr.selection__realestate_contract__state__cancelled
 msgid "Cancelled"
 msgstr "Cancelado"
 
@@ -49,12 +50,20 @@ msgstr "Contacto"
 #. module: rsr
 #: model:ir.model.fields,field_description:rsr.field_estate_property__create_uid
 #: model:ir.model.fields,field_description:rsr.field_estate_property_visit__create_uid
+#: model:ir.model.fields,field_description:rsr.field_realestate_category__create_uid
+#: model:ir.model.fields,field_description:rsr.field_realestate_contract__create_uid
+#: model:ir.model.fields,field_description:rsr.field_realestate_offer__create_uid
+#: model:ir.model.fields,field_description:rsr.field_realestate_property_stage__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: rsr
 #: model:ir.model.fields,field_description:rsr.field_estate_property__create_date
 #: model:ir.model.fields,field_description:rsr.field_estate_property_visit__create_date
+#: model:ir.model.fields,field_description:rsr.field_realestate_category__create_date
+#: model:ir.model.fields,field_description:rsr.field_realestate_contract__create_date
+#: model:ir.model.fields,field_description:rsr.field_realestate_offer__create_date
+#: model:ir.model.fields,field_description:rsr.field_realestate_property_stage__create_date
 msgid "Created on"
 msgstr "Creado el"
 
@@ -74,6 +83,10 @@ msgstr "Descripción"
 #. module: rsr
 #: model:ir.model.fields,field_description:rsr.field_estate_property__display_name
 #: model:ir.model.fields,field_description:rsr.field_estate_property_visit__display_name
+#: model:ir.model.fields,field_description:rsr.field_realestate_category__display_name
+#: model:ir.model.fields,field_description:rsr.field_realestate_contract__display_name
+#: model:ir.model.fields,field_description:rsr.field_realestate_offer__display_name
+#: model:ir.model.fields,field_description:rsr.field_realestate_property_stage__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
 
@@ -83,7 +96,9 @@ msgid "Done"
 msgstr "Hecho"
 
 #. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_graph
 #: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_list
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_pivot
 msgid "Estate Properties"
 msgstr "Propiedades inmobiliarias"
 
@@ -126,18 +141,30 @@ msgstr "Área del jardín (m²)"
 #. module: rsr
 #: model:ir.model.fields,field_description:rsr.field_estate_property__id
 #: model:ir.model.fields,field_description:rsr.field_estate_property_visit__id
+#: model:ir.model.fields,field_description:rsr.field_realestate_category__id
+#: model:ir.model.fields,field_description:rsr.field_realestate_contract__id
+#: model:ir.model.fields,field_description:rsr.field_realestate_offer__id
+#: model:ir.model.fields,field_description:rsr.field_realestate_property_stage__id
 msgid "ID"
 msgstr "ID"
 
 #. module: rsr
 #: model:ir.model.fields,field_description:rsr.field_estate_property__write_uid
 #: model:ir.model.fields,field_description:rsr.field_estate_property_visit__write_uid
+#: model:ir.model.fields,field_description:rsr.field_realestate_category__write_uid
+#: model:ir.model.fields,field_description:rsr.field_realestate_contract__write_uid
+#: model:ir.model.fields,field_description:rsr.field_realestate_offer__write_uid
+#: model:ir.model.fields,field_description:rsr.field_realestate_property_stage__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
 
 #. module: rsr
 #: model:ir.model.fields,field_description:rsr.field_estate_property__write_date
 #: model:ir.model.fields,field_description:rsr.field_estate_property_visit__write_date
+#: model:ir.model.fields,field_description:rsr.field_realestate_category__write_date
+#: model:ir.model.fields,field_description:rsr.field_realestate_contract__write_date
+#: model:ir.model.fields,field_description:rsr.field_realestate_offer__write_date
+#: model:ir.model.fields,field_description:rsr.field_realestate_property_stage__write_date
 msgid "Last Updated on"
 msgstr "Última actualización el"
 
@@ -194,6 +221,18 @@ msgid "Property"
 msgstr "Propiedad"
 
 #. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_stage_view_form
+msgid "Property Stage"
+msgstr "Etapa de propiedad"
+
+#. module: rsr
+#: model:ir.actions.act_window,name:rsr.estate_property_stage_action
+#: model:ir.ui.menu,name:rsr.estate_menu_property_stages
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_stage_view_list
+msgid "Property Stages"
+msgstr "Etapas de propiedad"
+
+#. module: rsr
 #: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_form
 msgid "Property Title"
 msgstr "Título de la propiedad"
@@ -209,7 +248,10 @@ msgid "Mark as Done"
 msgstr "Terminada"
 
 #. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_visit_view_calendar
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_visit_view_graph
 #: model_terms:ir.ui.view,arch_db:rsr.estate_property_visit_view_list
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_visit_view_pivot
 msgid "Property Visits"
 msgstr "Visitas de propiedades"
 
@@ -241,6 +283,11 @@ msgid "Search Estate Properties"
 msgstr "Buscar propiedades"
 
 #. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_search
+msgid "Search Multiple Fields"
+msgstr "Buscar en varios campos"
+
+#. module: rsr
 #: model_terms:ir.ui.view,arch_db:rsr.estate_property_visit_view_search
 msgid "Search Property Visits"
 msgstr "Buscar visitas de propiedades"
@@ -257,6 +304,18 @@ msgid "State"
 msgstr "Estado"
 
 #. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property_visit__sequence
+#: model:ir.model.fields,field_description:rsr.field_realestate_property_stage__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property__stage_id
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_search
+msgid "Stage"
+msgstr "Etapa"
+
+#. module: rsr
 #: model:ir.model.fields,field_description:rsr.field_estate_property__name
 msgid "Title"
 msgstr "Título"
@@ -268,6 +327,7 @@ msgstr "Superficie total (m²)"
 
 #. module: rsr
 #: model:ir.model.fields,field_description:rsr.field_estate_property__id_user
+#: model:ir.model.fields,field_description:rsr.field_estate_property_visit__user_id
 #: model:res.groups,name:rsr.group_real_estate_user
 msgid "User"
 msgstr "Usuario"
@@ -350,6 +410,7 @@ msgstr "En curso"
 #. module: rsr
 #: model:ir.model.fields,field_description:rsr.field_realestate_category__name
 #: model:ir.model.fields,field_description:rsr.field_realestate_contract__name
+#: model:ir.model.fields,field_description:rsr.field_realestate_property_stage__name
 msgid "Name"
 msgstr "Nombre"
 
@@ -381,6 +442,7 @@ msgstr "Oferta de propiedad"
 
 #. module: rsr
 #: model:ir.actions.act_window,name:rsr.estate_offer_action
+#: model_terms:ir.ui.view,arch_db:rsr.estate_offer_view_graph
 #: model_terms:ir.ui.view,arch_db:rsr.estate_offer_view_list
 msgid "Property Offers"
 msgstr "Ofertas de propiedades"
@@ -408,6 +470,11 @@ msgid "Real Estate Offer"
 msgstr "Oferta inmobiliaria"
 
 #. module: rsr
+#: model:ir.model,name:rsr.model_realestate_property_stage
+msgid "Real Estate Property Stage"
+msgstr "Etapa de propiedad inmobiliaria"
+
+#. module: rsr
 #: model_terms:ir.ui.view,arch_db:rsr.estate_offer_view_form
 msgid "Reject"
 msgstr "Rechazar"
@@ -426,6 +493,11 @@ msgstr "Precio"
 #: model:ir.model.fields.selection,name:rsr.selection__realestate_contract__contract_type__rental
 msgid "Rental"
 msgstr "Alquiler"
+
+#. module: rsr
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_view_search
+msgid "Reference"
+msgstr "Referencia"
 
 #. module: rsr
 #: model_terms:ir.ui.view,arch_db:rsr.estate_contract_view_form

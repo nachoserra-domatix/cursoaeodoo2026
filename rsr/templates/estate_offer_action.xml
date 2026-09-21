@@ -3,6 +3,6 @@
     <record id="estate_offer_action" model="ir.actions.act_window">
         <field name="name">Property Offers</field>
         <field name="res_model">realestate.offer</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">list,form,graph</field>
     </record>
 </odoo>

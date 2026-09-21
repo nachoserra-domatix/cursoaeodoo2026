@@ -13,6 +13,8 @@
         'templates/estate_property_view.xml',
         'templates/estate_category_action.xml',
         'templates/estate_category_view.xml',
+        'templates/estate_property_stage_action.xml',
+        'templates/estate_property_stage_view.xml',
         'templates/estate_contract_action.xml',
         'templates/estate_contract_view.xml',
         'templates/estate_offer_action.xml',

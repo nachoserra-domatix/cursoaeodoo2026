@@ -17,6 +17,7 @@
                         <group string="Description">
                             <field name="description"/>
                             <field name="category_id"/>
+                            <field name="stage_id"/>
                             <field name="postcode"/>
                             <field name="date_availability"/>
                             <field name="availability_state" widget="boolean_toggle" options="{'terminology': {'on': 'Available', 'off': 'Not Available'}}"/>
@@ -48,6 +49,7 @@
             <list string="Estate Properties">
                 <field name="name"/>
                 <field name="category_id"/>
+                <field name="stage_id"/>
                 <field name="postcode"/>
                 <field name="price"/>
                 <field name="date_availability"/>
@@ -60,13 +62,66 @@
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
             <search string="Search Estate Properties">
-                <field name="name"/>
-                <field name="postcode"/>
+                <field name="name" string="Search Multiple Fields" filter_domain="['|', '|', ('category_id.name', 'ilike', self), ('postcode', 'ilike', self), ('name', 'ilike', self)]"/>
+                <field name="postcode" string="Reference"/>
+                <field name="category_id"/>
+                <field name="stage_id"/>
                 <filter string="Available" name="available" domain="[('availability_state', '=', True)]"/>
+                <filter string="Reserved" name="reserved" domain="[('availability_state', '=', False)]"/>
                 <group>
                     <filter string="Owner" name="group_by_user" context="{'group_by': 'id_user'}"/>
+                    <filter string="Stage" name="group_by_stage" context="{'group_by': 'stage_id'}"/>
+                    <filter string="Category" name="group_by_category" context="{'group_by': 'category_id'}"/>
                 </group>
             </search>
+        </field>
+    </record>
+    <record id="estate_property_view_kanban" model="ir.ui.view">
+        <field name="name">estate.property.kanban</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="stage_id">
+                <field name="name"/>
+                <field name="price"/>
+                <field name="category_id"/>
+                <field name="id_user"/>
+                <field name="stage_id"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <strong class="text-truncate"><field name="name"/></strong>
+                            <field name="price"/>
+                        </div>
+                        <div class="text-muted small">
+                            <field name="category_id"/>
+                        </div>
+                        <div class="mt-2">
+                            <field name="id_user" widget="many2one_avatar_user"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="estate_property_view_pivot" model="ir.ui.view">
+        <field name="name">estate.property.pivot</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <pivot string="Estate Properties">
+                <field name="id_user" type="row"/>
+                <field name="category_id" type="col"/>
+                <field name="price" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+    <record id="estate_property_view_graph" model="ir.ui.view">
+        <field name="name">estate.property.graph</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <graph string="Estate Properties" type="bar">
+                <field name="stage_id" type="row"/>
+                <field name="price" type="measure"/>
+            </graph>
         </field>
     </record>
 </odoo>

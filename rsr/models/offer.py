@@ -10,6 +10,7 @@ class RealEstateOffer(models.Model):
         comodel_name="estate.property",
         string="Property",
         required=True,
+        domain=[("availability_state", "=", True)],
     )
     buyer_id = fields.Many2one(
         comodel_name="res.partner",
@@ -31,6 +32,15 @@ class RealEstateOffer(models.Model):
     )
     notes = fields.Text(string="Notes")
 
+    def write(self, vals):
+        res = super().write(vals)
+        if "state" in vals:
+            if vals["state"] == "accepted":
+                self.property_id.action_mark_reserved()
+            elif vals["state"] == "draft":
+                self.property_id.action_mark_available()
+        return res
+
     def action_mark_sent(self):
         for record in self:
             record.state = "sent"
@@ -38,7 +48,6 @@ class RealEstateOffer(models.Model):
 
     def action_mark_accepted(self):
         for record in self:
-            record.property_id.action_mark_reserved()
             record.state = "accepted"
         return True
 

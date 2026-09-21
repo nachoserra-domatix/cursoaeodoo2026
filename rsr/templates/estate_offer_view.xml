@@ -56,4 +56,14 @@
             </search>
         </field>
     </record>
+    <record id="estate_offer_view_graph" model="ir.ui.view">
+        <field name="name">realestate.offer.graph</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <graph string="Property Offers" type="bar">
+                <field name="state" type="row"/>
+                <field name="amount" type="measure"/>
+            </graph>
+        </field>
+    </record>
 </odoo>

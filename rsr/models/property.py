@@ -32,10 +32,24 @@ class EstateProperty(models.Model):
         comodel_name="res.users",
         string="User",
     )
+    stage_id = fields.Many2one(
+        comodel_name="realestate.property.stage",
+        string="Stage",
+    )
     category_id = fields.Many2one(
         comodel_name="realestate.category",
         string="Category",
     )
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        first_stage = self.env["realestate.property.stage"].search(
+            [], order="sequence, id", limit=1
+        )
+        for vals in vals_list:
+            if "stage_id" not in vals and first_stage:
+                vals["stage_id"] = first_stage.id
+        return super().create(vals_list)
 
     @api.depends("living_area", "garden_area")
     def _compute_total_area(self):
@@ -55,4 +69,9 @@ class EstateProperty(models.Model):
     def action_mark_reserved(self):
         for record in self:
             record.availability_state = False
+        return True
+
+    def action_mark_available(self):
+        for record in self:
+            record.availability_state = True
         return True 
