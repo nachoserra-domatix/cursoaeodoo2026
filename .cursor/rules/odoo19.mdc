@@ -1,0 +1,92 @@
+---
+description: Mandatory Odoo 19 development standards
+alwaysApply: true
+---
+
+# Odoo 19 Development Standards
+
+This project targets **Odoo 19 exclusively**.
+
+All generated, suggested, completed, modified, reviewed, or refactored code
+must be compatible with Odoo 19.
+
+## Odoo version
+
+- Use Odoo 19 APIs, syntax, conventions, and recommended patterns.
+- Do not use deprecated APIs, attributes, XML syntax, ORM patterns, or
+  conventions from previous Odoo versions when an Odoo 19 alternative exists.
+- Never assume that code valid in Odoo 16, 17, or 18 is valid in Odoo 19.
+- Do not introduce compatibility code for older Odoo versions unless
+  explicitly requested.
+
+## Python and ORM
+
+- Follow Odoo 19 ORM conventions and prefer idiomatic Odoo code.
+- Use the Odoo ORM instead of raw SQL whenever reasonably possible.
+- Write recordset-aware code.
+- Avoid singleton assumptions unless the operation explicitly requires one.
+- Avoid unnecessary database queries and inefficient ORM patterns.
+- Use appropriate Odoo decorators and method signatures for Odoo 19.
+- Follow Odoo 19 conventions for fields, relational fields, computed fields,
+  related fields, constraints, onchange methods, and ORM method overrides.
+- Prefer clear and maintainable implementations over unnecessary abstractions.
+
+## XML and UI
+
+- Use Odoo 19 XML view syntax and conventions.
+- Do not use XML attributes, view patterns, or mechanisms deprecated or
+  removed in Odoo 19.
+- Follow Odoo 19 conventions for views, actions, menus, templates, and assets.
+- Use current Odoo 19 frontend conventions when working with JavaScript,
+  OWL, QWeb, or web assets.
+
+## Security
+
+- Follow Odoo 19 security conventions.
+- Correctly distinguish between groups, access control lists (ACLs),
+  and record rules.
+- Do not bypass Odoo security mechanisms unless explicitly required and
+  justified.
+- Avoid unnecessary use of sudo().
+
+## Module structure
+
+- Follow standard Odoo 19 module structure and manifest conventions.
+- Keep models, views, security, data, controllers, tests, and frontend code
+  organized according to Odoo conventions.
+- Reuse existing models, fields, methods, XML IDs, and framework mechanisms
+  when appropriate.
+- Do not invent model names, field names, XML IDs, methods, APIs, or framework
+  behavior when their existence is uncertain.
+
+## Code quality
+
+- Prefer simple, explicit, readable, and maintainable code.
+- Follow Python and Odoo naming conventions.
+- Avoid unnecessary complexity, premature abstractions, and redundant code.
+- When several valid implementations exist, prefer the simplest idiomatic
+  Odoo 19 solution.
+- When modifying existing code, preserve the project's established conventions
+  when they are compatible with Odoo 19.
+
+## Verification and context
+
+- Use existing knowledge and the currently available project context by default.
+- Do not routinely search documentation, inspect the Odoo source tree, or
+  explore unrelated project files before generating code.
+- Do not perform broad searches merely to confirm standard Odoo behavior.
+- If an Odoo 19-specific API, syntax, or behavior is genuinely uncertain,
+  acknowledge the uncertainty rather than silently using an older-version
+  pattern.
+- When verification is genuinely necessary, inspect only the specific relevant
+  symbol, file, or documentation needed to resolve that uncertainty.
+
+## Learning-oriented development
+
+This is also a learning project.
+
+- Prefer code whose behavior and Odoo mechanisms are understandable.
+- Do not introduce advanced abstractions or unnecessary complexity when a
+  straightforward Odoo 19 implementation is sufficient.
+- When explaining generated code, use precise Odoo terminology and clearly
+  distinguish Python behavior from Odoo ORM/framework behavior.

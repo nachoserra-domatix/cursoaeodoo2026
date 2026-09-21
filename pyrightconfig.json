@@ -1,0 +1,8 @@
+{
+    "extraPaths": [
+        "/home/odoo/odoo",
+        "/home/odoo/odoo/addons"
+    ],
+    "venvPath": "/home/odoo",
+    "venv": "venv"
+}
