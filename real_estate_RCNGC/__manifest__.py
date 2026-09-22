@@ -1,3 +1,5 @@
+# pyright: reportUnusedExpression=false
+
 {
     'name': 'Real Estate RCNGC',
     'version': '1.0.0',
@@ -7,6 +9,7 @@
     'category': 'Real Estate',
     'depends': ['base'],
     'data': [
+        'security/real_estate_security.xml',
         'security/ir.model.access.csv',
         'views/realestate_property_views.xml',
         'views/realestate_menuitems.xml',
