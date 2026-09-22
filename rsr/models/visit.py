@@ -12,6 +12,9 @@ class EstatePropertyVisit(models.Model):
     date = fields.Datetime(string="Date")
     contact_id = fields.Many2one(comodel_name="res.partner", string="Contact")
     user_id = fields.Many2one(comodel_name="res.users", string="User")
+    contact_email = fields.Char(string="Contact Email", related="contact_id.email", readonly=True)
+    contact_phone = fields.Char(string="Contact Phone", related="contact_id.phone", readonly=True)
+
     state = fields.Selection(
         selection=[
             ("draft", "Draft"),

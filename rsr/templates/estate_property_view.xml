@@ -5,6 +5,12 @@
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
             <form string="Estate Property">
+                <header>
+                    <button name="action_create_offer" type="object" string="Create Offer" class="btn-primary"/>
+                    <button name="create_visit" type="object" string="Create Visit" class="btn-secondary"/>
+                    <button name="action_accept_best_offer" type="object" string="Accept Best Offer" class="btn-primary"/>
+                    <button name="action_delete_rejected_offers" type="object" string="Delete Rejected Offers" class="btn-secondary"/>
+                </header>
                 <sheet>
                     <widget name="web_ribbon"
                             title="Reserved"

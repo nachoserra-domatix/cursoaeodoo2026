@@ -21,12 +21,14 @@
                             <field name="contract_type"/>
                             <field name="property_id"/>
                             <field name="tenant_id"/>
+                            <field name="days_between"/>
                         </group>
                         <group>
                             <field name="start_date"/>
                             <field name="end_date"/>
                             <field name="rent"/>
                             <field name="deposit"/>
+                            <field name="has_deposit"/>
                         </group>
                     </group>
                 </sheet>

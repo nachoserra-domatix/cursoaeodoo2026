@@ -20,6 +20,7 @@
                             <field name="amount"/>
                         </group>
                         <group>
+                            <field name="property_resp"/>
                             <field name="date"/>
                             <field name="notes"/>
                         </group>
@@ -35,6 +36,7 @@
             <list string="Property Offers">
                 <field name="property_id"/>
                 <field name="buyer_id"/>
+                <field name="property_resp"/>
                 <field name="amount"/>
                 <field name="date"/>
                 <field name="state"/>

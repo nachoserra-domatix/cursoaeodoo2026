@@ -19,6 +19,13 @@ class RealEstateOffer(models.Model):
     )
     amount = fields.Float(string="Amount", required=True)
     date = fields.Date(string="Date", required=True, default=fields.Date.today)
+    property_resp = fields.Many2one(
+        comodel_name="res.users",
+        string="Property Responsible",
+        related="property_id.id_user",
+        readonly=True,
+    )
+    
     state = fields.Selection(
         selection=[
             ("draft", "Draft"),
@@ -50,6 +57,9 @@ class RealEstateOffer(models.Model):
         for record in self:
             record.state = "accepted"
         return True
+
+    def action_accept(self):
+        return self.action_mark_accepted()
 
     def action_mark_rejected(self):
         for record in self:

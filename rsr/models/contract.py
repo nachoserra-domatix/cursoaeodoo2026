@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import fields, models, api
 
 class RealEstateContract(models.Model):
     _name = "realestate.contract"
@@ -29,6 +29,9 @@ class RealEstateContract(models.Model):
     end_date = fields.Date(string="End Date", required=True)
     rent = fields.Float(string="Rent", required=True)
     deposit = fields.Float(string="Deposit", required=True)
+    days_between = fields.Integer(compute="_compute_days", string="Duration (Days)")
+    duration_d = fields.Integer(compute="_compute_duration", string="Duration (Days)")
+    has_deposit = fields.Boolean(compute="_compute_has_deposit", store=True, string="With Deposit")
     state = fields.Selection(
         selection=[
             ("draft", "Draft"),
@@ -40,6 +43,27 @@ class RealEstateContract(models.Model):
         default="draft",
         required=True,
     )
+
+    @api.depends("start_date", "end_date")
+    def _compute_duration(self):
+        for record in self:
+            if record.start_date and record.end_date:
+                record.duration_d = (record.end_date - record.start_date).days
+            else:
+                record.duration_d = 0
+                
+    def _compute_days(self):
+        date_today = fields.Date.today()
+        for record in self:
+            if record.start_date:
+                record.days_between = (date_today - record.start_date).days
+            else:
+                record.days_between = 0
+
+    @api.depends("deposit")
+    def _compute_has_deposit(self):
+        for record in self:
+            record.has_deposit = record.deposit > 0
 
     def action_mark_in_progress(self):
         for record in self:
