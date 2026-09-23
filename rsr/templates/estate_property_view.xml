@@ -44,6 +44,33 @@
                             <field name="id_user"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Visits">
+                            <field name="visit_ids" context="{'default_user_id': id_user, 'list_view_ref': 'rsr.estate_property_visit_view_list_simple'}"/>
+                        </page>
+                        <page string="Incidences">
+                            <field name="incidence_ids">
+                                <list editable="bottom" default_order="sequence asc">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="priority" widget="priority"/>
+                                    <field name="state"/>
+                                    <field name="date"/>
+                                    <field name="user_id" domain="[('share', '=', False)]"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Images">
+                            <field name="image_ids">
+                                <list editable="bottom" default_order="sequence asc">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="image" widget="image"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

@@ -40,6 +40,21 @@ class EstateProperty(models.Model):
         comodel_name="realestate.category",
         string="Category",
     )
+    incidence_ids = fields.One2many(
+        comodel_name="estate.property.incidence",
+        inverse_name="property_id",
+        string="Incidences",
+    )
+    visit_ids = fields.One2many(
+        comodel_name="estate.property.visit",
+        inverse_name="property_id",
+        string="Visits",
+    )
+    image_ids = fields.One2many(
+        comodel_name="estate.property.image",
+        inverse_name="property_id",
+        string="Images",
+    )
 
     @api.model_create_multi
     def create(self, vals_list):

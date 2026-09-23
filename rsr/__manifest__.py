@@ -21,6 +21,8 @@
         'templates/estate_offer_view.xml',
         'templates/estate_property_visit_action.xml',
         'templates/estate_property_visit_view.xml',
+        'templates/estate_property_incidence_view.xml',
+        'templates/estate_property_image_view.xml',
 
         # root menu
         'templates/estate_menu_root.xml',

@@ -16,8 +16,8 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="property_id"/>
-                            <field name="contact_id"/>
+                            <field name="property_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="contact_id" options="{'no_create': True, 'no_open': True}"/>
                             <field name="user_id"/>
                         </group>
                         <group>
@@ -34,10 +34,23 @@
         <field name="model">estate.property.visit</field>
         <field name="arch" type="xml">
             <list string="Property Visits">
-                <field name="property_id"/>
+                <field name="property_id" options="{'no_create': True, 'no_open': True}"/>
                 <field name="date"/>
                 <field name="contact_id"/>
                 <field name="state"/>
+            </list>
+        </field>
+    </record>
+    <record id="estate_property_visit_view_list_simple" model="ir.ui.view">
+        <field name="name">estate.property.visit.list.simple</field>
+        <field name="model">estate.property.visit</field>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <list string="Property Visits">
+                <field name="date"/>
+                <field name="contact_id" options="{'no_create': True, 'no_open': True}"/>
+                <field name="user_id" domain="[('share', '=', False)]"/>
+                <field name="state" widget="label_selection" options="{'classes': {'draft': 'info', 'new': 'info', 'planned': 'warning', 'done': 'success', 'cancelled': 'danger'}}"/>
             </list>
         </field>
     </record>
