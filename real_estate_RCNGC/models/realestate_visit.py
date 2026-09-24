@@ -23,6 +23,7 @@ class RealEstateVisit(models.Model):
     )
 
     phone = fields.Char(string="Phone", related="partner_id.phone", readonly=False, store=True)
+    personal_email = fields.Char(string="Personal Email", related="partner_id.email")
     
     state = fields.Selection(
         selection=[
