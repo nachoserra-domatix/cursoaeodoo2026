@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <!-- ###### Properties -->
+
+        <record id="estate_property_view_list" model="ir.ui.view">
+            <field name="name">estate.property.view.list</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <list string="Real Estate Properties" default_order="date_register desc">
+                    <field name="name" />
+                    <field name="property_ref_code" />
+                    <field name="property_type_id" />
+                    <field name="total_area" />
+                    <field name="available" />
+                </list>
+            </field>
+        </record>
+
+        <record id="estate_property_view_form" model="ir.ui.view">
+            <field name="name">estate.property.view.form</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <form string="Real Estate Property">
+                    <header>
+                        <button name="action_create_listing" string="Create Listing" type="object" class="oe_highlight" />
+                        <widget name="web_ribbon"
+                            title="Reserved"
+                            bg_color="text-bg-warning"
+                            invisible="available"/>
+                        <widget name="web_ribbon"
+                            title="Sold"
+                            bg_color="text-bg-danger"
+                            invisible="not date_sold"/>
+                    </header>
+                    <sheet>
+                        <field name="image_1920" widget='image' class="oe_avatar"/>
+                        <div class="oe_title">
+                            <field name="property_ref_code" class="text-muted"/>
+                            <h1>
+                                <field name="name" placeholder="Property name..."/>
+                            </h1>
+                        </div>
+                        <group> <field name="tags_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_edit_color': True}"/>  </group>
+                        <group col="2">
+                            <group>
+                                <field name="property_type_id" />
+                                <field name="available"/>
+                            </group>
+                            <group>
+                                <field name="expected_price" />
+                                <field name="selling_price" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="details" string="Details">
+                                <group col="2">
+                                    <group string="Property">
+                                        <field name="cunstruction_year" />
+                                        <field name="user_id"/>
+                                        <field name="seller_id"/>
+                                        <field name="agent_id" widget="many2one_avatar_user"/>
+                                        <field name="date_register" />
+                                        <field name="date_sold" />
+                                    </group>
+                                    <group string="Areas &amp; Rooms">
+                                        <field name="total_area" />
+                                        <field name="living_area" />
+                                        <field name="bedrooms" />
+                                        <field name="bathrooms" />
+                                        <field name="garage" />
+                                        <field name="garden" />
+                                        <field name="garden_area" invisible="not garden"/>
+                                        <field name="garden_orientation" invisible="not garden"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="description" />
+                                    <field name="external_url" widget="url"/>
+                                </group>
+                            </page>
+                            <page name="address" string="Address">
+                                <group col="2">
+                                    <group>
+                                        <field name="street" string="Street"/>
+                                        <field name="street2" string="Street 2"/>
+                                        <field name="city" string="City"/>
+                                        <field name="state_id" string="State" options="{'no_open': True, 'no_quick_create': True}" context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}"/>
+                                        <field name="zip" string="ZIP"/>
+                                        <field name="country_id" string="Country" options='{"no_open": True, "no_create": True}'/>
+                                    </group>
+                                    <group>
+                                        <field name="google_maps_url" widget="url"/>
+                                        <field name="partner_latitude"/>
+                                        <field name="partner_longitude"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="contacts_ids" string="Contacts">
+                                <field name="contacts_ids">
+                                    <list>                                    
+                                        <field name="partner_id" widget="many2one_avatar" />
+                                        <field name="role_id" />                                        
+                                    </list>
+                                    <form>
+                                        <group>
+                                            <field name="partner_id" widget="many2one_avatar" />
+                                            <field name="role_id" />  
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page name="gallery_ids" string="Gallery">
+                                <field name="gallery_ids">
+                                    <list>                                    
+                                        <field name="name" />
+                                        <field name="description" />
+                                        <field name="image" widget="image" options="{'size': [50, 50]}"/>                               
+                                    </list>
+                                    <form>
+                                        <group>
+                                            <field name="name" />
+                                            <field name="description" />
+                                            <field name="image" widget="image" options="{'size': [50, 50]}"/>                               
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page name="ticket_ids" string="Tickets">
+                                <field name="ticket_ids" context="{'list_view_ref': 'real_estate_mstiehl.estate_property_ticket_simple_view_list', 'default_property_id': id, 'default_responsible_id': agent_id}"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Action -->
+        <record id="estate_property_view_action" model="ir.actions.act_window">
+            <field name="name">Properties</field>
+            <field name="res_model">estate.property</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+    </data>
+</odoo>

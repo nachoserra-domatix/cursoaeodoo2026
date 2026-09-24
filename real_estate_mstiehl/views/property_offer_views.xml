@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <!-- ###### Offers -->
+
+        <record id="estate_listing_offer_view_list" model="ir.ui.view">
+            <field name="name">estate.listing.offer.view.list</field>
+            <field name="model">estate.listing.offer</field>
+            <field name="arch" type="xml">
+                <list string="Offers" default_order="create_date desc" decoration-muted="state in ('refused', 'expired')">
+                    <field name="listing_id"/>
+                    <field name="property_id" optional="show"/>
+                    <field name="partner_id" widget="many2one_avatar"/>
+                    <field name="agent_id" widget="many2one_avatar_user" optional="show"/>
+                    <field name="price" sum="Total"/>
+                    <field name="date" optional="show"/>
+                    <field name="valid_until" optional="show"/>
+                    <field name="state" widget="badge" decoration-info="state in ('submitted', 'in_analysis')" decoration-success="state == 'accepted'" decoration-danger="state in ('refused', 'expired')"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="estate_listing_offer_view_form" model="ir.ui.view">
+            <field name="name">estate.listing.offer.view.form</field>
+            <field name="model">estate.listing.offer</field>
+            <field name="arch" type="xml">
+                <form string="Real Estate Listing Offer">
+                    <header>
+                        <button string="Analyse" name="action_in_analysis" type="object" class="oe_highlight" invisible="state != 'submitted'"/>
+                        <button string="Accept" name="action_accepted" type="object" class="oe_highlight btn-success" invisible="state != 'in_analysis'" confirm="Are you sure you want to accept this offer?"/>
+                        <button string="Refuse" name="action_refused" type="object" class="oe_highlight btn-danger" invisible="state != 'in_analysis'"/>
+                        <field name="state" widget="statusbar" statusbar_visible="submitted,in_analysis,accepted,refused,expired"/>
+                    </header>
+                    <sheet>
+                        <widget name="web_ribbon" title="Accepted" bg_color="text-bg-success" invisible="state != 'accepted'"/>
+                        <widget name="web_ribbon" title="Refused" bg_color="text-bg-danger" invisible="state != 'refused'"/>
+                        <group>
+                            <group string="Offer">
+                                <field name="listing_id"/>
+                                <field name="property_id"/>
+                                <field name="partner_id" widget="many2one_avatar"/>
+                                <field name="agent_id" widget="many2one_avatar_user"/>
+                                <field name="price"/>
+                            </group>
+                            <group string="Dates">
+                                <field name="date"/>
+                                <field name="valid_until"/>
+                                <field name="date_in_analysis"/>
+                                <field name="date_accepted"/>
+                                <field name="date_refused"/>
+                                <field name="date_expired"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="estate_listing_offer_view_search" model="ir.ui.view">
+            <field name="name">estate.listing.offer.view.search</field>
+            <field name="model">estate.listing.offer</field>
+            <field name="arch" type="xml">
+                <search string="Offers">
+                    <field name="listing_id"/>
+                    <field name="property_id"/>
+                    <field name="partner_id"/>
+                    <field name="agent_id"/>
+                    <separator/>
+                    <filter string="Submitted" name="filter_submitted" domain="[('state', '=', 'submitted')]"/>
+                    <filter string="In Analysis" name="filter_in_analysis" domain="[('state', '=', 'in_analysis')]"/>
+                    <filter string="Accepted" name="filter_accepted" domain="[('state', '=', 'accepted')]"/>
+                    <filter string="Refused" name="filter_refused" domain="[('state', '=', 'refused')]"/>
+                    <filter string="Expired" name="filter_expired" domain="[('state', '=', 'expired')]"/>
+                    <separator/>
+                    <filter string="My Offers" name="filter_my_offers" domain="[('agent_id', '=', uid)]"/>
+                    <filter string="Expiring This Week" name="filter_expiring" domain="[('state', 'in', ('submitted', 'in_analysis')), ('valid_until', '&lt;=', (context_today() + datetime.timedelta(days=7)).strftime('%Y-%m-%d'))]"/>
+                    <separator/>
+                    <filter string="Date" name="filter_date" date="date"/>
+                    <group>
+                        <filter string="Status" name="groupby_state" context="{'group_by': 'state'}"/>
+                        <filter string="Listing" name="groupby_listing" context="{'group_by': 'listing_id'}"/>
+                        <filter string="Property" name="groupby_property" context="{'group_by': 'property_id'}"/>
+                        <filter string="Partner" name="groupby_partner" context="{'group_by': 'partner_id'}"/>
+                        <filter string="Agent" name="groupby_agent" context="{'group_by': 'agent_id'}"/>
+                        <filter string="Date" name="groupby_date" context="{'group_by': 'date:month'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Kanban -->
+        <record id="estate_listing_offer_view_kanban" model="ir.ui.view">
+            <field name="name">estate.listing.offer.view.kanban</field>
+            <field name="model">estate.listing.offer</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state" highlight_color="color" records_draggable="0" class="o_kanban_small_column" sample="1">
+                    <field name="state"/>
+                    <field name="valid_until"/>
+                    <templates>
+                        <t t-name="menu">
+                            <t t-if="widget.editable"><a role="menuitem" type="open" class="dropdown-item">Edit</a></t>
+                            <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                            <div role="separator" class="dropdown-divider"/>
+                            <field name="color" widget="kanban_color_picker"/>
+                        </t>
+                        <t t-name="card">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <field name="listing_id" class="fw-bold"/>
+                                <field name="state" widget="badge" decoration-info="state in ('submitted', 'in_analysis')" decoration-success="state == 'accepted'" decoration-danger="state in ('refused', 'expired')"/>
+                            </div>
+                            <field name="property_id" class="text-muted"/>
+                            <div class="d-flex align-items-center gap-1 mt-1">
+                                <field name="partner_id" widget="many2one_avatar"/>
+                            </div>
+                            <field name="price" class="fs-5 fw-bold text-primary mt-1"/>
+                            <div class="small text-muted" t-if="record.valid_until.raw_value">
+                                <i class="fa fa-clock-o me-1" title="Valid Until"/><field name="valid_until"/>
+                            </div>
+                            <footer class="pt-2">
+                                <div class="d-flex gap-1">
+                                    <button name="action_in_analysis" type="object" string="Analyse" class="btn btn-sm btn-primary" invisible="state != 'submitted'"/>
+                                    <button name="action_accepted" type="object" string="Accept" class="btn btn-sm btn-success" invisible="state != 'in_analysis'" confirm="Are you sure you want to accept this offer?"/>
+                                    <button name="action_refused" type="object" string="Refuse" class="btn btn-sm btn-danger" invisible="state != 'in_analysis'"/>
+                                </div>
+                                <field name="agent_id" widget="many2one_avatar_user" class="ms-auto"/>
+                            </footer>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Pivot -->
+        <record id="estate_listing_offer_view_pivot" model="ir.ui.view">
+            <field name="name">estate.listing.offer.view.pivot</field>
+            <field name="model">estate.listing.offer</field>
+            <field name="arch" type="xml">
+                <pivot string="Offers" sample="1">
+                    <field name="listing_id" type="row"/>
+                    <field name="state" type="col"/>
+                    <field name="price" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Graph -->
+        <record id="estate_listing_offer_view_graph" model="ir.ui.view">
+            <field name="name">estate.listing.offer.view.graph</field>
+            <field name="model">estate.listing.offer</field>
+            <field name="arch" type="xml">
+                <graph string="Offers" type="bar" stacked="1" sample="1">
+                    <field name="date" interval="month"/>
+                    <field name="state"/>
+                    <field name="price" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="estate_listing_offer_view_action" model="ir.actions.act_window">
+            <field name="name">Offers</field>
+            <field name="res_model">estate.listing.offer</field>
+            <field name="view_mode">kanban,list,form,pivot,graph</field>
+            <field name="search_view_id" ref="estate_listing_offer_view_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No offers yet
+                </p>
+                <p>
+                    Offers are registered from each listing.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

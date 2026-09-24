@@ -1,0 +1,28 @@
+{
+    'name': 'Real Estate MS',
+    'version': '19.0.1.0.0',
+    'summary': 'Real Estate MStiehl',
+    'description': '',
+    'author': 'Marco Stiehl',
+    'website': '',
+    'license': 'LGPL-3',
+    'depends': ['base', 'mail'],
+    "data": [
+        "security/real_estate_security.xml",
+        "security/ir_rules.xml",
+        "security/ir.model.access.csv",
+        "views/estate_listing_views.xml",
+        "views/estate_contract_views.xml",
+        "views/estate_contract_type_views.xml",
+        "views/property_offer_views.xml",
+        "views/estate_settings_views.xml",
+        "views/property_type_views.xml",
+        "views/estate_property_visit_views.xml",
+        "views/estate_property_ticket_views.xml",
+        "views/property_views.xml",
+        "menu/menu.xml"
+    ],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}

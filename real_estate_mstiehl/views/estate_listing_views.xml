@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View estate.listing View List -->
+    <record id="view_estate_listing_list" model="ir.ui.view">
+        <field name="name">view.estate.listing.list</field>
+        <field name="model">estate.listing</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="listing_ref_code" />
+                <field name="property_id" />
+                <field name="type_id" />
+                <field name="seller_id" />
+                <field name="agent_id" />
+                <field name="expected_price" />
+                <field name="state" widget="badge" decoration-info="state in ('published', 'offer_received')" decoration-warning="state in ('offer_accepted', 'reserved')" decoration-success="state == 'sold'" decoration-danger="state == 'canceled'"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- View estate.listing kanban -->
+    <record id="view_estate_listing_kanban" model="ir.ui.view">
+        <field name="name">view.estate.listing.kanban</field>
+        <field name="model">estate.listing</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" highlight_color="color" records_draggable="0" class="o_kanban_small_column" sample="1">
+                <field name="state"/>
+                <field name="selling_price"/>
+                <field name="next_visit_date"/>
+                <templates>
+                    <t t-name="menu">
+                        <t t-if="widget.editable"><a role="menuitem" type="open" class="dropdown-item">Edit</a></t>
+                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                        <div role="separator" class="dropdown-divider"/>
+                        <field name="color" widget="kanban_color_picker"/>
+                    </t>
+                    <t t-name="card" class="flex-row">
+                        <aside class="me-2">
+                            <field name="property_image" widget="image" options="{'size': [72, 72], 'img_class': 'rounded object-fit-cover'}"/>
+                        </aside>
+                        <main class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <field name="listing_ref_code" class="fw-bold"/>
+                                <field name="state" widget="badge" decoration-info="state in ('published', 'offer_received')" decoration-warning="state in ('offer_accepted', 'reserved')" decoration-success="state == 'sold'" decoration-danger="state == 'canceled'"/>
+                            </div>
+                            <field name="property_id" class="text-muted"/>
+                            <field name="type_id" class="small"/>
+                            <field name="tags_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                            <div class="small mt-1">
+                                <span class="text-muted">Expected: </span><field name="expected_price"/>
+                            </div>
+                            <div class="small" t-if="record.selling_price.raw_value">
+                                <span class="text-muted">Selling: </span><field name="selling_price" class="fw-bold text-success"/>
+                            </div>
+                            <div class="small" t-if="record.next_visit_date.raw_value">
+                                <i class="fa fa-calendar me-1" title="Next Visit Date"/><field name="next_visit_date"/>
+                            </div>
+                            <footer class="pt-2">
+                                <div class="d-flex gap-1">
+                                    <button name="action_accept_best_offer" type="object" string="Accept Best Offer" class="btn btn-sm btn-primary" invisible="state != 'offer_received'"/>
+                                    <button name="action_reserved" type="object" string="Reserved" class="btn btn-sm btn-primary" invisible="state != 'offer_accepted'"/>
+                                    <button name="action_sold" type="object" string="Sold" class="btn btn-sm btn-success" invisible="state != 'reserved'" confirm="Are you sure you want to mark this listing as sold? A contract will be created."/>
+                                </div>
+                                <field name="agent_id" widget="many2one_avatar_user" class="ms-auto"/>
+                            </footer>
+                        </main>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- View estate.listing form -->
+    <record id="view_estate_listing_form" model="ir.ui.view">
+        <field name="name">view.estate.listing.form</field>
+        <field name="model">estate.listing</field>
+        <field name="arch" type="xml">
+            <form string="Estate Listing">
+                <field name="num_pending_visits" readonly="True"/>
+                <header>
+                    <button name="action_create_visit" string="Create Visit" type="object" class="oe_highlight" />
+                    <button name="action_cancel_all_visits" string="Cancel All Visits" type="object" class="oe_highlight" invisible="num_pending_visits == 0"/>
+                    <button name="action_accept_best_offer" type="object" string="Accept Best Offer" class="btn-primary"
+                            invisible="state != 'offer_received'"/>
+                    <button name="action_reserved" type="object" string="Reserved" class="btn-primary"
+                            invisible="state != 'offer_accepted'"/>
+                    <button name="action_sold" type="object" string="Sold" class="btn-primary"
+                            invisible="state != 'reserved'"/>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}" />
+                </header>
+                <sheet readonly="state == 'sold'">
+                    <widget name="web_ribbon" title="Sold" invisible="state != 'sold'"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_contract" type="object" class="oe_stat_button" icon="fa-file-text-o"
+                                invisible="contract_count == 0">
+                            <field name="contract_count" widget="statinfo" string="Contract"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="listing_ref_code"/>
+                        </h1>
+                    </div>
+                    <group> <field name="tags_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_edit_color': True}"/>  </group>
+                    <group col="2">
+                        <group string="Listing Details">
+                            <field name="listing_ref_code" />
+                            <field name="property_id" />
+                            <field name="type_id" />
+                            <field name="seller_id" widget="many2one_avatar_user"/>
+                            <field name="agent_id"  widget="many2one_avatar_user"/>
+                            <field name="expected_price" />
+                            <field name="selling_price" />
+                        </group>
+                        <group string="Listing Prices">
+                            <field name="date_published" />
+                            <field name="date_offer_accepted" />
+                            <field name="date_reserved" />
+                            <field name="date_sold" />
+                            <field name="date_canceled" />
+                        </group>
+                    </group>
+                    <group> <field name="description" /> </group>
+                    <notebook>
+                        <page name="visits" string="Visits">
+                            <group> <field name="next_visit_date" /> </group>
+                            <field name="visit_ids" context="{'list_view_ref': 'real_estate_mstiehl.estate_property_visit_view_list', 'default_listing_id': id, 'default_agent_id': agent_id}"/>
+                        </page>
+                        <page name="Offers" string="Offers">
+                            <field name="offer_ids" editable="bottom">
+                                <list editable="bottom">
+                                    <field name="partner_id"  widget="many2one_avatar_user"/>
+                                    <field name="price" />
+                                    <field name="state" widget="badge" decoration-info="state in ('submitted', 'in_analysis')" decoration-success="state == 'accepted'" decoration-danger="state in ('refused', 'expired')"/>
+                                    <button name="action_accepted" type="object" icon="fa-check"
+                                            string="Accept" class="text-success" title="Accept this field"
+                                            confirm="Are you sure you want to accept this offer?"
+                                            invisible="state in ('accepted', 'refused', 'expired')"/>
+                                    <button name="action_refused" type="object" icon="fa-times"
+                                            string="Reject" class="text-danger" title="Reject this field"
+                                            invisible="state in ('accepted', 'refused', 'expired')"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Action estate.listing -->
+    <record id="estate_listing_view_action" model="ir.actions.act_window">
+        <field name="name">Estate Listing</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">estate.listing</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Estate Listing.
+            </p>
+        </field>
+    </record>
+
+</odoo>
