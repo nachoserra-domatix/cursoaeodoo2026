@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_realestate_category_form" model="ir.ui.view">
+        <field name="name">view.realestate.category.form</field>
+        <field name="model">realestate.category</field>
+        <field name="arch" type="xml">
+            <form string="Categories">
+                <sheet>
+                    <group name="group_top">
+                        <group name="group_left">
+                            <field name="name"/>
+                        </group>
+                        <group name="group_right">
+                            <field name="desc"/>
+                        </group>
+                    </group>
+                    <hr />
+
+                </sheet>
+            </form>    
+        </field>
+    </record>
+
+    <record id="view_realestate_category_list" model="ir.ui.view">
+        <field name="name">view.realestate.category.list</field>
+        <field name="model">realestate.category</field>
+        <field name="arch" type="xml">
+            <list string="Categories">
+                <field name="name"/>
+                <field name="desc"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_realestate_category_search" model="ir.ui.view">
+        <field name="name">view.realestate.category.search</field>
+        <field name="model">realestate.category</field>
+        <field name="arch" type="xml">
+            <search string="Foñter categories">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_realestate_category_view" model="ir.actions.act_window">
+        <field name="name">Categories</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">realestate.category</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Categories
+            </p>
+            <p>
+                Click 'New' to add new elements
+            </p>
+        </field>
+    </record>
+
+</odoo>

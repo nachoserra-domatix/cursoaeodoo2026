@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="action_realestate_visit_view" model="ir.actions.act_window">
+        <field name="name">Visits</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">realestate.visit</field>
+        <field name="view_mode">list,form,kanban,calendar,pivot,graph</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Visits
+            </p>
+            <p>
+                Click 'New' to add new elements
+            </p>
+        </field>
+    </record>
+
+    <record id="view_realestate_visit_form" model="ir.ui.view">
+        <field name="name">view.realestate.visit.form</field>
+        <field name="model">realestate.visit</field>
+        <field name="arch" type="xml">
+            <form string="Visit">
+                <header>
+                    <button name="action_reserve" string="Reserve" type="object" class="oe_highlight" invisible="status == 'R'"/>
+                    <field name="status" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Reserved" bg_color="text-bg-success" invisible="status != 'R'"/>
+                    <group name="group_top">
+                        <group name="group_left">
+                            <p>
+                                Main data
+                            </p><br />
+                            <field name="name"/>
+                            <field name="property_id"/>
+                            <field name="user_id"/>
+                            
+                        </group>
+                        <group name="group_right">
+                            <p>
+                                Details
+                            </p><br />
+                            <field name="date"/>
+                            <field name="partner_id"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="status"/>
+                        </group>
+                    </group>
+                    <hr />
+
+                </sheet>
+            </form>    
+        </field>
+    </record>
+
+    <record id="view_realestate_visit_list" model="ir.ui.view">
+        <field name="name">view.realestate.visit.list</field>
+        <field name="model">realestate.visit</field>
+        <field name="arch" type="xml">
+            <list string="Visits">
+                <field name="name"/>
+                <field name="property_id"/>
+                <field name="date"/>
+                <field name="partner_id"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_realestate_visit_simple_list" model="ir.ui.view">
+        <field name="name">realestate.visit.simple.list</field>
+        <field name="model">realestate.visit</field>
+        <field name="priority" eval="99" />
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="partner_id" options="{'no_quick_create': True}" optional="show"/>
+                <field name="user_id" options="{'no_create': True,'no_open':True}" optional="show"/>
+                <field name="status" decoration-info="status == 'P'" decoration-success="status == 'V'" decoration-warning="status == 'R'" widget="badge" optional="show"/>
+                <field name="date" optional="show"/>
+
+            </list>
+        </field>
+    </record>
+
+    <record id="view_realestate_visit_kanban" model="ir.ui.view">
+        <field name="name">view.realestate.visit.kanban</field>
+        <field name="model">realestate.visit</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column">
+                <field name="name"/>
+                <templates>
+                    <t t-name="card">
+                        <field name="property_id"/>
+                        <field name="date"/>
+                        <field name="partner_id"/>
+                        <field name="status"/>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_realestate_visit_calendar" model="ir.ui.view">
+        <field name="name">view.realestate.visit.calendar</field>
+        <field name="model">realestate.visit</field>
+        <field name="arch" type="xml">
+            <calendar string="Visits"
+                    date_start="date"
+                    color="partner_id"
+                    mode="month"
+                    quick_create="False">
+                <field name="name"/>
+                <field name="property_id"/>
+                <field name="partner_id"/>
+                <field name="status"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_realestate_visit_pivot" model="ir.ui.view">
+        <field name="name">realestate.visit.pivot</field>
+        <field name="model">realestate.visit</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="partner_id" type="row"/>
+                <field name="property_id" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_realestate_visit_graph" model="ir.ui.view">
+        <field name="name">realestate.visit.graph</field>
+        <field name="model">realestate.visit</field>
+        <field name="arch" type="xml">
+            <graph>
+                <field name="partner_id" type="row"/>
+                <field name="property_id" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_realestate_visit_search" model="ir.ui.view">
+        <field name="name">view.realestate.visit.search</field>
+        <field name="model">realestate.visit</field>
+        <field name="arch" type="xml">
+            <search string="Foñter visits">
+                <field name="name"/>
+                <field name="property_id"/>
+                <field name="partner_id"/>
+                <field name="status"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>
