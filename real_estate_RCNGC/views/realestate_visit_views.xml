@@ -50,6 +50,7 @@
                         <group>
                             <field name="date"/>
                             <field name="partner_id"/>
+                            <field name="phone"/>
                         </group>
                     </group>
                 </sheet>

@@ -22,6 +22,8 @@ class RealEstateVisit(models.Model):
         string="User",
     )
 
+    phone = fields.Char(string="Phone", related="partner_id.phone", readonly=False, store=True)
+    
     state = fields.Selection(
         selection=[
             ("draft", "Draft"),

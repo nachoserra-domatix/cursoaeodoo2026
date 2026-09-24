@@ -17,6 +17,15 @@ class RealEstateOffer(models.Model):
 
     amount = fields.Float(string="Amount")
     date = fields.Datetime(string="Date")
+
+    user_id = fields.Many2one(
+        comodel_name="res.users",
+        string="User",
+        related="property_id.user_id",
+        readonly=True,
+        store=True,
+    )
+
     state = fields.Selection(
         selection=[
             ('draft', 'Draft'),
