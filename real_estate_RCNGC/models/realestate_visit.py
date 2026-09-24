@@ -31,7 +31,11 @@ class RealEstateVisit(models.Model):
         ],
         string="State",
         default="draft",
+        group_expand="_group_expand_state"
     )
+
+    def _group_expand_state(self, states, domain):
+        return ["draft", "scheduled", "done", "canceled"]
 
     def action_schedule(self):
         self.state = "scheduled"
