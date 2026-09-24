@@ -4,5 +4,6 @@
         "/home/odoo/odoo/addons"
     ],
     "venvPath": "/home/odoo",
-    "venv": "venv"
+    "venv": "venv",
+    "reportArgumentType": "none"
 }
