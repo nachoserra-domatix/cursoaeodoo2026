@@ -10,12 +10,13 @@
                     <button name="action_mark_accepted" invisible="state != 'sent'" type="object" string="Accept" class="btn-primary"/>
                     <button name="action_mark_rejected" invisible="state != 'sent'" type="object" string="Reject" class="btn-secondary"/>
                     <button name="action_mark_draft" invisible="state not in ['accepted', 'rejected']" type="object" string="Reset to Draft" class="btn-secondary"/>
+                    <button name="action_create_contract" invisible="state != 'accepted'" type="object" string="Create Contract" class="btn-primary"/>
                     <field name="state" widget="statusbar" options="{'clickable': True}" statusbar_visible="draft,sent,accepted,rejected"/>
                 </header>
                 <sheet>
                     <group>
                         <group>
-                            <field name="property_id"/>
+                            <field name="property_id" options="{'no_create': True, 'no_open': True}"/>
                             <field name="buyer_id"/>
                             <field name="amount"/>
                         </group>
@@ -34,7 +35,7 @@
         <field name="model">realestate.offer</field>
         <field name="arch" type="xml">
             <list string="Property Offers">
-                <field name="property_id"/>
+                <field name="property_id" options="{'no_create': True, 'no_open': True}"/>
                 <field name="buyer_id"/>
                 <field name="property_resp"/>
                 <field name="amount"/>
@@ -48,12 +49,14 @@
         <field name="model">realestate.offer</field>
         <field name="arch" type="xml">
             <search string="Search Property Offers">
-                <field name="property_id"/>
+                <field name="property_id" options="{'no_create': True, 'no_open': True}"/>
                 <field name="buyer_id"/>
                 <field name="state"/>
+                <filter string="Sent" name="filter_sent" domain="[('state', '=', 'sent')]"/>
+                <filter string="Accepted" name="filter_accepted" domain="[('state', '=', 'accepted')]"/>
+                <filter string="Rejected" name="filter_rejected" domain="[('state', '=', 'rejected')]"/>
                 <group>
                     <filter string="Property" name="group_by_property" context="{'group_by': 'property_id'}"/>
-                    <filter string="State" name="group_by_state" context="{'group_by': 'state'}"/>
                 </group>
             </search>
         </field>
@@ -66,6 +69,44 @@
                 <field name="state" type="row"/>
                 <field name="amount" type="measure"/>
             </graph>
+        </field>
+    </record>
+    <record id="estate_offer_view_pivot" model="ir.ui.view">
+        <field name="name">realestate.offer.pivot</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <pivot string="Property Offers">
+                <field name="state" type="row"/>
+                <field name="property_id" type="col"/>
+                <field name="amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+    <record id="estate_offer_view_kanban" model="ir.ui.view">
+        <field name="name">realestate.offer.kanban</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state">
+                <field name="property_id"/>
+                <field name="buyer_id"/>
+                <field name="amount"/>
+                <field name="date"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <strong class="text-truncate"><field name="property_id"/></strong>
+                            <field name="amount"/>
+                        </div>
+                        <div class="text-muted small">
+                            <field name="buyer_id"/>
+                        </div>
+                        <div class="mt-2 text-muted small">
+                            <field name="date"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
         </field>
     </record>
 </odoo>

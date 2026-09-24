@@ -27,6 +27,9 @@ class EstatePropertyVisit(models.Model):
         default="new",
     )
 
+    def _reload(self):
+        return {"type": "ir.actions.client", "tag": "soft_reload"}
+        
     def action_mark_done(self):
         for record in self:
             record.state = "done"

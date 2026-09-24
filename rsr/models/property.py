@@ -25,6 +25,10 @@ class EstateProperty(models.Model):
     best_price = fields.Float(
         compute="_compute_best_price", store=True, string="Best Offer"
     )
+    next_visit_date = fields.Datetime(
+        compute="_compute_next_visit_date",
+        string="Next Visit Date",
+    )
 
     availability_state = fields.Boolean(string="Available", default=True)
 
@@ -55,6 +59,11 @@ class EstateProperty(models.Model):
         inverse_name="property_id",
         string="Images",
     )
+    offer_ids = fields.One2many(
+        comodel_name="realestate.offer",
+        inverse_name="property_id",
+        string="Offers",
+    )
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -78,6 +87,17 @@ class EstateProperty(models.Model):
     def _compute_best_price(self):
         for record in self:
             record.best_price = 0.0
+
+    @api.depends("visit_ids", "visit_ids.date", "visit_ids.state")
+    def _compute_next_visit_date(self):
+        now = fields.Datetime.now() 
+        for record in self:
+            planned_dates = record.visit_ids.filtered(
+                lambda visit: visit.state == "planned"
+                and visit.date
+                and visit.date > now
+            ).mapped("date")
+            record.next_visit_date = min(planned_dates) if planned_dates else False
 
     @api.onchange("availability_state")
     def _onchange_availability_state(self):
@@ -111,7 +131,7 @@ class EstateProperty(models.Model):
             "view_mode": "form",
             "view_id": self.env.ref("rsr.estate_property_visit_view_form").id,
         }
-
+    
     def action_accept_best_offer(self):
         self.ensure_one()
         best_offer = self.env["realestate.offer"].search(
@@ -135,6 +155,16 @@ class EstateProperty(models.Model):
             ]
         )
         rejected_offers.unlink()
+        return True
+
+    def action_cancel_open_visits(self):
+        visits = self.env["estate.property.visit"].search(
+            [
+                ("property_id", "in", self.ids),
+                ("state", "in", ["draft", "planned"]),
+            ]
+        )
+        visits.write({"state": "cancelled"})
         return True
 
 

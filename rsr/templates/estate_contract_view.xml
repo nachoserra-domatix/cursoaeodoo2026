@@ -19,8 +19,8 @@
                     <group>
                         <group>
                             <field name="contract_type"/>
-                            <field name="property_id"/>
-                            <field name="tenant_id"/>
+                            <field name="property_id" domain="[('availability_state', '=', False)]"/>
+                            <field name="tenant_id" options="{'no_create': True}"/>
                             <field name="days_between"/>
                         </group>
                         <group>

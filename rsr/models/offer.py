@@ -61,6 +61,30 @@ class RealEstateOffer(models.Model):
     def action_accept(self):
         return self.action_mark_accepted()
 
+    def action_create_contract(self):
+        self.ensure_one()
+        today = fields.Date.today()
+        contract = self.env["realestate.contract"].create(
+            {
+                "name": f"Contract - {self.property_id.name}",
+                "contract_type": "sale",
+                "property_id": self.property_id.id,
+                "tenant_id": self.buyer_id.id,
+                "start_date": today,
+                "end_date": today,
+                "rent": 0.0,
+                "deposit": 0.0,
+            }
+        )
+        return {
+            "type": "ir.actions.act_window",
+            "name": "Real Estate Contract",
+            "res_model": "realestate.contract",
+            "res_id": contract.id,
+            "view_mode": "form",
+            "view_id": self.env.ref("rsr.estate_contract_view_form").id,
+        }
+
     def action_mark_rejected(self):
         for record in self:
             record.state = "rejected"
