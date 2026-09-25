@@ -1,0 +1,165 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* real_estate_ramon
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-21 15:19+0000\n"
+"PO-Revision-Date: 2026-09-21 15:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: real_estate_ramon
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_visit_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: real_estate_ramon
+#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_visit__state__canceled
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_visit_form_view
+msgid "Canceled"
+msgstr "Cancelada"
+
+#. module: real_estate_ramon
+#: model_terms:ir.actions.act_window,help:real_estate_ramon.realestate_property_action
+msgid "Create a new property"
+msgstr "Crear una nueva propiedad"
+
+#. module: real_estate_ramon
+#: model_terms:ir.actions.act_window,help:real_estate_ramon.realestate_visit_action
+msgid "Create a new visit"
+msgstr "Crear una nueva visita"
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__create_uid
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__create_date
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__create_date
+msgid "Created on"
+msgstr "Creada en"
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__display_name
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: real_estate_ramon
+#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_visit__state__done
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_visit_form_view
+msgid "Done"
+msgstr "Completado"
+
+#. module: real_estate_ramon
+#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_visit__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: real_estate_ramon
+#: model_terms:ir.actions.act_window,help:real_estate_ramon.realestate_property_action
+msgid ""
+"Fill in the details of the property you want to add, such as its name and "
+"description."
+msgstr ""
+"Rellena los datos de la propiedad que quieres añadir, como su nombre y "
+"descripción."
+
+#. module: real_estate_ramon
+#: model_terms:ir.actions.act_window,help:real_estate_ramon.realestate_visit_action
+msgid ""
+"Fill in the details of the visit you want to add, such as the property, "
+"visitor, and date."
+msgstr ""
+"Rellena los datos de la visita que quieres añadir, como la propiedad, "
+"el visitante y la fecha."
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__id
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__id
+msgid "ID"
+msgstr "ID"
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__write_uid
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__write_date
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__write_date
+msgid "Last Updated on"
+msgstr "Última actualización"
+
+#. module: real_estate_ramon
+#: model:ir.ui.menu,name:real_estate_ramon.realestate_menu_properties
+msgid "Properites"
+msgstr "Propiedades"
+
+#. module: real_estate_ramon
+#: model:ir.actions.act_window,name:real_estate_ramon.realestate_property_action
+msgid "Properties"
+msgstr "Propiedades"
+
+#. module: real_estate_ramon
+#: model:ir.model,name:real_estate_ramon.model_realestate_property
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__property_id
+msgid "Property"
+msgstr "Propiedad"
+
+#. module: real_estate_ramon
+#: model:ir.ui.menu,name:real_estate_ramon.realestate_menu_root
+msgid "Real Estate"
+msgstr "Inmobiliaria"
+
+#. module: real_estate_ramon
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_visit_form_view
+msgid "Schedule"
+msgstr "Agendar"
+
+#. module: real_estate_ramon
+#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_visit__state__scheduled
+msgid "Scheduled"
+msgstr "Agendada"
+
+#. module: real_estate_ramon
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_visit_form_view
+msgid "Set to Draft"
+msgstr "Establecer como borrador"
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__state
+msgid "State"
+msgstr "Estado"
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__partner_id
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: real_estate_ramon
+#: model:ir.model,name:real_estate_ramon.model_realestate_visit
+msgid "Visit"
+msgstr "Visita"
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__datetime
+msgid "Visit Date"
+msgstr "Fecha de Visita"
+
+#. module: real_estate_ramon
+#: model:ir.actions.act_window,name:real_estate_ramon.realestate_visit_action
+#: model:ir.ui.menu,name:real_estate_ramon.realestate_menu_visits
+msgid "Visits"
+msgstr "Visitas"

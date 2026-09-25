@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_realestate_category,access_realestate_category,model_realestate_category,base.group_user,1,1,1,0
+access_realestate_contract,access_realestate_contract,model_realestate_contract,base.group_user,1,1,1,0
+access_realestate_offer,access_realestate_offer,model_realestate_offer,base.group_user,1,1,1,0
+access_realestate_property,access_realestate_property,model_realestate_property,base.group_user,1,1,1,0
+access_realestate_visit,access_realestate_visit,model_realestate_visit,base.group_user,1,1,1,0
+access_realestate_property_stage,access_realestate_property_stage,model_realestate_property_stage,1,1,1,0
+access_realestate_property_image,access_realestate_property_image,model_realestate_property_image,base.group_user,1,1,1,0
+access_realestate_property_incidence,access_realestete_property_incidence,model_realestate_property_incidence,base.group_user,1,1,1,0
