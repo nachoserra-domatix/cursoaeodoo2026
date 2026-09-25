@@ -14,4 +14,157 @@
         </p>
     </field>
 </record>
+
+<record id="real_estate_property_list_view" model="ir.ui.view">
+    <field name="name">realestate.property.list</field>
+    <field name="model">realestate.property</field>
+    <field name="arch" type="xml">
+        <list string="Properties" multi_edit="1">
+            <field name="name" optional="show"/>
+            <field name="description" optional="hide"/>
+            <field name="category_id" optional="show"/>
+            <field name="value" optional="show"/>
+            <field name="area" optional="show"/>
+            <field name="availability" widget="boolean_toggle" optional="show"/>
+            <field name="user_id" widget="many2one_avatar_user" optional="show"/>
+        </list>
+    </field>
+</record>
+
+<record id="realestate_property_form_view" model="ir.ui.view">
+    <field name="name">realestate.property.form</field>
+    <field name="model">realestate.property</field>
+    <field name="arch" type="xml">
+        <form string="Property">
+        <header>
+            <button name="action_reserve" string="Reserve" invisible="not availability" type="object" class="btn-primary"/>
+            <button name="action_create_visit" type="object" string="Create Visit"/>
+            <button name="action_accept_best_offer" type="object" string="Accept Best Offer"/>
+            <button name="action_delete_rejected_offers" type="object" string="Delete Rejected Offers"/>
+            <button name="action_create_draft_offer" type="object" string="Create Draft Offer"/>
+            <button name="action_cancel_visits" string="Cancel Visits" type="object"/>
+        </header>
+        <sheet>
+            <widget name="web_ribbon" title="Reserved" invisible="availability" bg_color="text-bg-warning"/>
+            <div class="oe_title">
+                <h1>
+                    <field name="name" placeholder="Property Name"/>
+                </h1>
+            </div>
+            <group>
+                <group>
+                    <field name="category_id"/>
+                    <field name="value"/>
+                    <field name="area"/>
+                    <field name="next_visit_date"/>
+                </group>
+                <group>
+                    <field name="availability" widget="boolean_toggle"/>
+                    <field name="user_id" widget="many2one_avatar_user"/>
+                </group>
+            </group>
+            <notebook>
+                <page string="Information">
+                    <field name="description"/>
+                </page>
+
+                <page string="Incidences">
+                    <field name="incidence_ids" context="{'default_user_id': user_id}">
+                        <list editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="priority" widget="priority"/>
+                            <field name="state"/>
+                            <field name="datetime"/>
+                            <field name="user_id"
+                                options="{'no_create': True, 'no_open': True}"
+                                domain="[('share', '=', False)]"/>
+                        </list>
+                    </field>
+                </page>
+
+                <page string="Ofertas">
+                    <field name="offer_ids">
+                        <list editable="bottom">
+                            <field name="date"/>
+                            <field name="buyer"/>
+                            <field name="amount"/>
+                            <field name="status"/>
+                        </list>
+                    </field>
+                </page>
+            </notebook>
+        </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="realestate_property_search_view" model="ir.ui.view">
+    <field name="name">realestate.property.search</field>
+    <field name="model">realestate.property</field>
+    <field name="arch" type="xml">
+        <search string="Properties">
+            <field name="name"/>
+            <field name="category_id"/>
+            <field name="stage_id"/>
+            <filter name="available" string="Available"
+                    domain="[('availability', '=', True)]"/>
+            <filter name="reserved" string="Reserved"
+                    domain="[('availability', '=', False)]"/>
+            <group expand="0" string="Group By">
+                <filter name="group_stage" string="Stage"
+                        context="{'group_by': 'stage_id'}"/>
+                <filter name="group_category" string="Category"
+                        context="{'group_by': 'category_id'}"/>
+                <filter name="group_user" string="Responsible"
+                        context="{'group_by': 'user_id'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="realestate_property_kanban_view" model="ir.ui.view">
+    <field name="name">realestate.property.kanban</field>
+    <field name="model">realestate.property</field>
+    <field name="arch" type="xml">
+        <kanban default_group_by="stage_id">
+            <field name="name"/>
+            <field name="value"/>
+            <field name="category_id"/>
+            <field name="user_id"/>
+            <field name="stage_id"/>
+            <templates>
+                <t t-name="card">
+                    <div class="oe_kanban_global_click">
+                        <strong>
+                            <field name="name"/>
+                        </strong>
+                        <div>
+                            Price: <field name="value"/>
+                        </div>
+                        <div>
+                            Category: <field name="category_id"/>
+                        </div>
+                        <div>
+                            Responsible: <field name="user_id"/>
+                        </div>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+</record>
+<record id="realestate_property_pivot_view" model="ir.ui.view">
+    <field name="name">realestate.property.pivot</field>
+    <field name="model">realestate.property</field>
+    <field name="arch" type="xml">
+        <pivot string="Properties Analysis">
+            <field name="value" type="measure"/>
+            <field name="category_id" type="row"/>
+            <field name="user_id" type="col"/>
+        </pivot>
+    </field>
+</record>
+
 </odoo>

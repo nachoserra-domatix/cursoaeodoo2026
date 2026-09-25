@@ -1,2 +1,0 @@
-from . import realestate_property.py
-

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="realestate_offer_action" model="ir.actions.act_window">
+        <field name="name">Offer</field>
+        <field name="res_model">realestate.offer</field>
+        <field name="view_mode">list,form,kanban,pivot,graph</field>
+        <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+        Create a new offer
+        </p>
+        <p>
+        Fill in the details of the offer you want to add
+        </p>
+        </field>
+    </record>
+    
+    <record id="realestate_offer_list_view" model="ir.ui.view">
+        <field name="name">realestate.offer.list</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <list string="Offers">
+                <field name="property_id"/>
+                <field name="buyer"/>
+                <field name="amount"/>
+                <field name="date"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="realestate_offer_form_view" model="ir.ui.view">
+        <field name="name">realestate.offer.form</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <form string="Offer">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="property_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="buyer"/>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                            <field name="amount"/>
+                            <field name="currency_id"/>
+                            <field name="status"/>
+                            <field name="category_id" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="realestate_offer_graph_view" model="ir.ui.view">
+        <field name="name">realestate.offer.graph</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <graph string="Offers Analysis" type="bar">
+                <field name="status" type="row"/>
+                <field name="amount" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="realestate_offer_kanban_view" model="ir.ui.view">
+        <field name="name">realestate.offer.kanban</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="status">
+                <field name="amount"/>
+                <field name="property_id"/>
+                <field name="buyer"/>
+                <field name="date"/>
+                <field name="status"/>
+
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_global_click">
+                            <strong>
+                                <field name="amount"/>
+                            </strong>
+                            <div>
+                                Property: <field name="property_id"/>
+                            </div>
+                            <div>
+                                Buyer: <field name="buyer"/>
+                            </div>
+                            <div>
+                                Date: <field name="date"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="realestate_offer_pivot_view" model="ir.ui.view">
+        <field name="name">realestate.offer.pivot</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <pivot string="Offers Analysis">
+                <field name="amount" type="measure"/>
+                <field name="status" type="row"/>
+                <field name="property_id" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="realestate_offer_search_view" model="ir.ui.view">
+        <field name="name">realestate.offer.search</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <search string="Offers">
+                <field name="property_id"/>
+                <field name="buyer"/>
+
+                <filter name="sent"
+                        string="Sent"
+                        domain="[('status', '=', 'sent')]"/>
+
+                <filter name="accepted"
+                        string="Accepted"
+                        domain="[('status', '=', 'accepted')]"/>
+
+                <filter name="refused"
+                        string="Refused"
+                        domain="[('status', '=', 'refused')]"/>
+
+                <group expand="0" string="Group By">
+                    <filter name="group_property"
+                            string="Property"
+                            context="{'group_by': 'property_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+</odoo>
