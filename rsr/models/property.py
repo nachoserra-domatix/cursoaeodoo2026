@@ -10,6 +10,11 @@ class EstateProperty(models.Model):
     postcode = fields.Char(string="Postcode")
     living_area = fields.Integer(string="Living Area (m²)")
     garden_area = fields.Integer(string="Garden Area (m²)")
+    reference = fields.Char(string="Reference", required=True)
+    _reference_unique = models.Constraint(
+        "UNIQUE(reference)",
+        "The property reference must be unique.",
+    )
 
     date_availability = fields.Date(
         copy=False,
@@ -29,12 +34,15 @@ class EstateProperty(models.Model):
         compute="_compute_next_visit_date",
         string="Next Visit Date",
     )
+    visit_count = fields.Integer(compute="_compute_visit_count", string="Visits")
+    incidence_count = fields.Integer(compute="_compute_incidence_count", string="Incidences")
 
     availability_state = fields.Boolean(string="Available", default=True)
 
     id_user = fields.Many2one(
         comodel_name="res.users",
         string="User",
+        default=lambda self: self.env.user,
     )
     stage_id = fields.Many2one(
         comodel_name="realestate.property.stage",
@@ -99,6 +107,16 @@ class EstateProperty(models.Model):
             ).mapped("date")
             record.next_visit_date = min(planned_dates) if planned_dates else False
 
+    @api.depends("visit_ids")
+    def _compute_visit_count(self):
+        for record in self:
+            record.visit_count = len(record.visit_ids)
+
+    @api.depends("incidence_ids")
+    def _compute_incidence_count(self):
+        for record in self:
+            record.incidence_count = len(record.incidence_ids)
+
     @api.onchange("availability_state")
     def _onchange_availability_state(self):
         if not self.availability_state:
@@ -130,6 +148,28 @@ class EstateProperty(models.Model):
             "res_id": visit.id,
             "view_mode": "form",
             "view_id": self.env.ref("rsr.estate_property_visit_view_form").id,
+        }
+
+    def action_view_visits(self):
+        self.ensure_one()
+        return {
+            "type": "ir.actions.act_window",
+            "name": _("Visits"),
+            "res_model": "estate.property.visit",
+            "view_mode": "list,form",
+            "domain": [("property_id", "=", self.id)],
+            "context": {"default_property_id": self.id},
+        }
+
+    def action_view_incidences(self):
+        self.ensure_one()
+        return {
+            "type": "ir.actions.act_window",
+            "name": _("Incidences"),
+            "res_model": "estate.property.incidence",
+            "view_mode": "list,form",
+            "domain": [("property_id", "=", self.id)],
+            "context": {"default_property_id": self.id},
         }
     
     def action_accept_best_offer(self):
@@ -166,7 +206,6 @@ class EstateProperty(models.Model):
         )
         visits.write({"state": "cancelled"})
         return True
-
 
     def action_create_offer(self):
         self.ensure_one()

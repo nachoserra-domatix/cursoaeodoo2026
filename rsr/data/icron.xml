@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="ir_cron_contract_date" model="ir.cron">
+            <field name="name">Finish expired contracts</field>
+            <field name="model_id" ref="model_realestate_contract"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_contract_date()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="ir_cron_real_state_visit_finished" model="ir.cron">
+            <field name="name">Finish expired visits</field>
+            <field name="model_id" ref="model_estate_property_visit"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_visit_finished()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

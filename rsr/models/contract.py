@@ -1,4 +1,5 @@
-from odoo import fields, models, api
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 class RealEstateContract(models.Model):
     _name = "realestate.contract"
@@ -7,6 +8,10 @@ class RealEstateContract(models.Model):
     _rec_name = "name"
 
     name = fields.Char(string="Name", required=True)
+    _name_unique = models.Constraint(
+        "UNIQUE(name)",
+        "The contract name must be unique.",
+    )
     contract_type = fields.Selection(
         selection=[
             ("rental", "Rental"),
@@ -25,7 +30,11 @@ class RealEstateContract(models.Model):
         string="Tenant",
         required=True,
     )
-    start_date = fields.Date(string="Start Date", required=True)
+    start_date = fields.Date(
+        string="Start Date",
+        required=True,
+        default=fields.Date.today
+    )
     end_date = fields.Date(string="End Date", required=True)
     rent = fields.Float(string="Rent", required=True)
     deposit = fields.Float(string="Deposit", required=True)
@@ -43,6 +52,21 @@ class RealEstateContract(models.Model):
         default="draft",
         required=True,
     )
+
+    @api.constrains("start_date", "end_date")
+    def _check_date_order(self):
+        for record in self:
+            if (
+                record.start_date
+                and record.end_date
+                and record.end_date < record.start_date
+            ):
+                raise ValidationError(_("The end date cannot be earlier than the start date."))
+
+    @api.onchange("property_id")
+    def _onchange_property_id(self):
+        for record in self:
+            record.rent = record.property_id.price if record.property_id else 0.0
 
     @api.depends("start_date", "end_date")
     def _compute_duration(self):
@@ -69,6 +93,16 @@ class RealEstateContract(models.Model):
         for record in self:
             record.state = "in_progress"
         return True
+
+    @api.model
+    def _cron_contract_date(self):
+        expired_contracts = self.search(
+            [
+                ("state", "=", "in_progress"),
+                ("end_date", "<", fields.Date.today()),
+            ]
+        )
+        expired_contracts.write({"state": "finished"})
 
     def action_mark_finished(self):
         for record in self:

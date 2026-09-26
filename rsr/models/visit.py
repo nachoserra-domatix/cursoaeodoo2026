@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class EstatePropertyVisit(models.Model):
@@ -9,7 +9,7 @@ class EstatePropertyVisit(models.Model):
 
     sequence = fields.Integer(string="Sequence", default=10, index=True)
     property_id = fields.Many2one(comodel_name="estate.property", string="Property")
-    date = fields.Datetime(string="Date")
+    date = fields.Datetime(string="Date", default=lambda self: fields.Datetime.now())
     contact_id = fields.Many2one(comodel_name="res.partner", string="Contact")
     user_id = fields.Many2one(comodel_name="res.users", string="User")
     contact_email = fields.Char(string="Contact Email", related="contact_id.email", readonly=True)
@@ -27,8 +27,15 @@ class EstatePropertyVisit(models.Model):
         default="new",
     )
 
-    def _reload(self):
-        return {"type": "ir.actions.client", "tag": "soft_reload"}
+    @api.onchange("contact_id")
+    def _onchange_contact_id(self):
+        if self.contact_id:
+            self.contact_email = self.contact_id.email
+            self.contact_phone = self.contact_id.phone
+        else:
+            self.contact_email = False
+            self.contact_phone = False
+
         
     def action_mark_done(self):
         for record in self:
@@ -54,3 +61,12 @@ class EstatePropertyVisit(models.Model):
         for record in self:
             record.state = "planned"
         return True
+
+    def _cron_visit_finished(self):
+        visits = self.search([
+            ("state", "=", ["planned"]),
+            ("date", "<", fields.Datetime.now())
+        ])
+        for visit in visits:
+            visit.state = "done" 
+            self.env.cr.commit() #Test

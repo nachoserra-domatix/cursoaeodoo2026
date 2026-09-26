@@ -1,4 +1,5 @@
-from odoo import fields, models
+from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError
 
 class RealEstateOffer(models.Model):
     _name = "realestate.offer"
@@ -17,7 +18,7 @@ class RealEstateOffer(models.Model):
         string="Buyer",
         required=True,
     )
-    amount = fields.Float(string="Amount", required=True)
+    amount = fields.Float(string="Amount", compute="_compute_amount", store=True, required=True)
     date = fields.Date(string="Date", required=True, default=fields.Date.today)
     property_resp = fields.Many2one(
         comodel_name="res.users",
@@ -94,3 +95,14 @@ class RealEstateOffer(models.Model):
         for record in self:
             record.state = "draft"
         return True
+
+    @api.depends("property_id.price")
+    def _compute_amount(self):
+        for record in self:
+            record.amount = record.property_id.price
+
+    @api.constrains("amount", "property_id")
+    def _check_amount_positive(self):
+        for record in self:
+            if record.amount < 0:
+                raise ValidationError(_("The offer amount cannot be negative."))

@@ -7,6 +7,7 @@
         # security
         'security/estate_security.xml',
         'security/ir.model.access.csv',
+        'data/icron.xml',
 
         # temaplates
         'templates/estate_property_action.xml',

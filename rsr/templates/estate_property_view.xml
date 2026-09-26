@@ -13,6 +13,14 @@
                     <button name="action_cancel_open_visits" type="object" string="Cancel Open Visits" class="btn-secondary"/>
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_visits" type="object" class="oe_stat_button" icon="fa-calendar">
+                            <field name="visit_count" widget="statinfo" string="Visits"/>
+                        </button>
+                        <button name="action_view_incidences" type="object" class="oe_stat_button" icon="fa-exclamation-circle">
+                            <field name="incidence_count" widget="statinfo" string="Incidences"/>
+                        </button>
+                    </div>
                     <widget name="web_ribbon"
                             title="Reserved"
                             bg_color="text-bg-warning"

@@ -23,6 +23,7 @@
                         <group>
                             <field name="date"/>
                             <field name="contact_email"/>
+                            <field name="contact_phone"/>
                         </group>
                     </group>
                 </sheet>
