@@ -18,7 +18,19 @@ class RealEstateOffer(models.Model):
         string="Buyer",
         required=True,
     )
-    amount = fields.Float(string="Amount", compute="_compute_amount", store=True, required=True)
+    currency_id = fields.Many2one(
+        comodel_name="res.currency",
+        string="Currency",
+        related="property_id.currency_id",
+        readonly=True,
+    )
+    amount = fields.Monetary(
+        string="Amount",
+        compute="_compute_amount",
+        store=True,
+        required=True,
+        currency_field="currency_id",
+    )
     date = fields.Date(string="Date", required=True, default=fields.Date.today)
     property_resp = fields.Many2one(
         comodel_name="res.users",

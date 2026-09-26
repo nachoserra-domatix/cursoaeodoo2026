@@ -25,6 +25,12 @@ class RealEstateContract(models.Model):
         string="Property",
         required=True,
     )
+    currency_id = fields.Many2one(
+        comodel_name="res.currency",
+        string="Currency",
+        related="property_id.currency_id",
+        readonly=True,
+    )
     tenant_id = fields.Many2one(
         comodel_name="res.partner",
         string="Tenant",
@@ -36,8 +42,12 @@ class RealEstateContract(models.Model):
         default=fields.Date.today
     )
     end_date = fields.Date(string="End Date", required=True)
-    rent = fields.Float(string="Rent", required=True)
-    deposit = fields.Float(string="Deposit", required=True)
+    rent = fields.Monetary(
+        string="Rent", required=True, currency_field="currency_id"
+    )
+    deposit = fields.Monetary(
+        string="Deposit", required=True, currency_field="currency_id"
+    )
     days_between = fields.Integer(compute="_compute_days", string="Duration (Days)")
     duration_d = fields.Integer(compute="_compute_duration", string="Duration (Days)")
     has_deposit = fields.Boolean(compute="_compute_has_deposit", store=True, string="With Deposit")

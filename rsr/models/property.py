@@ -21,14 +21,28 @@ class EstateProperty(models.Model):
         default=lambda self: fields.Date.add(fields.Date.today(), months=3),
         string="Available from",
     )
-    price = fields.Float(string="Expected Price")
-    selling_price = fields.Float(readonly=True, copy=False, string="Selling Price")
+    currency_id = fields.Many2one(
+        comodel_name="res.currency",
+        string="Currency",
+        default=lambda self: self.env.company.currency_id,
+        required=True,
+    )
+    price = fields.Monetary(string="Expected Price", currency_field="currency_id")
+    selling_price = fields.Monetary(
+        readonly=True,
+        copy=False,
+        string="Selling Price",
+        currency_field="currency_id",
+    )
 
     total_area = fields.Integer(
         compute="_compute_total_area", store=True, string="Total Area (m²)"
     )
-    best_price = fields.Float(
-        compute="_compute_best_price", store=True, string="Best Offer"
+    best_price = fields.Monetary(
+        compute="_compute_best_price",
+        store=True,
+        string="Best Offer",
+        currency_field="currency_id",
     )
     next_visit_date = fields.Datetime(
         compute="_compute_next_visit_date",

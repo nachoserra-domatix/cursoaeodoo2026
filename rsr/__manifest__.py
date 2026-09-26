@@ -10,6 +10,8 @@
         'data/icron.xml',
 
         # temaplates
+        'templates/estate_property_stage_wizard_view.xml',
+        'templates/estate_property_visit_wizard_view.xml',
         'templates/estate_property_action.xml',
         'templates/estate_property_view.xml',
         'templates/estate_category_action.xml',

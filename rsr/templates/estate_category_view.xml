@@ -9,6 +9,7 @@
                     <group>
                         <field name="name"/>
                         <field name="description"/>
+                        <field name="active" widget="boolean_toggle"/>
                     </group>
                 </sheet>
             </form>
@@ -21,6 +22,7 @@
             <list string="Property Categories">
                 <field name="name"/>
                 <field name="description"/>
+                <field name="active" widget="boolean_toggle"/>
             </list>
         </field>
     </record>
