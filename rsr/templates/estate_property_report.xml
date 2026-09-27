@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="paperformat_estate_property" model="report.paperformat">
+        <field name="name">Propiedades A4</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">45</field>
+        <field name="margin_bottom">20</field>
+        <field name="margin_left">12</field>
+        <field name="margin_right">12</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+    <record id="action_report_estate_property" model="ir.actions.report">
+        <field name="name">Informe de propiedad</field>
+        <field name="model">estate.property</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">rsr.report_estate_property</field>
+        <field name="report_file">rsr.report_estate_property</field>
+        <field name="paperformat_id" ref="rsr.paperformat_estate_property"/>
+        <field name="binding_model_id" ref="model_estate_property"/>
+        <field name="binding_type">report</field>
+    </record>
+    <template id="report_estate_property">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row align-items-end border-bottom pb-3 mb-4">
+                            <div class="col-8">
+                                <div class="text-muted small text-uppercase">Informe de propiedad</div>
+                                <h2 class="mb-0"><span t-field="o.name"/></h2>
+                            </div>
+                            <div class="col-4 text-end">
+                                <span class="text-muted small">REFERENCIA</span>
+                                <div class="h5 mb-0"><span t-field="o.reference"/></div>
+                            </div>
+                        </div>
+
+                        <table class="table table-sm table-bordered mb-4">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Categoría</th>
+                                    <th>Etapa</th>
+                                    <th>Precio</th>
+                                    <th>Responsable</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span t-field="o.category_id"/></td>
+                                    <td><span t-field="o.stage_id"/></td>
+                                    <td>
+                                        <strong><span t-field="o.price" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></strong>
+                                    </td>
+                                    <td><span t-field="o.id_user"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4 class="border-bottom pb-2 mb-3">Descripción</h4>
+                        <p t-if="o.description" class="mb-4"><span t-field="o.description"/></p>
+                        <p t-else="" class="text-muted mb-4">Sin descripción.</p>
+
+                        <h4 class="border-bottom pb-2 mb-3">Imágenes</h4>
+                        <table class="table table-sm table-striped mb-4">
+                            <thead class="table-light">
+                                <tr>
+                                    <th style="width: 130px;">Miniatura</th>
+                                    <th>Nombre</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.image_ids" t-as="image">
+                                    <td class="align-middle" style="width: 130px;">
+                                        <img t-if="image.image" t-att-src="image_data_uri(image.image)" class="img-thumbnail" style="width: 105px; height: 72px; object-fit: cover;"/>
+                                    </td>
+                                    <td class="align-middle"><span t-field="image.name"/></td>
+                                </tr>
+                                <tr t-if="not o.image_ids">
+                                    <td colspan="2" class="text-muted">No hay imágenes para esta propiedad.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4 class="border-bottom pb-2 mb-3">Visitas</h4>
+                        <table t-if="o.visit_ids" class="table table-sm table-striped">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Visitante</th>
+                                    <th>Teléfono</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.visit_ids" t-as="visit">
+                                    <td class="text-nowrap"><span t-field="visit.date"/></td>
+                                    <td><span t-field="visit.contact_id"/></td>
+                                    <td><span t-if="visit.contact_phone" t-field="visit.contact_phone"/><span t-else="" class="text-muted">-</span></td>
+                                    <td><span class="badge bg-secondary" t-field="visit.state"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p t-else="" class="alert alert-info">Esta propiedad no tiene visitas.</p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_estate_property_summary" model="ir.actions.report">
+        <field name="name">Resumen de propiedades</field>
+        <field name="model">estate.property</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">rsr.report_estate_property_summary</field>
+        <field name="report_file">rsr.report_estate_property_summary</field>
+        <field name="paperformat_id" ref="rsr.paperformat_estate_property"/>
+        <field name="binding_model_id" ref="model_estate_property"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_estate_property_summary">
+        <t t-call="web.html_container">
+            <t t-set="o" t-value="docs[:1]"/>
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2 class="border-bottom pb-2 mb-3">Resumen de propiedades</h2>
+                    <table class="table table-sm table-striped table-bordered" style="font-size: 10px;">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Referencia</th>
+                                <th>Precio</th>
+                                <th>Etapa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="docs" t-as="property">
+                                <td><span t-field="property.name"/></td>
+                                <td><span t-field="property.reference"/></td>
+                                <td><span t-field="property.price" t-options="{'widget': 'monetary', 'display_currency': property.currency_id}"/></td>
+                                <td><span t-field="property.stage_id"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

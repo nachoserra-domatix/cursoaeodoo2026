@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="paperformat_estate_contract" model="report.paperformat">
+        <field name="name">Contratos A4</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">55</field>
+        <field name="margin_bottom">20</field>
+        <field name="margin_left">15</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">50</field>
+        <field name="dpi">90</field>
+    </record>
+    <record id="action_report_estate_contract" model="ir.actions.report">
+        <field name="name">Informe de contrato</field>
+        <field name="model">realestate.contract</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">rsr.report_estate_contract</field>
+        <field name="report_file">rsr.report_estate_contract</field>
+        <field name="paperformat_id" ref="rsr.paperformat_estate_contract"/>
+        <field name="binding_model_id" ref="model_realestate_contract"/>
+        <field name="binding_type">report</field>
+    </record>
+    <template id="report_estate_contract">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row align-items-end border-bottom pb-3 mb-4">
+                            <div class="col-8">
+                                <div class="text-muted small text-uppercase">Informe de contrato</div>
+                                <h2 class="mb-0"><span t-field="o.name"/></h2>
+                            </div>
+                            <div class="col-4 text-end">
+                                <span class="badge bg-secondary" t-field="o.state"/>
+                            </div>
+                        </div>
+                        <table class="table table-sm table-striped table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th class="table-light" style="width: 30%;">Tipo</th>
+                                    <td class="align-middle"><span t-field="o.contract_type"/></td>
+                                </tr>
+                                <tr>
+                                    <th class="table-light">Propiedad</th>
+                                    <td class="align-middle"><span t-field="o.property_id"/></td>
+                                </tr>
+                                <tr>
+                                    <th class="table-light">
+                                        <t t-if="o.contract_type == 'rental'">Inquilino</t>
+                                        <t t-else="">Comprador</t>
+                                    </th>
+                                    <td class="align-middle"><span t-field="o.tenant_id"/></td>
+                                </tr>
+                                <tr>
+                                    <th class="table-light">Fecha de inicio</th>
+                                    <td class="align-middle"><span t-field="o.start_date"/></td>
+                                </tr>
+                                <tr>
+                                    <th class="table-light">Fecha de fin</th>
+                                    <td class="align-middle"><span t-field="o.end_date"/></td>
+                                </tr>
+                                <tr>
+                                    <th class="table-light">
+                                        <t t-if="o.contract_type == 'rental'">Alquiler</t>
+                                        <t t-else="">Precio de venta</t>
+                                    </th>
+                                    <td class="align-middle"><span t-field="o.rent" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                                </tr>
+                                <tr t-if="o.contract_type == 'rental'">
+                                    <th class="table-light">Fianza</th>
+                                    <td class="align-middle"><span t-field="o.deposit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
