@@ -1,9 +1,11 @@
-from odoo import models, fields
+from odoo import models, fields, api    
+
 
 class RealEstateProperty(models.Model):
     _name = 'realestate.property'
     _description = 'Real Estate Property'
 
+    #Atributos propios
     name = fields.Char(string="Name", required=True)
     description = fields.Text(string="Description")
     category_id = fields.Many2one(
@@ -17,7 +19,9 @@ class RealEstateProperty(models.Model):
         comodel_name="res.users",
         string="User",
     )
+    color = fields.Integer(string="Color")
 
+    #Relaciones con otras entidades
     stage_id = fields.Many2one(
         comodel_name="realestate.property.stage",
         string="Stage",
@@ -42,8 +46,29 @@ class RealEstateProperty(models.Model):
         string='Incidents'
     )
 
-    color = fields.Integer(string="Color")
+    offer_ids = fields.One2many(
+        comodel_name='realestate.offer',
+        inverse_name='property_id',
+        string='Offers'
+    )
 
+    #Campos calculados  
+    next_visit_date = fields.Datetime(
+        string="Next Visit Date", 
+        compute='_compute_next_visit_date', 
+        store=True
+        )
+
+    #Calculos
+    @api.depends('visit_ids.date', 'visit_ids.state')
+    def _compute_next_visit_date(self):
+        for property in self:
+            next_visit = self.env['realestate.visit'].search(
+                [('property_id', '=', property.id), ('state', '=', 'scheduled')], 
+                order='date asc', limit=1)
+            property.next_visit_date = next_visit.date if next_visit else False 
+
+    #Acciones del modelo
     def action_reserve(self):
         self.availability = False
 
@@ -74,4 +99,13 @@ class RealEstateProperty(models.Model):
         }
         offer = self.env['realestate.offer'].create(vals)
         offer.action_send()
+
+    def action_cancel_pending_visits(self):
+        pending_vists = self.env['realestate.visit'].search([
+            ('property_id', '=', self.id),
+            ('state', 'in', ['draft', 'scheduled']),
+        ])
+        pending_vists.write({
+            'state': 'canceled',
+        })
             

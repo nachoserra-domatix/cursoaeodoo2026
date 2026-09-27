@@ -38,6 +38,7 @@
     <field name="arch" type="xml">
         <form string="Property">
             <header>
+                <button name="action_cancel_pending_visits" class="btn-warning" string="Cancel Pending Visits" type="object" />
                 <button name="action_reserve" string="Reserve" invisible="not availability" type="object" class="btn-primary"/>
                 <button name="action_create_visit" string="Create Visit" type="object" class="btn-secondary"/>
                 <button name="action_accept_best_offer" class="btn-secondary" string="Accept Best Offer" type="object" />
@@ -60,6 +61,7 @@
                     </group>
                     <group>
                         <field name="availability" widget="boolean_toggle"/>
+                        <field name="next_visit_date"/>
                         <field name="user_id" widget="many2one_avatar_user"/>
                     </group>
                 </group>
@@ -84,6 +86,22 @@
                                 'list_view_ref': 'real_estate_RCNGC.realestate_visit_list_simple_view', 
                                 'default_user_id': user_id}"
                         />
+                    </page>
+                    <page string="Offers">
+                        <field name="offer_ids"> 
+                            <list editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="amount"/>
+                                <field name="date"/>
+                                <field name="state" widget="badge"/>
+                                <field name="partner_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field 
+                                    name="user_id" 
+                                    widget="many2one_avatar_user" 
+                                    domain="[('share', '=', False)]" 
+                                    options="{'no_create': True, 'no_open': True}"/>
+                            </list>
+                        </field>
                     </page>
                     <page string="Incidents">
                         <field name="incident_ids" context="{'default_user_id': user_id}"> 

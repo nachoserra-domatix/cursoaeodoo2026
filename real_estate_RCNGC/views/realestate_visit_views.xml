@@ -41,6 +41,7 @@
                     widget="badge"
                     decoration-info="state == 'draft'" decoration-success="state == 'done'" decoration-danger="state == 'canceled'"
                     optional="show"/>
+                <field name="date"/>
             </list>
         </field>
     </record>

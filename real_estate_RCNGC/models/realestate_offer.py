@@ -5,26 +5,10 @@ class RealEstateOffer(models.Model):
     _description = "Offer"
     _rec_name = "partner_id"
 
-    property_id = fields.Many2one(
-        comodel_name="realestate.property",
-        string="Property",
-    )
-
-    partner_id = fields.Many2one(
-        comodel_name="res.partner",
-        string="Partner",
-    )
-
+    #Atributos propios
+    sequence = fields.Integer(string="Sequence")
     amount = fields.Float(string="Amount")
     date = fields.Datetime(string="Date")
-
-    user_id = fields.Many2one(
-        comodel_name="res.users",
-        string="User",
-        related="property_id.user_id",
-        readonly=True,
-        store=True,
-    )
 
     state = fields.Selection(
         selection=[
@@ -36,8 +20,37 @@ class RealEstateOffer(models.Model):
         string="State",
         default='draft',
     )
+    color = fields.Integer(string="Color")
     note = fields.Html(string="Note")
 
+    #Relaciones
+    property_id = fields.Many2one(
+        comodel_name="realestate.property",
+        string="Property",
+    )
+
+    partner_id = fields.Many2one(
+        comodel_name="res.partner",
+        string="Partner",
+    )
+
+    user_id = fields.Many2one(
+        comodel_name="res.users",
+        string="User",
+        related="property_id.user_id",
+        readonly=True,
+        store=True,
+    )
+
+    category_id = fields.Many2one(
+        comodel_name="realestate.category",
+        string="Category",
+        related="property_id.category_id",
+        readonly=True,
+        store=True,
+    )
+
+    #Acciones
     def action_send(self):
         self.state = 'sent'
 
@@ -50,3 +63,13 @@ class RealEstateOffer(models.Model):
 
     def action_draft(self):
         self.state = 'draft'
+
+    #Crea una UNICA oferta individual como contrato
+    def create_contract(self):
+        self.ensure_one()
+        return self.env['realestate.contract'].create({
+            'partner_id': self.partner_id.id,
+            'property_id': self.property_id.id,
+            'start_date': fields.Date.today(),
+            'contract_type': 'sale',
+        })
