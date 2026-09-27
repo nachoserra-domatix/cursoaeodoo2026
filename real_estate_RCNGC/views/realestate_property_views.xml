@@ -85,6 +85,24 @@
                                 'default_user_id': user_id}"
                         />
                     </page>
+                    <page string="Incidents">
+                        <field name="incident_ids" context="{'default_user_id': user_id}"> 
+                            <list editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="incident_priority" widget="priority"/>
+                                <field name="state" widget="badge"/>
+                                <field name="date_time_reported"/>
+                                <field 
+                                    name="user_id"
+                                    widget="many2one_avatar_user" 
+                                    domain="[('share', '=', False)]"
+                                    options="{'no_create': True, 'no_open': True}"
+                                />
+                            </list>
+                        </field>
+                    </page>
                 </notebook>
             </sheet>
         </form>

@@ -36,6 +36,12 @@ class RealEstateProperty(models.Model):
         string='Visits'
     )
 
+    incident_ids = fields.One2many(
+        comodel_name='realestate.property.incident',
+        inverse_name='property_id',
+        string='Incidents'
+    )
+
     color = fields.Integer(string="Color")
 
     def action_reserve(self):
