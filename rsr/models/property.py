@@ -50,6 +50,7 @@ class EstateProperty(models.Model):
     )
     visit_count = fields.Integer(compute="_compute_visit_count", string="Visits")
     incidence_count = fields.Integer(compute="_compute_incidence_count", string="Incidences")
+    contract_count = fields.Integer(compute="_compute_contract_count", string="Contracts")
 
     availability_state = fields.Boolean(string="Available", default=True)
 
@@ -85,6 +86,11 @@ class EstateProperty(models.Model):
         comodel_name="realestate.offer",
         inverse_name="property_id",
         string="Offers",
+    )
+    contract_ids = fields.One2many(
+        comodel_name="realestate.contract",
+        inverse_name="property_id",
+        string="Contracts",
     )
 
     @api.model_create_multi
@@ -130,6 +136,11 @@ class EstateProperty(models.Model):
     def _compute_incidence_count(self):
         for record in self:
             record.incidence_count = len(record.incidence_ids)
+
+    @api.depends("contract_ids")
+    def _compute_contract_count(self):
+        for record in self:
+            record.contract_count = len(record.contract_ids)
 
     @api.onchange("availability_state")
     def _onchange_availability_state(self):
@@ -181,6 +192,17 @@ class EstateProperty(models.Model):
             "type": "ir.actions.act_window",
             "name": _("Incidences"),
             "res_model": "estate.property.incidence",
+            "view_mode": "list,form",
+            "domain": [("property_id", "=", self.id)],
+            "context": {"default_property_id": self.id},
+        }
+
+    def action_view_contracts(self):
+        self.ensure_one()
+        return {
+            "type": "ir.actions.act_window",
+            "name": _("Contracts"),
+            "res_model": "realestate.contract",
             "view_mode": "list,form",
             "domain": [("property_id", "=", self.id)],
             "context": {"default_property_id": self.id},

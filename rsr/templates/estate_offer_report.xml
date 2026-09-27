@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_report_estate_offer" model="ir.actions.report">
+        <field name="name">Offer Report</field>
+        <field name="model">realestate.offer</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">rsr.report_estate_offer</field>
+        <field name="report_file">rsr.report_estate_offer</field>
+        <field name="paperformat_id" ref="rsr.paperformat_estate_property"/>
+        <field name="binding_model_id" ref="model_realestate_offer"/>
+        <field name="binding_type">report</field>
+        <field name="binding_view_types">list,form</field>
+    </record>
+
+    <template id="report_estate_offer">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row align-items-end border-bottom pb-3 mb-4">
+                            <div class="col-8">
+                                <div class="text-muted small text-uppercase">Offer Report</div>
+                                <h2 class="mb-0"><span t-field="o.property_id"/></h2>
+                            </div>
+                            <div class="col-4 text-end">
+                                <span class="badge bg-secondary" t-field="o.state"/>
+                            </div>
+                        </div>
+                        <table class="table table-sm table-striped table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th class="table-light" style="width: 30%;">Property</th>
+                                    <td class="align-middle"><span t-field="o.property_id"/></td>
+                                </tr>
+                                <tr>
+                                    <th class="table-light">Buyer</th>
+                                    <td class="align-middle"><span t-field="o.buyer_id"/></td>
+                                </tr>
+                                <tr>
+                                    <th class="table-light">Amount</th>
+                                    <td class="align-middle">
+                                        <span t-field="o.amount" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="table-light">Date</th>
+                                    <td class="align-middle"><span t-field="o.date"/></td>
+                                </tr>
+                                <tr>
+                                    <th class="table-light">State</th>
+                                    <td class="align-middle"><span class="badge bg-secondary" t-field="o.state"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1037,3 +1037,21 @@ msgstr ""
 #: code:addons/rsr/models/property.py:0
 msgid "property_id"
 msgstr ""
+
+#. module: rsr
+#: model:ir.model,name:rsr.model_estate_property_visit_state_wizard
+#: model:ir.actions.act_window,name:rsr.estate_property_visit_state_wizard_action
+#: model_terms:ir.ui.view,arch_db:rsr.estate_property_visit_state_wizard_view_form
+msgid "Change Visit State"
+msgstr ""
+
+#. module: rsr
+#: model:ir.model.fields,field_description:rsr.field_estate_property_visit_state_wizard__state
+msgid "New State"
+msgstr ""
+
+#. module: rsr
+#: model:ir.actions.report,name:rsr.action_report_estate_offer
+#: model_terms:ir.ui.view,arch_db:rsr.report_estate_offer
+msgid "Offer Report"
+msgstr ""

@@ -12,6 +12,7 @@
         # temaplates
         'templates/estate_property_stage_wizard_view.xml',
         'templates/estate_property_visit_wizard_view.xml',
+        'templates/estate_property_visit_state_wizard_view.xml',
         'templates/estate_property_action.xml',
         'templates/estate_property_view.xml',
         'templates/estate_property_report.xml',
@@ -24,6 +25,7 @@
         'templates/estate_contract_report.xml',
         'templates/estate_offer_action.xml',
         'templates/estate_offer_view.xml',
+        'templates/estate_offer_report.xml',
         'templates/estate_property_visit_action.xml',
         'templates/estate_property_visit_view.xml',
         'templates/estate_property_incidence_view.xml',
