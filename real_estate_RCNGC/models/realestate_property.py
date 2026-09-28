@@ -5,29 +5,32 @@ class RealEstateProperty(models.Model):
     _name = 'realestate.property'
     _description = 'Real Estate Property'
 
-    #Atributos propios
+    # Attributes (fields)
     name = fields.Char(string="Name", required=True)
     description = fields.Text(string="Description")
+    price = fields.Float(string="Price")
+    reference = fields.Char(string="Reference")
+    availability = fields.Boolean(string="Availability", default=True)
+    color = fields.Integer(string="Color")
+
+    # Relations M2O (Many2one)
     category_id = fields.Many2one(
         comodel_name="realestate.category",
         string="Category",
     )
-    price = fields.Float(string="Price")
-    reference = fields.Char(string="Reference")
-    availability = fields.Boolean(string="Availability", default=True)
+
     user_id = fields.Many2one(
         comodel_name="res.users",
         string="User",
     )
-    color = fields.Integer(string="Color")
 
-    #Relaciones con otras entidades
     stage_id = fields.Many2one(
         comodel_name="realestate.property.stage",
         string="Stage",
         group_expand="_read_group_stage_ids"
     )
 
+    # Relations O2M (One2many)
     image_ids = fields.One2many(
         comodel_name='realestate.property.image',
         inverse_name='property_id',
@@ -52,14 +55,14 @@ class RealEstateProperty(models.Model):
         string='Offers'
     )
 
-    #Campos calculados  
+    # Computed fields
     next_visit_date = fields.Datetime(
         string="Next Visit Date", 
         compute='_compute_next_visit_date', 
         store=True
         )
 
-    #Calculos
+    # Compute methods
     @api.depends('visit_ids.date', 'visit_ids.state')
     def _compute_next_visit_date(self):
         for property in self:
@@ -68,12 +71,13 @@ class RealEstateProperty(models.Model):
                 order='date asc', limit=1)
             property.next_visit_date = next_visit.date if next_visit else False 
 
-    #Acciones del modelo
-    def action_reserve(self):
-        self.availability = False
-
+    # Other methods
     def _read_group_stage_ids(self, stages, domain):
         return self.env['realestate.property.stage'].search([], order='sequence')
+
+    # Actions
+    def action_reserve(self):
+        self.availability = False
   
     def action_create_visit(self):
         vals = {

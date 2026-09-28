@@ -5,11 +5,10 @@ class RealEstateOffer(models.Model):
     _description = "Offer"
     _rec_name = "partner_id"
 
-    #Atributos propios
+    # Attributes (fields)
     sequence = fields.Integer(string="Sequence")
     amount = fields.Float(string="Amount")
     date = fields.Datetime(string="Date")
-
     state = fields.Selection(
         selection=[
             ('draft', 'Draft'),
@@ -23,7 +22,7 @@ class RealEstateOffer(models.Model):
     color = fields.Integer(string="Color")
     note = fields.Html(string="Note")
 
-    #Relaciones
+    # Relations M2O (Many2one)
     property_id = fields.Many2one(
         comodel_name="realestate.property",
         string="Property",
@@ -50,7 +49,7 @@ class RealEstateOffer(models.Model):
         store=True,
     )
 
-    #Acciones
+    # Actions
     def action_send(self):
         self.state = 'sent'
 
@@ -64,9 +63,8 @@ class RealEstateOffer(models.Model):
     def action_draft(self):
         self.state = 'draft'
 
-    #Crea una UNICA oferta individual como contrato
-    def create_contract(self):
-        self.ensure_one()
+    def action_create_contract(self):
+        self.ensure_one()  # Only one offer is allowed to create a contract at a time
         return self.env['realestate.contract'].create({
             'partner_id': self.partner_id.id,
             'property_id': self.property_id.id,

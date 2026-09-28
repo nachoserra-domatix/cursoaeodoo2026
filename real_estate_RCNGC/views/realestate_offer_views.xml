@@ -36,7 +36,7 @@
         <field name="arch" type="xml">
             <form string="Offer">
                 <header>
-                    <button name="create_contract" class="btn-info" string="Create Contract" type="object" invisible="state != 'accepted'"/>
+                    <button name="action_create_contract" class="btn-info" string="Create Contract" type="object" invisible="state != 'accepted'"/>
                     <button name="action_send" class="btn-primary" string="Send" type="object" invisible="state != 'draft'"/>
                     <button name="action_accept" class="btn-success" string="Accept" type="object" invisible="state not in ('draft','sent')" />
                     <button name="action_refuse" class="btn-danger" string="Refuse" type="object" invisible="state not in ('draft','sent')" />

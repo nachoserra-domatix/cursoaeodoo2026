@@ -5,26 +5,10 @@ class RealEstateVisit(models.Model):
     _description = "Visit"
     _rec_name = "property_id"
 
-    property_id = fields.Many2one(
-        comodel_name="realestate.property",
-        string="Property",
-        required=True,
-    )
+    # Attributes (fields)
     date = fields.Datetime(string="Visit Date")
-
-    partner_id = fields.Many2one(
-        comodel_name="res.partner",
-        string="Visitor",
-    )
-
-    user_id = fields.Many2one(
-        comodel_name="res.users",
-        string="User",
-    )
-
     phone = fields.Char(string="Phone", related="partner_id.phone", readonly=False, store=True)
     personal_email = fields.Char(string="Personal Email", related="partner_id.email")
-    
     state = fields.Selection(
         selection=[
             ("draft", "Draft"),
@@ -37,9 +21,28 @@ class RealEstateVisit(models.Model):
         group_expand="_group_expand_state"
     )
 
+    # Relations M2O (Many2one)
+    property_id = fields.Many2one(
+        comodel_name="realestate.property",
+        string="Property",
+        required=True,
+    )
+
+    partner_id = fields.Many2one(
+        comodel_name="res.partner",
+        string="Visitor",
+    )
+
+    user_id = fields.Many2one(
+        comodel_name="res.users",
+        string="User",
+    )
+
+    # Other methods
     def _group_expand_state(self, states, domain):
         return ["draft", "scheduled", "done", "canceled"]
 
+    # Actions
     def action_schedule(self):
         self.state = "scheduled"
 
