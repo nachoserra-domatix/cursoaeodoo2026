@@ -2,20 +2,32 @@
 
 <odoo>
 
-    <record id="realestate_offer_action" model="ir.actions.act_window">
-        <field name="name">Offers</field>
-        <field name="res_model">realestate.offer</field>
-        <field name="view_mode">kanban,list,calendar,form,pivot,graph</field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-            Create a new offer
-            </p>
-            <p>
-            Fill in the details of the offer you want to add, such as the property, partner, and price.
-            </p>
+    # SEARCH AND GROUP VIEWS
+    <record id="realestate_offer_search_view" model="ir.ui.view">
+        <field name="name">realestate.offer.search</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="property_id"/>
+                <field name="partner_id"/>
+                <field name="user_id"/>
+
+                <filter name="Sent" string="Sent"
+                        domain="[('state','=','sent')]"/>
+
+                <filter name="Accepted" string="Accepted"
+                        domain="[('state','=','accepted')]"/>
+
+                <filter name="Refused" string="Refused"
+                        domain="[('state','=','refused')]"/>
+
+                <filter name="group_by_property" string="Property"
+                        context="{'group_by':'property_id'}"/>
+            </search>
         </field>
     </record>
 
+    # UI VIEWS
     <record id="realestate_offer_list_view" model="ir.ui.view">
         <field name="name">realestate.offer.list</field>
         <field name="model">realestate.offer</field>
@@ -27,54 +39,6 @@
                 <field name="amount" optional="show"/>
                 <field name="state" optional="show"/>
             </list>
-        </field>
-    </record>
-
-    <record id="realestate_offer_form_view" model="ir.ui.view">
-        <field name="name">realestate.offer.form</field>
-        <field name="model">realestate.offer</field>
-        <field name="arch" type="xml">
-            <form string="Offer">
-                <header>
-                    <button name="action_create_contract" class="btn-info" string="Create Contract" type="object" invisible="state != 'accepted'"/>
-                    <button name="action_send" class="btn-primary" string="Send" type="object" invisible="state != 'draft'"/>
-                    <button name="action_accept" class="btn-success" string="Accept" type="object" invisible="state not in ('draft','sent')" />
-                    <button name="action_refuse" class="btn-danger" string="Refuse" type="object" invisible="state not in ('draft','sent')" />
-                    <button name="action_draft" class="btn-secondary" string="Reset to Draft" invisible="state == 'draft'" type="object" />
-                    <field name="state" widget="statusbar"/>
-                </header>
-                <sheet>
-                    <group>
-                        <group>
-                            <field name="property_id" domain="[('availability','=',True)]" options="{'no_create': True, 'no_open': True}"/>
-                            <field name="category_id" optional="show"/>
-                            <field name="user_id" widget="many2one_avatar_user" optional="show"/>
-                            <field name="partner_id"/>                 
-                        </group>
-                        <group>
-                            <field name="date"/>
-                            <field name="amount"/>
-                        </group>
-                    </group>
-                    <notebook>
-                        <page string="Additional Information">
-                            <field name="note"/>
-                        </page>
-                    </notebook>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
-    <record id="realestate_offer_calendar_view" model="ir.ui.view">
-        <field name="name">realestate.offer.calendar</field>
-        <field name="model">realestate.offer</field>
-        <field name="arch" type="xml">
-            <calendar string="Offers" date_start="date" color="partner_id">
-                <field name="property_id"/>
-                <field name="partner_id"/>
-                <field name="state"/>
-            </calendar>
         </field>
     </record>
 
@@ -126,6 +90,54 @@
         </field>
     </record>
 
+    <record id="realestate_offer_form_view" model="ir.ui.view">
+        <field name="name">realestate.offer.form</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <form string="Offer">
+                <header>
+                    <button name="action_create_contract" class="btn-info" string="Create Contract" type="object" invisible="state != 'accepted'"/>
+                    <button name="action_send" class="btn-primary" string="Send" type="object" invisible="state != 'draft'"/>
+                    <button name="action_accept" class="btn-success" string="Accept" type="object" invisible="state not in ('draft','sent')" />
+                    <button name="action_refuse" class="btn-danger" string="Refuse" type="object" invisible="state not in ('draft','sent')" />
+                    <button name="action_draft" class="btn-secondary" string="Reset to Draft" invisible="state == 'draft'" type="object" />
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="property_id" domain="[('availability','=',True)]" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="category_id" optional="show"/>
+                            <field name="user_id" widget="many2one_avatar_user" optional="show"/>
+                            <field name="partner_id"/>                 
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="amount"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Additional Information">
+                            <field name="note"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="realestate_offer_calendar_view" model="ir.ui.view">
+        <field name="name">realestate.offer.calendar</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <calendar string="Offers" date_start="date" color="partner_id">
+                <field name="property_id"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+            </calendar>
+        </field>
+    </record>
+
     <record id="realestate_offer_pivot_view" model="ir.ui.view">
         <field name="name">realestate.offer.pivot</field>
         <field name="model">realestate.offer</field>
@@ -137,6 +149,7 @@
             </pivot>
         </field>
     </record>
+
     <record id="realestate_offer_graph_view" model="ir.ui.view">
         <field name="name">realestate.offer.graph</field>
         <field name="model">realestate.offer</field>
@@ -148,27 +161,18 @@
         </field>
     </record>
 
-    <record id="realestate_offer_search_view" model="ir.ui.view">
-        <field name="name">realestate.offer.search</field>
-        <field name="model">realestate.offer</field>
-        <field name="arch" type="xml">
-            <search>
-                <field name="property_id"/>
-                <field name="partner_id"/>
-                <field name="user_id"/>
-
-                <filter name="Sent" string="Sent"
-                        domain="[('state','=','sent')]"/>
-
-                <filter name="Accepted" string="Accepted"
-                        domain="[('state','=','accepted')]"/>
-
-                <filter name="Refused" string="Refused"
-                        domain="[('state','=','refused')]"/>
-
-                <filter name="group_by_property" string="Property"
-                        context="{'group_by':'property_id'}"/>
-            </search>
+    # ACTION WINDOW
+    <record id="realestate_offer_action" model="ir.actions.act_window">
+        <field name="name">Offers</field>
+        <field name="res_model">realestate.offer</field>
+        <field name="view_mode">kanban,list,calendar,form,pivot,graph</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            Create a new offer
+            </p>
+            <p>
+            Fill in the details of the offer you want to add, such as the property, partner, and price.
+            </p>
         </field>
     </record>
 
