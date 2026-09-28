@@ -1,9 +1,11 @@
-from odoo import models, fields
+from odoo import _,models, fields, api
+from odoo.exceptions import ValidationError
 
 class RealEstateOffer(models.Model):
     _name = "realestate.offer"
     _description = "Offer"
     _rec_name = "partner_id"
+
 
     # Attributes (fields)
     sequence = fields.Integer(string="Sequence")
@@ -21,6 +23,7 @@ class RealEstateOffer(models.Model):
     )
     color = fields.Integer(string="Color")
     note = fields.Html(string="Note")
+
 
     # Relations M2O (Many2one)
     property_id = fields.Many2one(
@@ -49,6 +52,15 @@ class RealEstateOffer(models.Model):
         store=True,
     )
 
+
+    # Constraints
+    @api.constrains('amount')
+    def _check_amount(self):
+        for offer in self:
+            if offer.amount < 0:
+                raise ValidationError(_("The offer amount must be positive."))  
+
+
     # Actions
     def action_send(self):
         self.state = 'sent'
@@ -71,3 +83,6 @@ class RealEstateOffer(models.Model):
             'start_date': fields.Date.today(),
             'contract_type': 'sale',
         })
+
+
+    

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo noupdate="1">
+    <record id="realstate_contract_finish_cron" model="ir.cron">
+        <field name="name">Real Estate: Contract Finish</field>
+        <field name="model_id" ref="model_realestate_contract"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_contract_finish()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+    </record>
+
+    <record id='realestate_visit_finish_cron' model="ir.cron">
+        <field name="name">Real Estate: Visit Finish</field>
+        <field name="model_id" ref="model_realestate_visit"/>   
+        <field name="state">code</field>    
+        <field name="code">model._cron_visit_finish()</field>   
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+    </record>
+</odoo>

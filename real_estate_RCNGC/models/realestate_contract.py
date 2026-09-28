@@ -1,9 +1,12 @@
-from odoo import models, fields, api
+from odoo import _,models, fields, api
+from odoo.exceptions import ValidationError
 
 class RealEstateContract(models.Model):
     _name = "realestate.contract"
     _description = "Contract"
 
+    # Defaults
+    
     # Attributes (fields)
     name = fields.Char(string="Name")
     contract_type = fields.Selection(
@@ -14,7 +17,7 @@ class RealEstateContract(models.Model):
         string="Contract Type",
         default='rent'
     )
-    start_date = fields.Date(string="Start Date")
+    start_date = fields.Date(string="Start Date", default=fields.Date.today)
     end_date = fields.Date(string="End Date")
     rent = fields.Float(string="Rent")
     deposit = fields.Float(string="Deposit")
@@ -79,7 +82,26 @@ class RealEstateContract(models.Model):
     def _compute_has_deposit(self):
         for record in self:
             record.has_deposit = record.deposit > 0
-   
+
+
+    # Constraints / Onchange
+    @api.constrains('start_date', 'end_date')
+    def _check_dates(self):
+        for record in self:
+            if record.start_date and record.end_date and record.start_date > record.end_date:
+                raise ValidationError(_("Start date must be before end date.")) 
+
+    _contract_name_uniq = models.Constraint(    
+        'unique(name)',
+        'The contract name must be unique.',      
+    )
+
+    @api.onchange('property_id')
+    def _onchange_property_id(self):
+        if self.property_id:
+            self.rent=self.property_id.price
+    
+           
     # Actions
     def action_draft(self):
         self.state = 'draft'
@@ -92,4 +114,16 @@ class RealEstateContract(models.Model):
 
     def action_cancelled(self):
         self.state = 'cancelled'
-        
+
+    # CRON Methods
+    def _cron_contract_finish(self):    
+        contracts = self.search([    
+            ('state', '=', 'progress'),
+            ('end_date', '<=', fields.Date.today())])
+        contracts.write({'state': 'done'})
+
+        # Ensure changes are commited one by one
+        #for record in self:
+        #    if record.state == 'progress' and record.end_date and record.end_date <= fields.Date.today():   
+        #        record.state = 'done'
+        #        self.env.cr.commit()     

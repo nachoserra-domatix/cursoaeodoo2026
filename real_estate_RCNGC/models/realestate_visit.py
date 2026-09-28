@@ -1,14 +1,23 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 class RealEstateVisit(models.Model):
     _name = "realestate.visit"
     _description = "Visit"
     _rec_name = "property_id"
 
+    # ---------------------------------------------------------------------------------------
+    # Defaults
+    # ---------------------------------------------------------------------------------------
+
+
+    # ---------------------------------------------------------------------------------------
     # Attributes (fields)
-    date = fields.Datetime(string="Visit Date")
-    phone = fields.Char(string="Phone", related="partner_id.phone", readonly=False, store=True)
-    personal_email = fields.Char(string="Personal Email", related="partner_id.email")
+    # ---------------------------------------------------------------------------------------
+    date = fields.Datetime(string="Visit Date", default=fields.Datetime.now)
+ #   phone = fields.Char(string="Phone", related="partner_id.phone", readonly=False, store=True)
+ #   personal_email = fields.Char(string="Personal Email", related="partner_id.email")
+    phone = fields.Char(string="Phone")
+    personal_email = fields.Char(string="Personal Email")
     state = fields.Selection(
         selection=[
             ("draft", "Draft"),
@@ -21,7 +30,9 @@ class RealEstateVisit(models.Model):
         group_expand="_group_expand_state"
     )
 
+    # ---------------------------------------------------------------------------------------
     # Relations M2O (Many2one)
+    # ---------------------------------------------------------------------------------------
     property_id = fields.Many2one(
         comodel_name="realestate.property",
         string="Property",
@@ -38,11 +49,20 @@ class RealEstateVisit(models.Model):
         string="User",
     )
 
-    # Other methods
-    def _group_expand_state(self, states, domain):
-        return ["draft", "scheduled", "done", "canceled"]
 
+    # ---------------------------------------------------------------------------------------
+    # Constraints / Onchange
+    # ---------------------------------------------------------------------------------------
+    @api.onchange('partner_id')
+    def _onchange_partner_id(self):     
+        if self.partner_id: 
+            self.phone = self.partner_id.phone
+            self.personal_email = self.partner_id.email 
+
+
+    # ---------------------------------------------------------------------------------------
     # Actions
+    # ---------------------------------------------------------------------------------------
     def action_schedule(self):
         self.state = "scheduled"
 
@@ -54,3 +74,20 @@ class RealEstateVisit(models.Model):
     
     def action_draft(self):
         self.state = "draft"
+
+    # ---------------------------------------------------------------------------------------
+    # Cron Methods
+    # ---------------------------------------------------------------------------------------
+
+    def _cron_visit_finish(self):
+        visits = self.search([
+            ('state', '=', 'scheduled'), 
+            ('date', '<', fields.Datetime.now())])
+        visits.write({'state': 'done'})
+            
+
+    # ---------------------------------------------------------------------------------------
+    # Other methods
+    # ---------------------------------------------------------------------------------------
+    def _group_expand_state(self, states, domain):
+        return ["draft", "scheduled", "done", "canceled"]

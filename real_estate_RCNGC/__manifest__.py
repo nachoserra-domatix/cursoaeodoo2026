@@ -17,6 +17,7 @@
         "views/realestate_category_views.xml",
         "views/realestate_contract_views.xml",
         'views/realestate_menuitems.xml',
+        'data/ir_cron.xml',
     ],
     'installable': True,
     'application': True

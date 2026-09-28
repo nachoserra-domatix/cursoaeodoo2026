@@ -1,9 +1,12 @@
-from odoo import models, fields, api    
+from odoo import models, fields, api  
 
 
 class RealEstateProperty(models.Model):
     _name = 'realestate.property'
     _description = 'Real Estate Property'
+
+    # Defaults
+
 
     # Attributes (fields)
     name = fields.Char(string="Name", required=True)
@@ -12,6 +15,7 @@ class RealEstateProperty(models.Model):
     reference = fields.Char(string="Reference")
     availability = fields.Boolean(string="Availability", default=True)
     color = fields.Integer(string="Color")
+
 
     # Relations M2O (Many2one)
     category_id = fields.Many2one(
@@ -22,6 +26,7 @@ class RealEstateProperty(models.Model):
     user_id = fields.Many2one(
         comodel_name="res.users",
         string="User",
+        default=lambda self: self.env.user.id
     )
 
     stage_id = fields.Many2one(
@@ -55,12 +60,23 @@ class RealEstateProperty(models.Model):
         string='Offers'
     )
 
+
     # Computed fields
     next_visit_date = fields.Datetime(
         string="Next Visit Date", 
         compute='_compute_next_visit_date', 
         store=True
         )
+
+    visit_count = fields.Integer(
+        string="Visit Count",
+        compute='_compute_visit_count',
+    )
+
+    incident_count = fields.Integer(    
+        string="Incident Count",
+        compute='_compute_incident_count',
+    )
 
     # Compute methods
     @api.depends('visit_ids.date', 'visit_ids.state')
@@ -71,9 +87,24 @@ class RealEstateProperty(models.Model):
                 order='date asc', limit=1)
             property.next_visit_date = next_visit.date if next_visit else False 
 
+    def _compute_visit_count(self):     
+        for property in self:
+            property.visit_count = len(property.visit_ids) 
+
+    def _compute_incident_count(self):
+        for property in self:
+            property.incident_count = len(property.incident_ids)
+
     # Other methods
     def _read_group_stage_ids(self, stages, domain):
         return self.env['realestate.property.stage'].search([], order='sequence')
+
+
+    # Constraints
+    _reference_uniq = models.Constraint(
+        'unique(reference)',
+        'The reference must be unique.',      
+    )    
 
     # Actions
     def action_reserve(self):
@@ -112,4 +143,25 @@ class RealEstateProperty(models.Model):
         pending_vists.write({
             'state': 'canceled',
         })
+
+    def action_open_visits(self):   
+        return {    
+            'type': 'ir.actions.act_window',    
+            'name': 'Visits',
+            'res_model': 'realestate.visit',
+            'view_mode': 'list,form',   
+            'domain': [('property_id', '=', self.id)],
+            'context': {'default_property_id': self.id},
+        }
+
+    def action_open_incidents(self):    
+        return {    
+            'type': 'ir.actions.act_window',    
+            'name': 'Incidents',
+            'res_model': 'realestate.property.incident',
+            'view_mode': 'list,form',   
+            'domain': [('property_id', '=', self.id)],
+            'context': {'default_property_id': self.id},
+        }
+                
             
