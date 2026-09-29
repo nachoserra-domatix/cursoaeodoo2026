@@ -4,6 +4,8 @@ class RealestatePropertyStage(models.Model):
     _name = "realestate.property.stage"
     _description = "Real Estate Property Stage"
 
+    # ---------------------------------------------------------------------------------------
     # Attributes (fields)
+    # ---------------------------------------------------------------------------------------
     name = fields.Char(string="Stage Name", required=True)
     sequence = fields.Integer(string="Sequence", default=10)

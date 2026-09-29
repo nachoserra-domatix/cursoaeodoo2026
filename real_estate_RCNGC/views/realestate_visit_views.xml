@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    # SEARCH AND GROUP UI VIEWS
+    <!-- SEARCH AND GROUP UI VIEWS -->
     <record id="realestate_visit_search_view" model="ir.ui.view">
         <field name="name">realestate.visit.search</field>
         <field name="model">realestate.visit</field>
@@ -21,7 +21,7 @@
         </field>
     </record>
 
-    # UI VIEWS
+    <!-- UI VIEWS -->  
     <record id="realestate_visit_list_view" model="ir.ui.view">
         <field name="name">realestate.visit.list</field>
         <field name="model">realestate.visit</field>
@@ -154,7 +154,7 @@
         </field>
     </record>
 
-    # ACTION WINDOW  
+    <!-- ACTION WINDOW --> 
     <record id="realestate_visit_action" model="ir.actions.act_window">
         <field name="name">Visits</field>
         <field name="res_model">realestate.visit</field>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-    # UI VIEWS
+    <!-- UI VIEWS -->
     <record id="realestate_contract_list_view" model="ir.ui.view">
         <field name="name">realestate.contract.list.view</field>
         <field name="model">realestate.contract</field>
@@ -62,7 +62,7 @@
         </field>
     </record>
 
-    # ACTION WINDOW
+    <!-- ACTION WINDOW -->
     <record id="realestate_contract_action" model="ir.actions.act_window">
         <field name="name">realestate.contract.action</field>
         <field name="res_model">realestate.contract</field>

@@ -4,7 +4,10 @@ class RealestatePropertyIncident(models.Model):
     _name = 'realestate.property.incident'
     _description = 'Property Incident'
 
+
+    # ---------------------------------------------------------------------------------------
     # Attributes (fields)
+    # ---------------------------------------------------------------------------------------
     sequence = fields.Integer(string='Sequence', default=10)
     name = fields.Char(string='Incident Name', required=True)
     description = fields.Text(string='Description')
@@ -20,7 +23,10 @@ class RealestatePropertyIncident(models.Model):
     )
     date_time_reported = fields.Datetime(string='Date Time Reported', default=fields.Datetime.now)
 
+
+    # ---------------------------------------------------------------------------------------
     # Relations M2O (Many2one)  
+    # ---------------------------------------------------------------------------------------
     property_id = fields.Many2one(
         comodel_name='realestate.property', 
         string='Property', 

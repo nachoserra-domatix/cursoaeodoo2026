@@ -2,7 +2,7 @@
 
 <odoo>
 
-    # SEARCH AND GROUP VIEWS
+    <!-- SEARCH AND GROUP VIEWS -->
     <record id="realestate_offer_search_view" model="ir.ui.view">
         <field name="name">realestate.offer.search</field>
         <field name="model">realestate.offer</field>
@@ -27,7 +27,7 @@
         </field>
     </record>
 
-    # UI VIEWS
+    <!-- UI VIEWS -->
     <record id="realestate_offer_list_view" model="ir.ui.view">
         <field name="name">realestate.offer.list</field>
         <field name="model">realestate.offer</field>
@@ -161,7 +161,7 @@
         </field>
     </record>
 
-    # ACTION WINDOW
+    <!-- ACTION WINDOW -->
     <record id="realestate_offer_action" model="ir.actions.act_window">
         <field name="name">Offers</field>
         <field name="res_model">realestate.offer</field>

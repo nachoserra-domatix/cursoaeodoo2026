@@ -30,6 +30,7 @@ class RealEstateVisit(models.Model):
         group_expand="_group_expand_state"
     )
 
+
     # ---------------------------------------------------------------------------------------
     # Relations M2O (Many2one)
     # ---------------------------------------------------------------------------------------
@@ -75,10 +76,10 @@ class RealEstateVisit(models.Model):
     def action_draft(self):
         self.state = "draft"
 
+
     # ---------------------------------------------------------------------------------------
     # Cron Methods
     # ---------------------------------------------------------------------------------------
-
     def _cron_visit_finish(self):
         visits = self.search([
             ('state', '=', 'scheduled'), 

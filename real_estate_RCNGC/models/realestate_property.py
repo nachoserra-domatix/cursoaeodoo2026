@@ -5,10 +5,14 @@ class RealEstateProperty(models.Model):
     _name = 'realestate.property'
     _description = 'Real Estate Property'
 
+    # ---------------------------------------------------------------------------------------
     # Defaults
+    # ---------------------------------------------------------------------------------------
 
 
+    # ---------------------------------------------------------------------------------------
     # Attributes (fields)
+    # ---------------------------------------------------------------------------------------
     name = fields.Char(string="Name", required=True)
     description = fields.Text(string="Description")
     price = fields.Float(string="Price")
@@ -17,7 +21,9 @@ class RealEstateProperty(models.Model):
     color = fields.Integer(string="Color")
 
 
+    # ---------------------------------------------------------------------------------------
     # Relations M2O (Many2one)
+    # ---------------------------------------------------------------------------------------
     category_id = fields.Many2one(
         comodel_name="realestate.category",
         string="Category",
@@ -35,7 +41,10 @@ class RealEstateProperty(models.Model):
         group_expand="_read_group_stage_ids"
     )
 
+
+    # ---------------------------------------------------------------------------------------
     # Relations O2M (One2many)
+    # ---------------------------------------------------------------------------------------
     image_ids = fields.One2many(
         comodel_name='realestate.property.image',
         inverse_name='property_id',
@@ -61,7 +70,9 @@ class RealEstateProperty(models.Model):
     )
 
 
+    # ---------------------------------------------------------------------------------------    
     # Computed fields
+    # ---------------------------------------------------------------------------------------
     next_visit_date = fields.Datetime(
         string="Next Visit Date", 
         compute='_compute_next_visit_date', 
@@ -78,7 +89,10 @@ class RealEstateProperty(models.Model):
         compute='_compute_incident_count',
     )
 
+
+    # ---------------------------------------------------------------------------------------
     # Compute methods
+    # ---------------------------------------------------------------------------------------
     @api.depends('visit_ids.date', 'visit_ids.state')
     def _compute_next_visit_date(self):
         for property in self:
@@ -95,18 +109,19 @@ class RealEstateProperty(models.Model):
         for property in self:
             property.incident_count = len(property.incident_ids)
 
-    # Other methods
-    def _read_group_stage_ids(self, stages, domain):
-        return self.env['realestate.property.stage'].search([], order='sequence')
-
-
-    # Constraints
+  
+    # ---------------------------------------------------------------------------------------
+    # Constraints / Onchange
+    # ---------------------------------------------------------------------------------------
     _reference_uniq = models.Constraint(
         'unique(reference)',
         'The reference must be unique.',      
-    )    
+    )
 
+
+    # ---------------------------------------------------------------------------------------
     # Actions
+    # ---------------------------------------------------------------------------------------
     def action_reserve(self):
         self.availability = False
   
@@ -164,4 +179,14 @@ class RealEstateProperty(models.Model):
             'context': {'default_property_id': self.id},
         }
                 
-            
+
+    # ---------------------------------------------------------------------------------------
+    # Cron Methods
+    # ---------------------------------------------------------------------------------------
+
+
+    # ---------------------------------------------------------------------------------------
+    # Other methods
+    # ---------------------------------------------------------------------------------------
+    def _read_group_stage_ids(self, stages, domain):
+        return self.env['realestate.property.stage'].search([], order='sequence')
