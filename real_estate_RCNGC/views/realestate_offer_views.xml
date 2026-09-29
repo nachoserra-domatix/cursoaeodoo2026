@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <!-- SEARCH AND GROUP VIEWS -->
+    <record id="realestate_offer_search_view" model="ir.ui.view">
+        <field name="name">realestate.offer.search</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="property_id"/>
+                <field name="partner_id"/>
+                <field name="user_id"/>
+
+                <filter name="Sent" string="Sent"
+                        domain="[('state','=','sent')]"/>
+
+                <filter name="Accepted" string="Accepted"
+                        domain="[('state','=','accepted')]"/>
+
+                <filter name="Refused" string="Refused"
+                        domain="[('state','=','refused')]"/>
+
+                <filter name="group_by_property" string="Property"
+                        context="{'group_by':'property_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- UI VIEWS -->
+    <record id="realestate_offer_list_view" model="ir.ui.view">
+        <field name="name">realestate.offer.list</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <list string="Offers">
+                <field name="property_id" optional="show"/>
+                <field name="date" optional="show"/>
+                <field name="partner_id" optional="show"/>
+                <field name="amount" optional="show"/>
+                <field name="state" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="realestate_offer_kanban_view" model="ir.ui.view">
+        <field name="name">realestate.offer.kanban</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" on_create="quick_create" class="o_kanban_small_column">
+                <field name="property_id"/>
+                <field name="category_id"/>
+                <field name="partner_id"/>
+                <field name="user_id"/>
+                <field name="amount"/>
+                <field name="date"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="menu">
+                        <t t-if="widget.editable"><a role="menuitem" type="open" class="dropdown-item">Edit</a></t>
+                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                        <div role="separator" class="dropdown-divider"/>
+                        <field name="color" widget="kanban_color_picker"/>
+                    </t>
+                    <t t-name="card">
+                        <field name="property_id" class="fw-bold fs-5"/>
+
+                        <div class="mt-2">
+                            <field name="amount" class="fw-bold"/>
+                        </div>
+
+                        <div>
+                            <field name="partner_id"/>
+                        </div>
+
+                        <div class="text-muted">
+                            <field name="date"/>
+                        </div>
+
+                        <footer>
+                            <field name="state" widget="badge"/>
+                            <field
+                                name="user_id"
+                                widget="many2one_avatar_user"
+                                class="ms-auto"
+                            />
+                        </footer>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="realestate_offer_form_view" model="ir.ui.view">
+        <field name="name">realestate.offer.form</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <form string="Offer">
+                <header>
+                    <button name="action_create_contract" class="btn-info" string="Create Contract" type="object" invisible="state != 'accepted'"/>
+                    <button name="action_send" class="btn-primary" string="Send" type="object" invisible="state != 'draft'"/>
+                    <button name="action_accept" class="btn-success" string="Accept" type="object" invisible="state not in ('draft','sent')" />
+                    <button name="action_refuse" class="btn-danger" string="Refuse" type="object" invisible="state not in ('draft','sent')" />
+                    <button name="action_draft" class="btn-secondary" string="Reset to Draft" invisible="state == 'draft'" type="object" />
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="property_id" domain="[('availability','=',True)]" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="category_id" optional="show"/>
+                            <field name="user_id" widget="many2one_avatar_user" optional="show"/>
+                            <field name="partner_id"/>                 
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="amount"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Additional Information">
+                            <field name="note"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="realestate_offer_calendar_view" model="ir.ui.view">
+        <field name="name">realestate.offer.calendar</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <calendar string="Offers" date_start="date" color="partner_id">
+                <field name="property_id"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="realestate_offer_pivot_view" model="ir.ui.view">
+        <field name="name">realestate.offer.pivot</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <pivot string="Offers">
+                <field name="state" type="row"/>
+                <field name="property_id" type="col"/>
+                <field name="amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="realestate_offer_graph_view" model="ir.ui.view">
+        <field name="name">realestate.offer.graph</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <graph string="Offers">
+                <field name="state" type="row"/>
+                <field name="amount" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- ACTION WINDOW -->
+    <record id="realestate_offer_action" model="ir.actions.act_window">
+        <field name="name">Offers</field>
+        <field name="res_model">realestate.offer</field>
+        <field name="view_mode">kanban,list,calendar,form,pivot,graph</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            Create a new offer
+            </p>
+            <p>
+            Fill in the details of the offer you want to add, such as the property, partner, and price.
+            </p>
+        </field>
+    </record>
+
+</odoo>
