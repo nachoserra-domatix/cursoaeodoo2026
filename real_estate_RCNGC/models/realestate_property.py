@@ -14,11 +14,13 @@ class RealEstateProperty(models.Model):
     # Attributes (fields)
     # ---------------------------------------------------------------------------------------
     name = fields.Char(string="Name", required=True)
+    active = fields.Boolean(string="Active", default=True)
     description = fields.Text(string="Description")
-    price = fields.Float(string="Price")
-    reference = fields.Char(string="Reference")
+    price = fields.Monetary(string="Price", currency_field='currency_id')
+    reference = fields.Char(string="Reference", copy=False)
     availability = fields.Boolean(string="Availability", default=True)
     color = fields.Integer(string="Color")
+    internal_note = fields.Text(string="Internal Note", company_dependent=True)
 
 
     # ---------------------------------------------------------------------------------------
@@ -40,6 +42,18 @@ class RealEstateProperty(models.Model):
         string="Stage",
         group_expand="_read_group_stage_ids"
     )
+
+    currency_id = fields.Many2one(
+        comodel_name="res.currency",
+        string="Currency",
+        default=lambda self: self.env.company.currency_id.id
+    )   
+
+    company_id = fields.Many2one(
+        comodel_name='res.company',
+        string='Company',
+        default=lambda self: self.env.company.id
+    )   
 
 
     # ---------------------------------------------------------------------------------------
@@ -75,7 +89,8 @@ class RealEstateProperty(models.Model):
     # ---------------------------------------------------------------------------------------
     next_visit_date = fields.Datetime(
         string="Next Visit Date", 
-        compute='_compute_next_visit_date', 
+        compute='_compute_next_visit_date',
+        inverse='_inverse_next_visit_date', 
         store=True
         )
 
@@ -99,7 +114,14 @@ class RealEstateProperty(models.Model):
             next_visit = self.env['realestate.visit'].search(
                 [('property_id', '=', property.id), ('state', '=', 'scheduled')], 
                 order='date asc', limit=1)
-            property.next_visit_date = next_visit.date if next_visit else False 
+            property.next_visit_date = next_visit.date if next_visit else False
+
+    def _inverse_next_visit_date(self):
+        for record in self:
+            if record.next_visit_date:
+                scheduled_visits = record.visit_ids.filtered(lambda visit: visit.state == 'scheduled')
+                if scheduled_visits:
+                    scheduled_visits[0].date = record.next_visit_date
 
     def _compute_visit_count(self):     
         for property in self:

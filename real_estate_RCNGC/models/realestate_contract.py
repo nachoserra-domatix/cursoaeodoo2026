@@ -8,7 +8,7 @@ class RealEstateContract(models.Model):
     # Defaults
     
     # Attributes (fields)
-    name = fields.Char(string="Name")
+    name = fields.Char(string="Name", copy=False)
     contract_type = fields.Selection(
         selection=[
             ('sale', 'Sale'),

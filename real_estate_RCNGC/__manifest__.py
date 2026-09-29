@@ -17,6 +17,8 @@
         "views/realestate_category_views.xml",
         "views/realestate_contract_views.xml",
         'views/realestate_menuitems.xml',
+        'wizard/realestate_property_change_stage.xml',
+        'wizard/realestate_property_schedule_visits.xml',
         'data/ir_cron.xml',
     ],
     'installable': True,
