@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="action_report_estate_property_details" model="ir.actions.report">
+        <field name="name">Print Property (Each Page)</field>
+        <field name="model">estate.property</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">real_estate_mstiehl.estate_property_report</field>
+        <field name="report_file">real_estate_mstiehl.estate_property_report</field>
+        <field name="print_report_name">'Property - %s' % (object.property_ref_code)</field>
+        <field name="binding_model_id" ref="model_estate_property"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="estate_property_report" name="Estate Property Report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2 t-field="o.name"/>
+                                <p class="text-muted mb-0" t-field="o.property_ref_code"/>
+                            </div>
+                            <div class="col-6 text-end">
+                                <img t-if="o.image_1920" t-att-src="image_data_uri(o.image_1920)" style="max-height: 120px;"/>
+                            </div>
+                        </div>
+
+                        <hr class="mt-3 mb-4"/>
+
+                        <div class="row mb-4">
+                            <div class="col-4">
+                                <strong>Type</strong>
+                                <p class="mb-0" t-field="o.property_type_id"/>
+                            </div>
+                            <div class="col-4">
+                                <strong>Expected Price</strong>
+                                <p class="mb-0" t-field="o.expected_price"/>
+                            </div>
+                            <div class="col-4">
+                                <strong>Selling Price</strong>
+                                <p class="mb-0" t-field="o.selling_price"/>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-3">
+                                <strong>Total Area</strong>
+                                <p class="mb-0" t-field="o.total_area"/>
+                            </div>
+                            <div class="col-3">
+                                <strong>Bedrooms</strong>
+                                <p class="mb-0" t-field="o.bedrooms"/>
+                            </div>
+                            <div class="col-3">
+                                <strong>Bathrooms</strong>
+                                <p class="mb-0" t-field="o.bathrooms"/>
+                            </div>
+                            <div class="col-3">
+                                <strong>Garage</strong>
+                                <p class="mb-0" t-field="o.garage"/>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <strong>Address</strong>
+                                <p class="mb-0">
+                                    <span t-field="o.street"/><br/>
+                                    <span t-field="o.zip"/> <span t-field="o.city"/><br/>
+                                    <span t-field="o.state_id"/> <span t-field="o.country_id"/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <strong>Seller</strong>
+                                <p class="mb-0" t-field="o.seller_id"/>
+                            </div>
+                            <div class="col-6">
+                                <strong>Agent</strong>
+                                <p class="mb-0" t-field="o.agent_id"/>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4" t-if="o.description">
+                            <div class="col-12">
+                                <strong>Description</strong>
+                                <p class="mb-0" t-field="o.description"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+    <record id="action_report_estate_properties_list" model="ir.actions.report">
+        <field name="name">Print Properties (list)</field>
+        <field name="model">estate.property</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">real_estate_mstiehl.estate_properties_list_report</field>
+        <field name="report_file">real_estate_mstiehl.estate_properties_list_report</field>
+        <field name="print_report_name">'Properties List'</field>
+        <field name="binding_model_id" ref="model_estate_property"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="estate_properties_list_report" name="Estate Properties List Report">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Properties</h2>
+                    <hr class="mt-2 mb-4"/>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>City</th>
+                                <th>Bedrooms</th>
+                                <th>Bathrooms</th>
+                                <th>Total Area</th>
+                                <th>Expected Price</th>
+                                <th>Selling Price</th>
+                                <th>Agent</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs" t-as="o">
+                                <tr>
+                                    <td><span t-field="o.property_ref_code"/></td>
+                                    <td><span t-field="o.name"/></td>
+                                    <td><span t-field="o.property_type_id"/></td>
+                                    <td><span t-field="o.city"/></td>
+                                    <td><span t-field="o.bedrooms"/></td>
+                                    <td><span t-field="o.bathrooms"/></td>
+                                    <td><span t-field="o.total_area"/></td>
+                                    <td><span t-field="o.expected_price"/></td>
+                                    <td><span t-field="o.selling_price"/></td>
+                                    <td><span t-field="o.agent_id"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

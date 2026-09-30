@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- Action Stages  Type -->
+        <record id="estate_visit_change_stage_action" model="ir.actions.act_window">
+            <field name="name">Change Visit Stage</field>
+            <field name="res_model">estate.visit.change.stage</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="real_estate_mstiehl.model_estate_listing"/>
+            <field name="binding_view_types">list,form</field>
+        </record>
+
+        <record id="view_estate_visit_change_stage" model="ir.ui.view">
+            <field name="name">Change Visit Stage</field>
+            <field name="model">estate.visit.change.stage</field>
+            <field name="arch" type="xml">
+                <form string="Change Visit Stage">
+                    <group>
+                        <field name="stage_id"/>
+                    </group>
+                    <footer>     
+                        <button name="action_change_visit_stage" type="object"
+                        id="action_change_visit_stage"
+                        string="Change Visits Stage"
+                        class="btn-primary" data-hotkey="q"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

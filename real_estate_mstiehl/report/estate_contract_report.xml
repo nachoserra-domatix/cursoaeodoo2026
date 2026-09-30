@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_estate_contract" model="ir.actions.report">
+        <field name="name">Print Contract</field>
+        <field name="model">estate.contract</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">real_estate_mstiehl.estate_contract_report</field>
+        <field name="report_file">real_estate_mstiehl.estate_contract_report</field>
+        <field name="print_report_name">'Contract - %s' % (object.contract_ref_code)</field>
+        <field name="binding_model_id" ref="model_estate_contract"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="estate_contract_report" name="Estate Contract Report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2 t-field="o.name"/>
+                                <p class="text-muted mb-0" t-field="o.contract_ref_code"/>
+                            </div>
+                            <div class="col-6 text-end">
+                                <span class="badge rounded-pill text-bg-secondary" t-field="o.state"/>
+                            </div>
+                        </div>
+
+                        <hr class="mt-3 mb-4"/>
+
+                        <div class="row mb-4">
+                            <div class="col-4">
+                                <strong>Type</strong>
+                                <p class="mb-0" t-field="o.type_id"/>
+                            </div>
+                            <div class="col-4">
+                                <strong>Property</strong>
+                                <p class="mb-0" t-field="o.property_id"/>
+                            </div>
+                            <div class="col-4">
+                                <strong>Listing</strong>
+                                <p class="mb-0" t-field="o.listing_id"/>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-4">
+                                <strong>Expected Price</strong>
+                                <p class="mb-0" t-field="o.expected_price"/>
+                            </div>
+                            <div class="col-4">
+                                <strong>Price</strong>
+                                <p class="mb-0" t-field="o.price"/>
+                            </div>
+                            <div class="col-4" t-if="o.has_security_deposit">
+                                <strong>Security Deposit</strong>
+                                <p class="mb-0" t-field="o.security_deposit"/>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-3">
+                                <strong>Start Date</strong>
+                                <p class="mb-0" t-field="o.date_start"/>
+                            </div>
+                            <div class="col-3">
+                                <strong>End Date</strong>
+                                <p class="mb-0" t-field="o.date_end"/>
+                            </div>
+                            <div class="col-3">
+                                <strong>Duration (Days)</strong>
+                                <p class="mb-0" t-field="o.duration_days"/>
+                            </div>
+                            <div class="col-3">
+                                <strong>Days Left</strong>
+                                <p class="mb-0" t-field="o.days_left"/>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <strong>Seller</strong>
+                                <p class="mb-0" t-field="o.seller_id"/>
+                            </div>
+                            <div class="col-6">
+                                <strong>Agent</strong>
+                                <p class="mb-0" t-field="o.agent_id"/>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4" t-if="o.buyer_ids">
+                            <div class="col-12">
+                                <strong>Buyers</strong>
+                                <table class="table table-sm mt-2">
+                                    <thead>
+                                        <tr>
+                                            <th>Partner</th>
+                                            <th>Share</th>
+                                            <th>Notes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="o.buyer_ids" t-as="buyer">
+                                            <tr>
+                                                <td><span t-field="buyer.partner_id"/></td>
+                                                <td><span t-field="buyer.numerator"/>/<span t-field="buyer.denominator"/></td>
+                                                <td><span t-field="buyer.notes"/></td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4" t-if="o.tags_ids">
+                            <div class="col-12">
+                                <strong>Tags</strong>
+                                <p class="mb-0 mt-1">
+                                    <t t-foreach="o.tags_ids" t-as="tag">
+                                        <span class="badge text-bg-secondary me-1" t-field="tag.name"/>
+                                    </t>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4" t-if="o.description">
+                            <div class="col-12">
+                                <strong>Description</strong>
+                                <p class="mb-0" t-field="o.description"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

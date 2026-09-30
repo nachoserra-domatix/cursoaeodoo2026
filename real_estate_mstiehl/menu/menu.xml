@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <menuitem id="estate_menu_root" name="Real Estate" sequence="10"/>
+        <menuitem id="estate_menu_properties_root" name="Properties" parent="estate_menu_root" sequence="20"/>
+        <menuitem id="estate_menu_properties" action="estate_property_view_action" name="Properties" parent="estate_menu_properties_root" sequence="10"/>
+        <menuitem id="estate_menu_property_tickets" action="estate_property_ticket_view_action" name="Property Tickets" parent="estate_menu_properties_root" sequence="30"/>
+
+
+        <menuitem id="estate_menu_listing_root" name="Listings" parent="estate_menu_root" sequence="30"/>
+        <menuitem id="estate_menu_listing" action="estate_listing_view_action" name="Listings" parent="estate_menu_listing_root" sequence="10"/>
+        <menuitem id="estate_menu_offers" action="estate_listing_offer_view_action" name="Offers" parent="estate_menu_listing_root" sequence="15"/>
+        <menuitem id="estate_menu_visits" action="estate_property_visit_view_action" name="Visits" parent="estate_menu_listing_root" sequence="20"/>
+
+        <menuitem id="estate_menu_contracts" action="estate_contract_view_action" name="Contracts" parent="estate_menu_root" sequence="30"/>
+        <!-- Settings -->
+        <menuitem id="estate_menu_settings" name="Settings" parent="estate_menu_root" sequence="100"/>
+        <menuitem id="estate_menu_property_type" action="estate_property_type_view_action" name="Property Types" parent="estate_menu_settings" sequence="110"/>
+        <menuitem id="estate_menu_contract_type" action="estate_contract_type_view_action" name="Contract Type" parent="estate_menu_settings" sequence="120"/>
+        <menuitem id="estate_menu_tag" action="estate_tag_view_action" name="Tags" parent="estate_menu_settings" sequence="130"/>
+        <menuitem id="estate_menu_stage" action="estate_stage_view_action" name="Stage" parent="estate_menu_settings" sequence="140"/>
+        <menuitem id="estate_menu_stage_type" action="estate_stage_type_view_action" name="Stage Types" parent="estate_menu_settings" sequence="150"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!-- Property Types -->
+    <record id="property_type_apartment" model="estate.property.type">
+        <field name="name">Apartment</field>
+        <field name="code">apartment</field>
+    </record>
+    <record id="property_type_studio" model="estate.property.type">
+        <field name="name">Studio</field>
+        <field name="code">studio</field>
+    </record>
+    <record id="property_type_penthouse" model="estate.property.type">
+        <field name="name">Penthouse</field>
+        <field name="code">penthouse</field>
+    </record>
+    <record id="property_type_duplex" model="estate.property.type">
+        <field name="name">Duplex</field>
+        <field name="code">duplex</field>
+    </record>
+    <record id="property_type_loft" model="estate.property.type">
+        <field name="name">Loft</field>
+        <field name="code">loft</field>
+    </record>
+    <record id="property_type_house" model="estate.property.type">
+        <field name="name">House</field>
+        <field name="code">house</field>
+    </record>
+    <record id="property_type_townhouse" model="estate.property.type">
+        <field name="name">Townhouse</field>
+        <field name="code">townhouse</field>
+    </record>
+    <record id="property_type_villa" model="estate.property.type">
+        <field name="name">Villa</field>
+        <field name="code">villa</field>
+    </record>
+    <record id="property_type_country_house" model="estate.property.type">
+        <field name="name">Country House</field>
+        <field name="code">country_house</field>
+    </record>
+    <record id="property_type_commercial" model="estate.property.type">
+        <field name="name">Commercial Premises</field>
+        <field name="code">commercial</field>
+    </record>
+    <record id="property_type_office" model="estate.property.type">
+        <field name="name">Office</field>
+        <field name="code">office</field>
+    </record>
+    <record id="property_type_garage" model="estate.property.type">
+        <field name="name">Garage</field>
+        <field name="code">garage</field>
+    </record>
+    <record id="property_type_storage" model="estate.property.type">
+        <field name="name">Storage Room</field>
+        <field name="code">storage</field>
+    </record>
+    <record id="property_type_land" model="estate.property.type">
+        <field name="name">Land</field>
+        <field name="code">land</field>
+    </record>
+
+    <!-- Contract Types -->
+    <record id="contract_type_sale" model="estate.contract.type">
+        <field name="name">Sale</field>
+        <field name="code">sale</field>
+    </record>
+    <record id="contract_type_rent" model="estate.contract.type">
+        <field name="name">Long-Term Rent</field>
+        <field name="code">rent</field>
+    </record>
+    <record id="contract_type_seasonal_rent" model="estate.contract.type">
+        <field name="name">Seasonal Rent</field>
+        <field name="code">seasonal_rent</field>
+    </record>
+    <record id="contract_type_rent_to_own" model="estate.contract.type">
+        <field name="name">Rent to Own</field>
+        <field name="code">rent_to_own</field>
+    </record>
+    <record id="contract_type_transfer" model="estate.contract.type">
+        <field name="name">Business Transfer</field>
+        <field name="code">transfer</field>
+    </record>
+
+    <!-- Tags -->
+    <record id="tag_new_build" model="estate.tag">
+        <field name="name">New Build</field>
+        <field name="color">10</field>
+    </record>
+    <record id="tag_renovated" model="estate.tag">
+        <field name="name">Renovated</field>
+        <field name="color">4</field>
+    </record>
+    <record id="tag_needs_renovation" model="estate.tag">
+        <field name="name">Needs Renovation</field>
+        <field name="color">2</field>
+    </record>
+    <record id="tag_sea_view" model="estate.tag">
+        <field name="name">Sea View</field>
+        <field name="color">9</field>
+    </record>
+    <record id="tag_terrace" model="estate.tag">
+        <field name="name">Terrace</field>
+        <field name="color">3</field>
+    </record>
+    <record id="tag_pool" model="estate.tag">
+        <field name="name">Pool</field>
+        <field name="color">4</field>
+    </record>
+    <record id="tag_elevator" model="estate.tag">
+        <field name="name">Elevator</field>
+        <field name="color">7</field>
+    </record>
+    <record id="tag_parking" model="estate.tag">
+        <field name="name">Parking</field>
+        <field name="color">8</field>
+    </record>
+    <record id="tag_furnished" model="estate.tag">
+        <field name="name">Furnished</field>
+        <field name="color">5</field>
+    </record>
+    <record id="tag_pets_allowed" model="estate.tag">
+        <field name="name">Pets Allowed</field>
+        <field name="color">11</field>
+    </record>
+    <record id="tag_luxury" model="estate.tag">
+        <field name="name">Luxury</field>
+        <field name="color">6</field>
+    </record>
+    <record id="tag_exclusive" model="estate.tag">
+        <field name="name">Exclusive</field>
+        <field name="color">1</field>
+    </record>
+
+    <!-- Stage Types -->
+    <record id="stage_type_visit" model="estate.stage.type">
+        <field name="name">Visit</field>
+        <field name="code">visit</field>
+    </record>
+
+    <!-- Visit Stages -->
+    <record id="stage_visit_draft" model="estate.stage">
+        <field name="name">Draft</field>
+        <field name="code">draft</field>
+        <field name="sequence">10</field>
+        <field name="type_id" ref="stage_type_visit"/>
+    </record>
+    <record id="stage_visit_confirmed" model="estate.stage">
+        <field name="name">Confirmed</field>
+        <field name="code">confirmed</field>
+        <field name="sequence">20</field>
+        <field name="type_id" ref="stage_type_visit"/>
+    </record>
+    <record id="stage_visit_done" model="estate.stage">
+        <field name="name">Done</field>
+        <field name="code">done</field>
+        <field name="sequence">30</field>
+        <field name="type_id" ref="stage_type_visit"/>
+    </record>
+    <record id="stage_visit_canceled" model="estate.stage">
+        <field name="name">Canceled</field>
+        <field name="code">canceled</field>
+        <field name="sequence">40</field>
+        <field name="type_id" ref="stage_type_visit"/>
+    </record>
+
+</odoo>
