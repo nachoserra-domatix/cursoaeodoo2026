@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_realestate_offer_form" model="ir.ui.view">
+        <field name="name">view.realestate.offer.form</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <form string="Offer">
+                <header>
+                    <button name="action_draft" string="Return to draft" type="object" class="oe_highlight" invisible="status == 'D'"/>
+                    <button name="action_sent" string="Send" type="object" class="oe_highlight" invisible="status == 'S'"/>
+                    <button name="action_accepted" string="Accept" type="object" class="oe_highlight" invisible="status == 'A'"/>
+                    <button name="action_refused" string="Refuse" type="object" class="oe_highlight" invisible="status == 'R'"/>
+                    <button name="action_create_contract" string="Create Contract" type="object" class="btn-secondary" invisible="status != 'A'"/>
+                    <field name="status" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Accepted" bg_color="text-bg-success" invisible="status != 'A'"/>
+                    <group name="group_top">
+                        <group name="group_left">
+                            <p>
+                                Main data
+                            </p><br />
+                            <field name="property_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="category_id"/>
+                            <field name="partner_id"/>
+                            <field name="offer"/>
+                            
+                        </group>
+                        <group name="group_right">
+                            <p>
+                                Details
+                            </p><br />
+                            <field name="date"/>
+                            <field name="status"/>
+                            <field name="notes"/>
+                        </group>
+                    </group>
+                    <hr />
+
+                </sheet>
+            </form>    
+        </field>
+    </record>
+
+    <record id="view_realestate_offer_list" model="ir.ui.view">
+        <field name="name">view.realestate.offer.list</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <list string="offers">
+                <field name="property_id"/>
+                <field name="partner_id"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_realestate_offer_kanban" model="ir.ui.view">
+        <field name="name">view.realestate.offer.kanban</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="status" class="o_kanban_small_column">
+                <field name="offer"/>
+                <field name="property_id"/>
+                <field name="partner_id"/>
+                <field name="date"/>
+                <field name="status"/>
+                <templates>
+                    <t t-name="card">
+                        <field name="property_id" class="fw-bold fs-5"/>
+                        <field name="partner_id"/>
+                        <field name="date"/>
+                        <footer>
+                            <field name="offer" class="fw-bold"/>
+                        </footer>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_realestate_offer_pivot" model="ir.ui.view">
+        <field name="name">view.realestate.offer.pivot</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <pivot string="Offers">
+                <field name="status" type="row"/>
+                <field name="property_id" type="col"/>
+                <field name="offer" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_realestate_offer_graph" model="ir.ui.view">
+        <field name="name">view.realestate.offer.graph</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <graph string="Offers" type="bar">
+                <field name="status"/>
+                <field name="offer" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_realestate_offer_search" model="ir.ui.view">
+        <field name="name">view.realestate.offer.search</field>
+        <field name="model">realestate.offer</field>
+        <field name="arch" type="xml">
+            <search string="Filter offers">
+                <field name="property_id"/>
+                <field name="partner_id"/>
+                <filter name="sent" string="Sent" domain="[('status','=','S')]"/>
+                <filter name="accepted" string="Accepted" domain="[('status','=','A')]"/>
+                <filter name="refused" string="Refused" domain="[('status','=','R')]"/>
+                <separator/>
+                <filter name="group_by_property" string="Property" context="{'group_by':'property_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_realestate_offer_view" model="ir.actions.act_window">
+        <field name="name">Offers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">realestate.offer</field>
+        <field name="view_mode">list,kanban,pivot,graph,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Offers
+            </p>
+            <p>
+                Click 'New' to add new elements
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record id="realestate_visit_lot_create_action" model="ir.actions.act_window">
+    <field name="name">Visit lot create</field>
+    <field name="res_model">realestate.visit.lot.create</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+    <field name="binding_model_id" ref="real_estate_victor.model_realestate_property"/>
+    <field name="binding_view_types">form</field>
+</record>
+
+<record id="realestate_visit_lot_create_view_form" model="ir.ui.view">
+    <field name="name">realestate.visit.lot.create.view.form</field>
+    <field name="model">realestate.visit.lot.create</field>
+    <field name="arch" type="xml">
+        <form string="Visit lot create">
+            <group>
+                <field name="start_date" widget="daterange" options="{'end_date_field': 'end_date'}"/>
+                <field name="end_date" widget="daterange" invisible="1"/>
+            </group>
+            <footer>
+                <button string="Create visits" name="action_visit_lot_create" type="object" class="btn-primary"/>
+                <button string="Cancel" class="btn-secondary" special="cancel"/>
+            </footer>
+        </form>
+    </field>
+</record>
+</odoo>
