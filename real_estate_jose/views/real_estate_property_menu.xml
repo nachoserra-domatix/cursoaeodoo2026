@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="action_real_estate_property" model="ir.actions.act_window">
+        <field name="name">Properties</field>
+        <field name="res_model">real.estate.property</field>
+        <field name="view_mode">kanban,list,pivot,form</field>
+        <field name="search_view_id" ref="view_real_estate_property_search"/>
+    </record>
+
+    <menuitem
+        id="menu_real_estate_root"
+        name="Real Estate"
+        sequence="10"
+    />
+
+    <menuitem
+        id="menu_real_estate_property"
+        name="Properties"
+        parent="menu_real_estate_root"
+        action="action_real_estate_property"
+        sequence="10"
+    />
+
+    <menuitem
+            id="menu_real_estate_visit"
+            name="Visits"
+            parent="menu_real_estate_root"
+            action="action_real_estate_visit"
+            sequence="20"
+    />
+    <menuitem id="menu_real_estate_category"
+              name="Categories"
+              parent="menu_real_estate_root"
+              action="action_real_estate_category"
+              sequence="30"/>
+
+    <menuitem id="menu_real_estate_offer"
+              name="Offers"
+              parent="menu_real_estate_root"
+              action="action_real_estate_offer"
+              sequence="40"/>
+
+    <menuitem id="menu_real_estate_contract"
+              name="Contracts"
+              parent="menu_real_estate_root"
+              action="action_real_estate_contract"
+              sequence="50"/>
+
+    <menuitem id="menu_real_estate_property_stage"
+              name="Property Stages"
+              parent="menu_real_estate_root"
+              action="action_real_estate_property_stage"
+              sequence="60"/>
+
+</odoo>
