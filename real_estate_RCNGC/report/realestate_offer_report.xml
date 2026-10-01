@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    
+    <record id="report_realestate_offer_report" model="ir.actions.report">
+        <field name="name">Real Estate Offer</field>
+        <field name="model">realestate.offer</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">real_estate_RCNGC.realestate_offer_report</field>
+        <field name="report_file">real_estate_RCNGC.realestate_offer_report</field>
+        <field name="print_report_name">'Offer - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="real_estate_RCNGC.model_realestate_offer"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_realestate_offer"/>
+    </record>  
+
+    <template id="realestate_offer_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="offer">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 class="text-center">Real Estate Offer</h2>
+                        <!-- PARTIES -->
+                        <h4 class="mt-4">Parties</h4>
+                        <table class="table table-sm">
+                            <tbody>
+                                <tr>
+                                    <th>Property</th>
+                                    <td><span t-field="offer.property_id"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Buyer</th>
+                                    <td><span t-field="offer.partner_id"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- OFFER INFORMATION -->
+                        <h4 class="mt-4">Offer Information</h4>
+                        <table class="table table-sm">
+                            <tbody>
+                                <tr>
+                                    <th>Price</th>
+                                    <td><span t-field="offer.amount"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Date</th>
+                                    <td><span t-field="offer.date"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Status</th>
+                                    <td><span t-field="offer.state"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo> 

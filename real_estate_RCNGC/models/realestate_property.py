@@ -83,6 +83,11 @@ class RealEstateProperty(models.Model):
         string='Offers'
     )
 
+    contract_ids = fields.One2many(
+        comodel_name='realestate.contract',
+        inverse_name='property_id',
+        string='Contracts'
+    )
 
     # ---------------------------------------------------------------------------------------    
     # Computed fields
@@ -104,6 +109,10 @@ class RealEstateProperty(models.Model):
         compute='_compute_incident_count',
     )
 
+    contract_count = fields.Integer(
+        string="Contract Count",
+        compute='_compute_contract_count',
+    )
 
     # ---------------------------------------------------------------------------------------
     # Compute methods
@@ -130,6 +139,10 @@ class RealEstateProperty(models.Model):
     def _compute_incident_count(self):
         for property in self:
             property.incident_count = len(property.incident_ids)
+
+    def _compute_contract_count(self):
+        for property in self:
+            property.contract_count = len(property.contract_ids)
 
   
     # ---------------------------------------------------------------------------------------
@@ -196,6 +209,16 @@ class RealEstateProperty(models.Model):
             'type': 'ir.actions.act_window',    
             'name': 'Incidents',
             'res_model': 'realestate.property.incident',
+            'view_mode': 'list,form',   
+            'domain': [('property_id', '=', self.id)],
+            'context': {'default_property_id': self.id},
+        }
+
+    def action_open_contracts(self):    
+        return {    
+            'type': 'ir.actions.act_window',    
+            'name': 'Contracts',
+            'res_model': 'realestate.contract',
             'view_mode': 'list,form',   
             'domain': [('property_id', '=', self.id)],
             'context': {'default_property_id': self.id},
