@@ -31,6 +31,7 @@
                 <field name="price" optional="show"/>
                 <field name="availability" widget="boolean_toggle" optional="show"/>
                 <field name="stage_id" optional="show"/>
+                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="user_id" widget="many2one_avatar_user" optional="show"/>
             </list>
         </field>
@@ -124,6 +125,7 @@
                             <field name="availability" widget="boolean_toggle"/>
                             <field name="next_visit_date"/>
                             <field name="user_id" widget="many2one_avatar_user"/>
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                             <field name="company_id"/>
                         </group>
                     </group>

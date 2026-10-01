@@ -55,6 +55,13 @@ class RealEstateProperty(models.Model):
         default=lambda self: self.env.company.id
     )   
 
+    tag_ids = fields.Many2many(
+        comodel_name='realestate.property.tag',
+        relation='realestate_property_tag_rel',
+        column1='property_id',
+        column2='tag_id',
+        string='Tags'
+    )   
 
     # ---------------------------------------------------------------------------------------
     # Relations O2M (One2many)

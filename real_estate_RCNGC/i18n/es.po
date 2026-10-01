@@ -17,13 +17,13 @@ msgstr ""
 
 #. module: real_estate_RCNGC
 #: model:ir.actions.report,print_report_name:real_estate_RCNGC.realestate_contract_report
-msgid "'Contract - %s' % (object.name)"
-msgstr "'Contrato - %s' % (object.name)"
+msgid "'Contract - %s' % (object.property_id.name)"
+msgstr "'Contrato - %s' % (object.property_id.name)"
 
 #. module: real_estate_RCNGC
 #: model:ir.actions.report,print_report_name:real_estate_RCNGC.report_realestate_offer_report
-msgid "'Offer - %s' % (object.name)"
-msgstr "'Oferta - %s' % (object.name)"
+msgid "'Offer - %s' % (object.property_id.name)"
+msgstr "'Oferta - %s' % (object.property_id.name)"
 
 #. module: real_estate_RCNGC
 #: model:ir.actions.report,print_report_name:real_estate_RCNGC.realestate_properties_simple_report
