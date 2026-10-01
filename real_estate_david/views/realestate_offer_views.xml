@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <!-- Action -->
+   <record id="realestate_offer_action" model="ir.actions.act_window">
+      <field name="name">Offers</field>
+      <field name="path">offers</field>
+      <field name="res_model">realestate.offer</field>
+      <field name="view_mode">list,calendar,kanban,graph,pivot,form</field>
+      <field name="help" type="html">
+         <p class="o_view_nocontent_smiling_face">Create a new offer</p>
+         <p>Fill in the details of the offer you want to create.</p>
+      </field>
+   </record>
+
+   <!-- List View -->
+   <record id="realestate_offer_list_view" model="ir.ui.view">
+      <field name="name">realestate.offer.list</field>
+      <field name="model">realestate.offer</field>
+      <field name="arch" type="xml">
+         <list string="Offers" multi_edit="1">
+            <field name="property_id" />
+            <field name="date"  optional="show" />
+            <field name="partner_id" />
+            <field name="amount" optional="show" />
+            <field name="state" optional="show" />
+         </list>
+      </field>
+   </record>
+
+   <!-- Form View -->
+   <record id="realestate_offer_form_view" model="ir.ui.view">
+      <field name="name">realestate.offer.form</field>
+      <field name="model">realestate.offer</field>
+      <field name="arch" type="xml">
+         <form string="Offer">
+            <header>
+               <button name="action_draft" string="Draft" type="object" invisible="state == 'draft'" class="btn-secondary"/>
+               <button name="action_send" string="Send" type="object" invisible="state != 'draft'" class="btn-success"/>
+               <button name="action_accept" string="Accept" type="object" invisible="state not in('draft','sent')" class="btn-primary"/>
+               <button name="action_refuse" string="Refuse" type="object" invisible="state not in('draft','sent')" class="btn-danger"/>
+               <button name="action_create_contract" string="Create contract" type="object" invisible="state!='accepted'"></button>
+
+               <field name="state" widget="statusbar"/>
+            </header>
+            <sheet>
+               <group>
+                  <group>
+                     <field name="property_id" domain="[('availability', '=', True)]" options="{'no_open':True,'no_create':True}"/>
+                     <field name="category_id" />
+                     <field name="partner_id" />
+                  </group>
+                  <group>
+                     <field name="amount" />
+                     <field name="date" />
+                  </group>
+               </group>
+               <notebook>
+                  <page name="note" string="Additional Information">
+                     <field name="note" />
+                  </page>
+               </notebook>
+            </sheet>
+         </form>
+      </field>
+   </record>
+
+   <!-- Calendar View -->
+   <record id="realestate_offer_calendar_view" model="ir.ui.view">
+      <field name="name">realestate.offer.calendar</field>
+      <field name="model">realestate.offer</field>
+      <field name="arch" type="xml">
+         <calendar string="Offers" date_start="date" color="partner_id">
+            <field name="property_id"/>
+            <field name="partner_id"/>
+            <field name="state"/>
+         </calendar>
+      </field>
+   </record>
+
+   <!-- Kanban View -->
+   <record id="realestate_offer_kanban_view" model="ir.ui.view">
+      <field name="name">realestate.offer.kanban</field>
+      <field name="model">realestate.offer</field>
+      <field name="arch" type="xml">
+         <kanban default_group_by="state">
+            <templates>
+               <t t-name="menu">
+                  <t t-if="widget.editable"><a role="menuitem" type="open" class="dropdown-item">Edit</a></t>
+                  <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+               </t>
+               <t t-name="card">
+                  <field name="amount" class="fw-bold"/>
+                  <field name="property_id" />
+                  <field name="date" />
+                  <footer>
+                     <field name="partner_id" widget="many2one_avatar_user" class="ms-auto"/>
+                  </footer>
+               </t>
+            </templates>
+         </kanban>
+      </field>
+   </record>
+
+   <!-- Pivot View -->
+    <record id="realestate_offer_pivot_view" model="ir.ui.view">
+      <field name="name">realestate.offer.pivot</field>
+      <field name="model">realestate.offer</field>
+      <field name="arch" type="xml">
+         <pivot>
+            <field name="state" type="row"/>
+            <field name="property_id" type="col"/>
+            <field name="amount" type="measure"/>
+         </pivot>
+      </field>
+   </record>
+
+   <!-- Graph View -->
+   <record id="realestate_offer_graph_view" model="ir.ui.view">
+      <field name="name">realestate.offer.graph</field>
+      <field name="model">realestate.offer</field>
+      <field name="arch" type="xml">
+         <graph>
+            <field name="state" type="row"/>
+            <field name="amount" type="measure"/>
+         </graph>
+      </field>
+   </record>
+
+   <!-- Search View -->
+   <record id="realestate_offer_search_view" model="ir.ui.view">
+      <field name="name">realestate.offer.search</field>
+      <field name="model">realestate.offer</field>
+      <field name="arch" type="xml">
+         <search>
+            <filter name="sent" string="Sent" domain="[('state', '=', 'sent')]" />
+            <filter name="accepted" string="Accepted" domain="[('state', '=', 'accepted')]" />
+            <filter name="refused" string="Refused" domain="[('state', '=', 'refused')]" />
+
+            <filter name="group_by_property" string="Property" context="{'group_by': 'property_id'}" />
+         </search>
+      </field>
+   </record>
+</odoo>

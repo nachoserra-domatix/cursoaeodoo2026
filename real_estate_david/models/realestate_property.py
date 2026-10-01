@@ -1,0 +1,171 @@
+from odoo import models, fields, api
+
+class RealEstateProperty(models.Model):
+   _name = 'realestate.property'
+   _description = 'Property'
+   
+   name = fields.Char(string='Name', required=True)
+   
+   description = fields.Text(string='Description')
+   
+   active = fields.Boolean(string="Active", default=True)
+   
+   price = fields.Monetary(string='Price', currency_field='currency_id')
+   
+   currency_id = fields.Many2one(
+      comodel_name='res.currency',
+      string='Currency',
+      default=lambda self:self.env.user.id
+   )
+   
+   reference = fields.Char(string='Reference', copy=False)
+   
+   availability = fields.Boolean(string="Availability", default=True)
+   
+   user_id = fields.Many2one(
+      comodel_name='res.users', 
+      string='User',
+      default=lambda self: self.env.user.id
+   )
+   
+   category_id = fields.Many2one(
+      comodel_name='realestate.category', 
+      string='Category'
+   )
+   
+   stage_id = fields.Many2one(
+      comodel_name='realestate.property.stage',
+      string='Stage',
+      group_expand='_read_group_stage_ids'
+   )
+   
+   image_ids = fields.One2many(
+      comodel_name='realestate.property.image',
+      inverse_name='property_id', 
+      string='Images'
+   )
+   
+   visit_ids = fields.One2many(
+      comodel_name='realestate.visit',
+      inverse_name='property_id',
+      string='Visits'
+   )
+
+   incident_ids = fields.One2many(
+      comodel_name='realestate.property.incident',
+      inverse_name='property_id',
+      string='Incidents'
+   )
+
+   offers_ids = fields.One2many(
+      comodel_name='realestate.offer',
+      inverse_name='property_id',
+      string='Offers',
+   )
+   
+   internal_note = fields.Text(string='Internal note', company_dependent = True)
+   
+   company_id = fields.Many2one(
+      comodel_name='res.company',
+      string='Company',
+      default = lambda self: self.env.company.id
+   )
+
+   next_visit_date = fields.Datetime(string='Next visit date', compute='_next_visit_date', inverse="_inverse_next_visit_day", store=True)
+   
+   color = fields.Integer(string='Color')
+   
+   visit_count = fields.Integer(string='Visit count', compute='_compute_visit_count')
+   
+   incident_count = fields.Integer(string='Incident count', compute='_compute_incident_count')
+   
+   _reference_uniq = models.Constraint(
+      'UNIQUE(reference)', 
+      'The property reference must be unique'
+   )
+   
+   def action_reserve(self):
+      self.availability = False
+      
+   def _read_group_stage_ids(self, stages, domain):
+      return self.env['realestate.property.stage'].search([], order='sequence')
+   
+   def action_create_visit(self):
+      vals = {
+         'property_id': self.id,
+         'date': fields.Datetime.now(),
+         'user_id': self.user_id.id,
+      }
+      self.env['realestate.visit'].create(vals)
+      
+   def action_accept_best_offer(self):
+      best_offer = self.env['realestate.offer'].search([('property_id', '=', self.id),('state','=','sent')], order='amount desc', limit=1)
+      if best_offer:
+         best_offer.action_accept()
+            
+   def action_deleted_refused_offers(self):
+      refused_offers = self.env['realestate.offer'].search([('property_id', '=', self.id),('state','=','refused')])
+      refused_offers.unlink()
+      
+   def action_create_offer(self):
+      vals = {
+         'property_id':self.id,
+         'amount':self.price,
+      }
+      offer = self.env['realestate.offer'].create(vals)
+      offer.action_send()
+
+   def action_cancel_visits(self):
+      pending_visits = self.env['realestate.visit'].search([
+        ('property_id', '=', self.id),
+        ('state', 'in', ['draft', 'scheduled']),
+      ])
+      pending_visits.write({'state': 'canceled'})
+
+      
+   @api.depends('visit_ids.date', 'visit_ids.state')
+   def _next_visit_date(self):
+      for record in self:
+         # next_visit = self.env['realestate.visit'].search([('property_id','=',record.id),('state','=','scheduled')], order='date asc', limit=1)
+         # record.next_visit_date = next_visit.date
+
+         scheduled_visits = record.visit_ids.filtered(lambda visit: visit.state == 'scheduled' and visit.date)
+         visit_dates = scheduled_visits.mapped('date')
+         record.next_visit_date = min(visit_dates) if visit_dates else False
+   
+   def _inverse_next_visit_day(self):
+      for record in self:
+         if record.next_visit_date:
+            scheduled_visits = record.visit_ids.filtered(lambda visit: visit.state == 'scheduled')
+            if scheduled_visits:
+               scheduled_visits[0].date = record.next_visit_date
+         
+   def _compute_visit_count(self):
+      for record in self:
+         record.visit_count = len(record.visit_ids)
+         
+   def _compute_incident_count(self):
+      for record in self:
+         record.incident_count = len(record.incident_ids)
+   
+   # Smart button
+   def action_open_visits(self):
+      return {
+         'type': 'ir.actions.act_window',
+         'name':'Visits',
+         'res_model':'realestate.visit',
+         'view_mode':'list,form',
+         'domain':[('property_id','=',self.id)],
+         'context':{'default_property_id':self.id}
+      }
+   
+   def action_open_incidents(self):
+      return {
+         'type': 'ir.actions.act_window',
+         'name':'Incidents',
+         'res_model':'realestate.property.incident',
+         'view_mode':'list,form',
+         'domain':[('property_id','=',self.id)],
+         'context':{'default_property_id':self.id}
+      }
+
