@@ -6,14 +6,49 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-24 18:41+0000\n"
-"PO-Revision-Date: 2026-09-24 18:41+0000\n"
+"POT-Creation-Date: 2026-10-01 14:52+0000\n"
+"PO-Revision-Date: 2026-10-01 14:52+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: real_estate_RCNGC
+#: model:ir.actions.report,print_report_name:real_estate_RCNGC.realestate_contract_report
+msgid "'Contract - %s' % (object.name)"
+msgstr "'Contrato - %s' % (object.name)"
+
+#. module: real_estate_RCNGC
+#: model:ir.actions.report,print_report_name:real_estate_RCNGC.report_realestate_offer_report
+msgid "'Offer - %s' % (object.name)"
+msgstr "'Oferta - %s' % (object.name)"
+
+#. module: real_estate_RCNGC
+#: model:ir.actions.report,print_report_name:real_estate_RCNGC.realestate_properties_simple_report
+msgid "'Properties Summary'"
+msgstr "'Resumen de propiedades'"
+
+#. module: real_estate_RCNGC
+#: model:ir.actions.report,print_report_name:real_estate_RCNGC.realestate_property_report
+msgid "'Real Estate Property - %s' % (object.reference)"
+msgstr "'Propiedad inmobiliaria - %s' % (object.reference)"
+
+#. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_property
+msgid "<strong>Category:</strong>"
+msgstr "<strong>Categoría:</strong>"
+
+#. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_property
+msgid "<strong>Price:</strong>"
+msgstr "<strong>Precio:</strong>"
+
+#. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_property
+msgid "<strong>Reference:</strong>"
+msgstr "<strong>Referencia:</strong>"
 
 #. module: real_estate_RCNGC
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_form_view
@@ -27,8 +62,15 @@ msgstr "Aceptar la mejor oferta"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_offer__state__accepted
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_search_view
 msgid "Accepted"
 msgstr "Aceptada"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_category__active
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__active
+msgid "Active"
+msgstr "Activo"
 
 #. module: real_estate_RCNGC
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_form_view
@@ -41,6 +83,11 @@ msgid "Amount"
 msgstr "Importe"
 
 #. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_incident__user_id
+msgid "Assigned to"
+msgstr "Asignado a"
+
+#. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__availability
 msgid "Availability"
 msgstr "Disponible"
@@ -51,12 +98,26 @@ msgid "Available"
 msgstr "Disponible"
 
 #. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_report
+msgid "Buyer"
+msgstr "Comprador"
+
+#. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_change_stage_wizard
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_schedule_visits_wizard
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_visit_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.view_realestate_visit_change_state_form
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_form_view
+msgid "Cancel Pending Visits"
+msgstr "Cancelar visitas pendientes"
+
+#. module: real_estate_RCNGC
 #: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_visit__state__canceled
+#: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_visit_change_state__state__canceled
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_visit_form_view
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_visit_kanban_view
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_visit_search_view
@@ -76,15 +137,55 @@ msgid "Categories"
 msgstr "Categorías"
 
 #. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_offer__category_id
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__category_id
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_category_form
 msgid "Category"
 msgstr "Categoría"
 
 #. module: real_estate_RCNGC
+#: model:ir.model,name:real_estate_RCNGC.model_realestate_property_change_stage
+msgid "Change Property Stage"
+msgstr "Cambiar etapa de la propiedad"
+
+#. module: real_estate_RCNGC
+#: model:ir.actions.act_window,name:real_estate_RCNGC.realestate_property_change_stage_action
+msgid "Change Stage"
+msgstr "Cambiar etapa"
+
+#. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_change_stage_wizard
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.view_realestate_visit_change_state_form
+msgid "Change State"
+msgstr "Cambiar estado"
+
+#. module: real_estate_RCNGC
+#: model:ir.actions.act_window,name:real_estate_RCNGC.action_realestate_visit_change_state
+#: model:ir.model,name:real_estate_RCNGC.model_realestate_visit_change_state
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.view_realestate_visit_change_state_form
+msgid "Change State of Real Estate Visit"
+msgstr "Cambiar estado de la visita inmobiliaria"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_property_incident__state__closed
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_offer__color
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__color
 msgid "Color"
 msgstr "Color"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_change_stage_wizard
+msgid "Confirm"
+msgstr "Confirmar"
 
 #. module: real_estate_RCNGC
 #: model:ir.model,name:real_estate_RCNGC.model_realestate_contract
@@ -93,19 +194,37 @@ msgid "Contract"
 msgstr "Contrato"
 
 #. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__contract_count
+msgid "Contract Count"
+msgstr "Número de contratos"
+
+#. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_contract
+msgid "Contract Information"
+msgstr "Información del contrato"
+
+#. module: real_estate_RCNGC
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_contract_form_view
 msgid "Contract Name"
 msgstr "Nombre del contrato"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__contract_type
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_contract
 msgid "Contract Type"
 msgstr "Tipo de contrato"
 
 #. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__contract_ids
 #: model:ir.ui.menu,name:real_estate_RCNGC.realestate_menu_contracts
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_form_view
 msgid "Contracts"
 msgstr "Contratos"
+
+#. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_form_view
+msgid "Create Contract"
+msgstr "Crear contrato"
 
 #. module: real_estate_RCNGC
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_form_view
@@ -137,8 +256,13 @@ msgstr "Crear una nueva visita"
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__create_uid
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_offer__create_uid
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__create_uid
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_change_stage__create_uid
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_image__create_uid
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_incident__create_uid
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_schedule_visits__create_uid
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_stage__create_uid
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit__create_uid
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit_change_state__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
@@ -147,15 +271,37 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__create_date
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_offer__create_date
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__create_date
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_change_stage__create_date
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_image__create_date
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_incident__create_date
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_schedule_visits__create_date
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_stage__create_date
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit__create_date
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit_change_state__create_date
 msgid "Created on"
 msgstr "Creado el"
 
 #. module: real_estate_RCNGC
+#: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_property_incident__incident_priority__critical
+msgid "Critical"
+msgstr "Crítica"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_offer__date
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_report
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_property
 msgid "Date"
 msgstr "Fecha"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_incident__date_time_reported
+msgid "Date Time Reported"
+msgstr "Fecha y hora del reporte"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__days_in_progress
@@ -168,6 +314,7 @@ msgid "Days to End"
 msgstr "Días hasta la finalización"
 
 #. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_kanban_view
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_kanban_view
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_visit_kanban_view
 msgid "Delete"
@@ -180,12 +327,16 @@ msgstr "Eliminar ofertas rechazadas"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__deposit
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_contract
 msgid "Deposit"
 msgstr "Fianza"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_category__description
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__description
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_image__description
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_incident__description
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_property
 msgid "Description"
 msgstr "Descripción"
 
@@ -194,14 +345,20 @@ msgstr "Descripción"
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__display_name
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_offer__display_name
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__display_name
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_change_stage__display_name
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_image__display_name
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_incident__display_name
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_schedule_visits__display_name
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_stage__display_name
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit__display_name
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit_change_state__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_contract__state__done
 #: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_visit__state__done
+#: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_visit_change_state__state__done
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_visit_form_view
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_visit_search_view
 msgid "Done"
@@ -221,6 +378,7 @@ msgid "Duration (Days)"
 msgstr "Duración (días)"
 
 #. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_kanban_view
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_kanban_view
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_visit_kanban_view
 msgid "Edit"
@@ -228,6 +386,8 @@ msgstr "Editar"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__end_date
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_schedule_visits__end_date
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_contract
 msgid "End Date"
 msgstr "Fecha de finalización"
 
@@ -260,14 +420,68 @@ msgid "Has Deposit"
 msgstr "Tiene depósito"
 
 #. module: real_estate_RCNGC
+#: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_property_incident__incident_priority__high
+msgid "High"
+msgstr "Alta"
+
+#. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_category__id
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__id
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_offer__id
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__id
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_change_stage__id
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_image__id
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_incident__id
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_schedule_visits__id
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_stage__id
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit__id
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit_change_state__id
 msgid "ID"
 msgstr "ID"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_image__image
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_property
+msgid "Image"
+msgstr "Imagen"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_image__name
+msgid "Image Name"
+msgstr "Nombre de la imagen"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__image_ids
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_property
+msgid "Images"
+msgstr "Imágenes"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_property_incident__state__in_progress
+msgid "In Progress"
+msgstr "En progreso"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__incident_count
+msgid "Incident Count"
+msgstr "Número de incidencias"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_incident__name
+msgid "Incident Name"
+msgstr "Nombre de la incidencia"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_incident__incident_priority
+msgid "Incident Priority"
+msgstr "Prioridad de la incidencia"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__incident_ids
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_form_view
+msgid "Incidents"
+msgstr "Incidencias"
 
 #. module: real_estate_RCNGC
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_form_view
@@ -275,12 +489,23 @@ msgid "Information"
 msgstr "Información"
 
 #. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__internal_note
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_form_view
+msgid "Internal Note"
+msgstr "Nota interna"
+
+#. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_category__write_uid
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__write_uid
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_offer__write_uid
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__write_uid
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_change_stage__write_uid
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_image__write_uid
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_incident__write_uid
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_schedule_visits__write_uid
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_stage__write_uid
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit__write_uid
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit_change_state__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
 
@@ -289,10 +514,20 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__write_date
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_offer__write_date
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__write_date
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_change_stage__write_date
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_image__write_date
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_incident__write_date
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_schedule_visits__write_date
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_stage__write_date
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit__write_date
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit_change_state__write_date
 msgid "Last Updated on"
 msgstr "Última actualización el"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_property_incident__incident_priority__low
+msgid "Low"
+msgstr "Baja"
 
 #. module: real_estate_RCNGC
 #: model:res.groups,name:real_estate_RCNGC.group_real_estate_manager
@@ -300,11 +535,37 @@ msgid "Manager"
 msgstr "Responsable"
 
 #. module: real_estate_RCNGC
+#: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_property_incident__incident_priority__medium
+msgid "Medium"
+msgstr "Media"
+
+#. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_category__name
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__name
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__name
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_properties_simple
 msgid "Name"
 msgstr "Nombre"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_property_incident__state__new
+msgid "New"
+msgstr "Nueva"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__next_visit_date
+msgid "Next Visit Date"
+msgstr "Fecha de la próxima visita"
+
+#. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_property
+msgid "No images available."
+msgstr "No hay imágenes disponibles."
+
+#. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_property
+msgid "No visits available."
+msgstr "No hay visitas disponibles."
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_offer__note
@@ -318,12 +579,27 @@ msgid "Offer"
 msgstr "Oferta"
 
 #. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_report
+msgid "Offer Information"
+msgstr "Información de la oferta"
+
+#. module: real_estate_RCNGC
 #: model:ir.actions.act_window,name:real_estate_RCNGC.realestate_offer_action
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__offer_ids
 #: model:ir.ui.menu,name:real_estate_RCNGC.realestate_menu_offers
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_calendar_view
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_graph_view
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_list_view
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_pivot_view
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_form_view
 msgid "Offers"
 msgstr "Ofertas"
+
+#. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_report
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_contract
+msgid "Parties"
+msgstr "Partes"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__partner_id
@@ -332,17 +608,25 @@ msgid "Partner"
 msgstr "Contacto"
 
 #. module: real_estate_RCNGC
+#: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_visit_change_state__state__pending
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit__personal_email
 msgid "Personal Email"
 msgstr "Correo electrónico personal"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit__phone
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_property
 msgid "Phone"
 msgstr "Teléfono"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__price
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_report
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_properties_simple
 msgid "Price"
 msgstr "Precio"
 
@@ -359,14 +643,30 @@ msgid "Properties"
 msgstr "Propiedades"
 
 #. module: real_estate_RCNGC
+#: model:ir.actions.report,name:real_estate_RCNGC.realestate_properties_simple_report
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_properties_simple
+msgid "Properties Summary"
+msgstr "Resumen de propiedades"
+
+#. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__property_id
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_offer__property_id
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_image__property_id
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_incident__property_id
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit__property_id
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_report
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_search_view
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_form_view
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_search_view
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_visit_search_view
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_contract
 msgid "Property"
 msgstr "Propiedad"
+
+#. module: real_estate_RCNGC
+#: model:ir.model,name:real_estate_RCNGC.model_realestate_property_incident
+msgid "Property Incident"
+msgstr "Incidencia de la propiedad"
 
 #. module: real_estate_RCNGC
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_form_view
@@ -386,14 +686,36 @@ msgid "Real Estate Category"
 msgstr "Categoría inmobiliaria"
 
 #. module: real_estate_RCNGC
+#: model:ir.actions.report,name:real_estate_RCNGC.realestate_contract_report
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_contract
+msgid "Real Estate Contract"
+msgstr "Contrato inmobiliario"
+
+#. module: real_estate_RCNGC
 #: model:res.groups,comment:real_estate_RCNGC.group_real_estate_manager
 msgid "Real Estate Manager Group"
 msgstr "Grupo de responsables de la inmobiliaria"
 
 #. module: real_estate_RCNGC
+#: model:ir.actions.report,name:real_estate_RCNGC.report_realestate_offer_report
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_report
+msgid "Real Estate Offer"
+msgstr "Oferta inmobiliaria"
+
+#. module: real_estate_RCNGC
 #: model:ir.model,name:real_estate_RCNGC.model_realestate_property
 msgid "Real Estate Property"
 msgstr "Propiedad"
+
+#. module: real_estate_RCNGC
+#: model:ir.model,name:real_estate_RCNGC.model_realestate_property_image
+msgid "Real Estate Property Image"
+msgstr "Imagen de la propiedad inmobiliaria"
+
+#. module: real_estate_RCNGC
+#: model:ir.actions.report,name:real_estate_RCNGC.realestate_property_report
+msgid "Real Estate Property Report"
+msgstr "Informe de la propiedad inmobiliaria"
 
 #. module: real_estate_RCNGC
 #: model:ir.model,name:real_estate_RCNGC.model_realestate_property_stage
@@ -406,7 +728,18 @@ msgid "Real Estate User Group"
 msgstr "Grupo de usuarios de la inmobiliaria"
 
 #. module: real_estate_RCNGC
+#: model:ir.actions.server,name:real_estate_RCNGC.realstate_contract_finish_cron_ir_actions_server
+msgid "Real Estate: Contract Finish"
+msgstr "Inmobiliaria: finalización del contrato"
+
+#. module: real_estate_RCNGC
+#: model:ir.actions.server,name:real_estate_RCNGC.realestate_visit_finish_cron_ir_actions_server
+msgid "Real Estate: Visit Finish"
+msgstr "Inmobiliaria: finalización de la visita"
+
+#. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__reference
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_properties_simple
 msgid "Reference"
 msgstr "Referencia"
 
@@ -417,12 +750,14 @@ msgstr "Rechazar"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_offer__state__refused
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_search_view
 msgid "Refused"
 msgstr "Rechazada"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__rent
 #: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_contract__contract_type__rent
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_contract
 msgid "Rent"
 msgstr "Alquiler"
 
@@ -445,14 +780,31 @@ msgid "Reset to Draft"
 msgstr "Restablecer a borrador"
 
 #. module: real_estate_RCNGC
+#: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_property_incident__state__resolved
+msgid "Resolved"
+msgstr "Resuelta"
+
+#. module: real_estate_RCNGC
 #: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_contract__contract_type__sale
 msgid "Sale"
 msgstr "Venta"
 
 #. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_schedule_visits_wizard
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_visit_form_view
 msgid "Schedule"
 msgstr "Programar"
+
+#. module: real_estate_RCNGC
+#: model:ir.actions.act_window,name:real_estate_RCNGC.realestate_property_schedule_visits_action
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_schedule_visits_wizard
+msgid "Schedule Visits"
+msgstr "Programar visitas"
+
+#. module: real_estate_RCNGC
+#: model:ir.model,name:real_estate_RCNGC.model_realestate_property_schedule_visits
+msgid "Schedule Visits for Real Estate Property"
+msgstr "Programar visitas para la propiedad inmobiliaria"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_visit__state__scheduled
@@ -467,10 +819,14 @@ msgstr "Enviar"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields.selection,name:real_estate_RCNGC.selection__realestate_offer__state__sent
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_search_view
 msgid "Sent"
 msgstr "Enviada"
 
 #. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_offer__sequence
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_image__sequence
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_incident__sequence
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_stage__sequence
 msgid "Sequence"
 msgstr "Secuencia"
@@ -497,6 +853,8 @@ msgstr "Marcar en curso"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__stage_id
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_change_stage__stage_id
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_properties_simple
 msgid "Stage"
 msgstr "Etapa"
 
@@ -507,16 +865,54 @@ msgstr "Nombre de la etapa"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__start_date
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_schedule_visits__start_date
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_contract
 msgid "Start Date"
 msgstr "Fecha de inicio"
 
 #. module: real_estate_RCNGC
+#. odoo-python
+#: code:addons/real_estate_RCNGC/models/realestate_contract.py:0
+msgid "Start date must be before end date."
+msgstr "La fecha de inicio debe ser anterior a la fecha de finalización."
+
+#. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_contract__state
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_offer__state
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property_incident__state
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit__state
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit_change_state__state
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_visit_search_view
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_contract
 msgid "State"
 msgstr "Estado"
+
+#. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_offer_report
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_property
+msgid "Status"
+msgstr "Estado"
+
+#. module: real_estate_RCNGC
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_contract
+msgid "Tenant / Buyer"
+msgstr "Inquilino / Comprador"
+
+#. module: real_estate_RCNGC
+#: model:ir.model.constraint,message:real_estate_RCNGC.constraint_realestate_contract_contract_name_uniq
+msgid "The contract name must be unique."
+msgstr "El nombre del contrato debe ser único."
+
+#. module: real_estate_RCNGC
+#. odoo-python
+#: code:addons/real_estate_RCNGC/models/realestate_offer.py:0
+msgid "The offer amount must be positive."
+msgstr "El importe de la oferta debe ser positivo."
+
+#. module: real_estate_RCNGC
+#: model:ir.model.constraint,message:real_estate_RCNGC.constraint_realestate_property_reference_uniq
+msgid "The reference must be unique."
+msgstr "La referencia debe ser única."
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_offer__user_id
@@ -533,19 +929,28 @@ msgid "Visit"
 msgstr "Visita"
 
 #. module: real_estate_RCNGC
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__visit_count
+msgid "Visit Count"
+msgstr "Número de visitas"
+
+#. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit__date
 msgid "Visit Date"
 msgstr "Fecha de la visita"
 
 #. module: real_estate_RCNGC
 #: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_visit__partner_id
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_property
 msgid "Visitor"
 msgstr "Visitante"
 
 #. module: real_estate_RCNGC
 #: model:ir.actions.act_window,name:real_estate_RCNGC.realestate_visit_action
+#: model:ir.model.fields,field_description:real_estate_RCNGC.field_realestate_property__visit_ids
 #: model:ir.ui.menu,name:real_estate_RCNGC.realestate_menu_visits
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_property_form_view
 #: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.realestate_visit_calendar_view
+#: model_terms:ir.ui.view,arch_db:real_estate_RCNGC.report_realestate_property
 msgid "Visits"
 msgstr "Visitas"
 
