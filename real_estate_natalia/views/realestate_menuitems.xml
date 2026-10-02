@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="realestate_menu_root" name="Real Estate" web_icon="real_estate_natalia,static/description/icon_256.png"/>
+    <menuitem
+        id="realestate_menu_properties"
+        name="Properties"
+        parent="realestate_menu_root"
+        action="realestate_property_action"/>
+
+    <menuitem
+        id="realestate_menu_tags"
+        name="Tags"
+        action="realestate_property_tag_action"
+        parent="realestate_menu_root"/>
+
+    <menuitem
+        id="realestate_menu_visits"
+        name="Visits"
+        parent="realestate_menu_root"
+        action="realestate_visit_action"/>
+
+    <menuitem
+        id="realestate_menu_categories"
+        name="Categories"
+        parent="realestate_menu_root"
+        action="realestate_category_action"/>    
+    
+    <menuitem
+        id="realestate_menu_offers"
+        name="Offers"
+        parent="realestate_menu_root"
+        action="realestate_offer_action"/>
+
+    <menuitem
+        id="realestate_menu_contracts"
+        name="Contracts"
+        parent="realestate_menu_root"
+        action="realestate_contract_action"/>
+
+</odoo>
