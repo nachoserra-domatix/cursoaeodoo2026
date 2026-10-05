@@ -25,6 +25,8 @@ class RealEstateProperty(models.Model):
         string="Salesperson",
     )
     category_id = fields.Many2one('real.estate.category', string='Category')
+    agent_id = fields.Many2one('real.estate.agent', string='Agent')
+    owner_id = fields.Many2one('real.estate.owner', string='Owner')
     stage_id = fields.Many2one(
         'real.estate.property.stage',
         string='Stage',

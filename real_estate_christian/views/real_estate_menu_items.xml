@@ -8,5 +8,7 @@
         <menuitem id="real_estate_menu_incidences" name="Incidences" parent="real_estate_menu_root" action="real_estate_property_incidence_action"/>
         <menuitem id="real_estate_menu_offers" name="Offers" parent="real_estate_menu_root" action="real_estate_offer_action"/>
         <menuitem id="real_estate_menu_contracts" name="Contracts" parent="real_estate_menu_root" action="real_estate_contract_action"/>
+        <menuitem id="real_estate_menu_agents" name="Agents" parent="real_estate_menu_root" action="real_estate_agent_action"/>
+        <menuitem id="real_estate_menu_owners" name="Owners" parent="real_estate_menu_root" action="real_estate_owner_action"/>
 
 </odoo>

@@ -18,3 +18,7 @@ access_real_estate_property_incidence_manager,real.estate.property.incidence_man
 access_real_estate_property_stage_wizard_user,real.estate.property.stage.wizard_user,model_real_estate_property_stage_wizard,base.group_user,1,1,1,0
 access_real_estate_visit_batch_wizard_user,real.estate.property.batch.wizard_user,model_real_estate_property_batch_wizard,base.group_user,1,1,1,0
 access_real_estate_visit_stage_wizard_user, real.estate.visit.stage.wizard_user,model_real_estate_visit_stage_wizard,base.group_user,1,1,1,0
+access_real_estate_agent_user,real.estate.agent_user,model_real_estate_agent,base.group_user,1,1,1,0
+access_real_estate_agent_manager,real.estate.agent_manager,model_real_estate_agent,group_real_estate_manager,1,1,1,1
+access_real_estate_owner_user,real.estate.owner_user,model_real_estate_owner,base.group_user,1,1,1,0
+access_real_estate_owner_manager,real.estate.owner_manager,model_real_estate_owner,group_real_estate_manager,1,1,1,1

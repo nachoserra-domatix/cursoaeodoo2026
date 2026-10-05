@@ -31,6 +31,7 @@
                     <field name="state" options="{'clickable': True}" widget="statusbar"/>
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box"/>
                     <group>
                         <group>
                             <field name="name"/>
