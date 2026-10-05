@@ -3,6 +3,7 @@ from odoo.exceptions import ValidationError
 
 class RealEstateContract(models.Model):
     _name = "realestate.contract"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Real Estate Contract"
     _order = "start_date desc, id desc"
     _rec_name = "name"
@@ -61,6 +62,7 @@ class RealEstateContract(models.Model):
         string="State",
         default="draft",
         required=True,
+        tracking=True,
     )
 
     @api.constrains("start_date", "end_date")

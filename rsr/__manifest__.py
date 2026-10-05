@@ -2,7 +2,7 @@
     "name": "Estate Jnc 2",  # Jnc 
     "version": "19.0.3",  # Version
     "application": True,
-    "depends": ["base"],  
+    "depends": ["base", "mail"],
     "data": [
         # security
         'security/estate_security.xml',

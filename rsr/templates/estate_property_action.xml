@@ -4,6 +4,6 @@
         <field name="name">Estate property action</field>
         <field name="res_model">estate.property</field>
         <field name="view_mode">list,form,kanban,pivot,graph</field>
-        <field name="context">{'search_default_available': 1}</field>
+        <field name="context">{'search_default_availability': 1}</field>
     </record>
 </odoo>

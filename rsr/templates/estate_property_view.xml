@@ -98,6 +98,7 @@
                         </page>
                     </notebook>
                 </sheet>
+                <chatter/>
             </form>
         </field>
     </record>
@@ -126,7 +127,7 @@
                 <field name="postcode" string="Reference"/>
                 <field name="category_id"/>
                 <field name="stage_id"/>
-                <filter string="Available" name="available" domain="[('availability_state', '=', True)]"/>
+                <filter string="Available" name="availability" domain="[('availability_state', '=', True)]"/>
                 <filter string="Reserved" name="reserved" domain="[('availability_state', '=', False)]"/>
                 <group>
                     <filter string="Owner" name="group_by_user" context="{'group_by': 'id_user'}"/>

@@ -2,6 +2,7 @@ from odoo import _, api, fields, models
 
 class EstateProperty(models.Model):
     _name = "estate.property"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Estate Property"
     _order = "id desc"
 
@@ -27,7 +28,9 @@ class EstateProperty(models.Model):
         default=lambda self: self.env.company.currency_id,
         required=True,
     )
-    price = fields.Monetary(string="Expected Price", currency_field="currency_id")
+    price = fields.Monetary(
+        string="Expected Price", currency_field="currency_id", tracking=True
+    )
     selling_price = fields.Monetary(
         readonly=True,
         copy=False,
@@ -52,7 +55,9 @@ class EstateProperty(models.Model):
     incidence_count = fields.Integer(compute="_compute_incidence_count", string="Incidences")
     contract_count = fields.Integer(compute="_compute_contract_count", string="Contracts")
 
-    availability_state = fields.Boolean(string="Available", default=True)
+    availability_state = fields.Boolean(
+        string="Available", default=True, tracking=True
+    )
 
     id_user = fields.Many2one(
         comodel_name="res.users",
@@ -62,6 +67,7 @@ class EstateProperty(models.Model):
     stage_id = fields.Many2one(
         comodel_name="realestate.property.stage",
         string="Stage",
+        tracking=True,
     )
     category_id = fields.Many2one(
         comodel_name="realestate.category",
@@ -126,7 +132,7 @@ class EstateProperty(models.Model):
 
     @api.depends("visit_ids", "visit_ids.date", "visit_ids.state")
     def _compute_next_visit_date(self):
-        now = fields.Datetime.now() 
+        now = fields.Datetime.to_datetime(fields.Datetime.now())
         for record in self:
             planned_dates = record.visit_ids.filtered(
                 lambda visit: visit.state == "planned"
@@ -191,7 +197,10 @@ class EstateProperty(models.Model):
             "res_model": "estate.property.visit",
             "view_mode": "list,form",
             "domain": [("property_id", "=", self.id)],
-            "context": {"default_property_id": self.id},
+            "context": {
+                "default_property_id": self.id,
+                "search_default_filter_planned": 1,
+            },
         }
 
     def action_view_incidences(self):
@@ -228,6 +237,9 @@ class EstateProperty(models.Model):
         )
         if best_offer:
             best_offer.action_accept()
+            self.message_post(
+                body=_("The best offer was accepted and the property was reserved.")
+            )
         return True
 
     def action_delete_rejected_offers(self):
