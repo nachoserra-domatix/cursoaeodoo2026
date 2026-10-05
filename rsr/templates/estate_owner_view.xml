@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="estate_owner_view_form" model="ir.ui.view">
+        <field name="name">realestate.owner.form</field>
+        <field name="model">realestate.owner</field>
+        <field name="arch" type="xml">
+            <form string="Real Estate Owner">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Owner Name"/></h1>
+                    </div>
+                    <group string="Address">
+                        <field name="street"/>
+                        <field name="city"/>
+                        <field name="country_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="estate_owner_view_list" model="ir.ui.view">
+        <field name="name">realestate.owner.list</field>
+        <field name="model">realestate.owner</field>
+        <field name="arch" type="xml">
+            <list string="Real Estate Owners">
+                <field name="name"/>
+                <field name="street"/>
+                <field name="city"/>
+                <field name="country_id"/>
+            </list>
+        </field>
+    </record>
+</odoo>

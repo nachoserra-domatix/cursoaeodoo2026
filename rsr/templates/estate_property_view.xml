@@ -37,6 +37,8 @@
                             <field name="description"/>
                             <field name="category_id"/>
                             <field name="stage_id"/>
+                            <field name="agent_id"/>
+                            <field name="owner_id"/>
                             <field name="postcode"/>
                             <field name="date_availability"/>
                             <field name="availability_state" widget="boolean_toggle" options="{'terminology': {'on': 'Available', 'off': 'Not Available'}}"/>

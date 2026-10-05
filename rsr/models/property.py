@@ -67,6 +67,14 @@ class EstateProperty(models.Model):
         comodel_name="realestate.category",
         string="Category",
     )
+    agent_id = fields.Many2one(
+        comodel_name="realestate.agent",
+        string="Agent",
+    )
+    owner_id = fields.Many2one(
+        comodel_name="realestate.owner",
+        string="Owner",
+    )
     incidence_ids = fields.One2many(
         comodel_name="estate.property.incidence",
         inverse_name="property_id",
