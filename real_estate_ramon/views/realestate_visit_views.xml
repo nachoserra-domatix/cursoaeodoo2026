@@ -57,12 +57,12 @@
             </form>
         </field>
     </record>
-
+<!--
     <record id="realestate_visit_search_view" model="ir.ui.view">
         <field name="name">realestate.visit.search</field>
         <field name="model">realestate.visit</field>
         <field name="arch" type="xml">
-            <search string="Visits">
+            <search>
                 <field name="property_id"/>
                 <field name="partner_id"/>
                 <field name="user_id"/>
@@ -83,7 +83,7 @@
             </search>
         </field>
     </record>
-
+-->
     <record id="realestate_visit_kanban_view" model="ir.ui.view">
         <field name="name">realestate.visit.kanban</field>
         <field name="model">realestate.visit</field>

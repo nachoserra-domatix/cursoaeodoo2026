@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 15:19+0000\n"
-"PO-Revision-Date: 2026-09-21 15:19+0000\n"
+"POT-Creation-Date: 2026-10-02 06:14+0000\n"
+"PO-Revision-Date: 2026-10-02 06:14+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,15 +16,87 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_offer__amount
+msgid "Amount"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__area
+msgid "Area"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__availability
+msgid "Availability"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__bail
+msgid "Bail"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__begin_date
+msgid "Begin Date"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_offer__buyer
+msgid "Buyer"
+msgstr ""
+
+#. module: real_estate_ramon
 #: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_visit_form_view
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: real_estate_ramon
+#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_contract__status__canceled
+#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_offer__status__canceled
 #: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_visit__state__canceled
 #: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_visit_form_view
 msgid "Canceled"
 msgstr "Cancelada"
+
+#. module: real_estate_ramon
+#: model:ir.actions.act_window,name:real_estate_ramon.realestate_category_action
+#: model:ir.ui.menu,name:real_estate_ramon.realestate_menu_category
+msgid "Categories"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model,name:real_estate_ramon.model_realestate_category
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__category_id
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_category_form_view
+msgid "Category"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_contract_form_view
+msgid "Contract"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.actions.act_window,name:real_estate_ramon.realestate_contract_action
+#: model:ir.ui.menu,name:real_estate_ramon.realestate_menu_contract
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_contract_list_view
+msgid "Contracts"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model_terms:ir.actions.act_window,help:real_estate_ramon.realestate_category_action
+msgid "Create a new category"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model_terms:ir.actions.act_window,help:real_estate_ramon.realestate_contract_action
+msgid "Create a new contract"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model_terms:ir.actions.act_window,help:real_estate_ramon.realestate_offer_action
+msgid "Create a new offer"
+msgstr ""
 
 #. module: real_estate_ramon
 #: model_terms:ir.actions.act_window,help:real_estate_ramon.realestate_property_action
@@ -37,33 +109,78 @@ msgid "Create a new visit"
 msgstr "Crear una nueva visita"
 
 #. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_category__create_uid
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__create_uid
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_offer__create_uid
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__create_uid
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_category__create_date
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__create_date
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_offer__create_date
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__create_date
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__create_date
 msgid "Created on"
 msgstr "Creada en"
 
 #. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__currency_id
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_offer__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_category__description
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__description
+msgid "Description"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_category__display_name
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__display_name
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_offer__display_name
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__display_name
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__display_name
 msgid "Display Name"
 msgstr "Nombre"
 
 #. module: real_estate_ramon
+#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_contract__status__done
+#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_offer__status__done
 #: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_visit__state__done
 #: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_visit_form_view
 msgid "Done"
 msgstr "Completado"
 
 #. module: real_estate_ramon
+#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_contract__status__draft
+#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_offer__status__draft
 #: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_visit__state__draft
 msgid "Draft"
 msgstr "Borrador"
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__end_date
+msgid "End Date"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model_terms:ir.actions.act_window,help:real_estate_ramon.realestate_category_action
+msgid "Fill in the details of the category you want to add"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model_terms:ir.actions.act_window,help:real_estate_ramon.realestate_contract_action
+msgid "Fill in the details of the contract you want to add"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model_terms:ir.actions.act_window,help:real_estate_ramon.realestate_offer_action
+msgid "Fill in the details of the offer you want to add"
+msgstr ""
 
 #. module: real_estate_ramon
 #: model_terms:ir.actions.act_window,help:real_estate_ramon.realestate_property_action
@@ -80,42 +197,92 @@ msgid ""
 "Fill in the details of the visit you want to add, such as the property, "
 "visitor, and date."
 msgstr ""
-"Rellena los datos de la visita que quieres añadir, como la propiedad, "
-"el visitante y la fecha."
+"Rellena los datos de la visita que quieres añadir, como la propiedad, el "
+"visitante y la fecha."
 
 #. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_category__id
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__id
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_offer__id
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__id
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: real_estate_ramon
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_category_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_property_form_view
+msgid "Information"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_category__write_uid
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__write_uid
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_offer__write_uid
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__write_uid
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__write_uid
 msgid "Last Updated by"
 msgstr "Actualizado por"
 
 #. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_category__write_date
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__write_date
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_offer__write_date
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__write_date
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__write_date
 msgid "Last Updated on"
 msgstr "Última actualización"
 
 #. module: real_estate_ramon
-#: model:ir.ui.menu,name:real_estate_ramon.realestate_menu_properties
-msgid "Properites"
-msgstr "Propiedades"
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_category__name
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__name
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__name
+msgid "Name"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_offer__notes
+msgid "Notes"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.actions.act_window,name:real_estate_ramon.realestate_offer_action
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_offer_form_view
+msgid "Offer"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_offer__date
+msgid "Offer Date"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.ui.menu,name:real_estate_ramon.realestate_menu_offer
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_offer_list_view
+msgid "Offers"
+msgstr ""
 
 #. module: real_estate_ramon
 #: model:ir.actions.act_window,name:real_estate_ramon.realestate_property_action
+#: model:ir.ui.menu,name:real_estate_ramon.realestate_menu_properties
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.real_estate_property_list_view
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_category_list_view
 msgid "Properties"
 msgstr "Propiedades"
 
 #. module: real_estate_ramon
 #: model:ir.model,name:real_estate_ramon.model_realestate_property
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__property_id
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_offer__property_id
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__property_id
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_property_form_view
 msgid "Property"
 msgstr "Propiedad"
+
+#. module: real_estate_ramon
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_property_form_view
+msgid "Property Name"
+msgstr ""
 
 #. module: real_estate_ramon
 #: model:ir.ui.menu,name:real_estate_ramon.realestate_menu_root
@@ -123,14 +290,36 @@ msgid "Real Estate"
 msgstr "Inmobiliaria"
 
 #. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__rent
+#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_contract__type__rent
+msgid "Rent"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_property_form_view
+msgid "Reserve"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_property_form_view
+msgid "Reserved"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_contract__type__sale
+msgid "Sale"
+msgstr ""
+
+#. module: real_estate_ramon
 #: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_visit_form_view
 msgid "Schedule"
 msgstr "Agendar"
 
 #. module: real_estate_ramon
-#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_visit__state__scheduled
+#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_contract__status__scheduled
+#: model:ir.model.fields.selection,name:real_estate_ramon.selection__realestate_offer__status__scheduled
 msgid "Scheduled"
-msgstr "Agendada"
+msgstr ""
 
 #. module: real_estate_ramon
 #: model_terms:ir.ui.view,arch_db:real_estate_ramon.realestate_visit_form_view
@@ -138,15 +327,33 @@ msgid "Set to Draft"
 msgstr "Establecer como borrador"
 
 #. module: real_estate_ramon
-#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__state
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_offer__status
 msgid "State"
-msgstr "Estado"
+msgstr ""
 
 #. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__status
+msgid "Status"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__type
+msgid "Type"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__resident
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_contract__user_id
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__user_id
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__partner_id
 #: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_visit__user_id
 msgid "User"
 msgstr "Usuario"
+
+#. module: real_estate_ramon
+#: model:ir.model.fields,field_description:real_estate_ramon.field_realestate_property__value
+msgid "Value"
+msgstr ""
 
 #. module: real_estate_ramon
 #: model:ir.model,name:real_estate_ramon.model_realestate_visit
@@ -163,3 +370,13 @@ msgstr "Fecha de Visita"
 #: model:ir.ui.menu,name:real_estate_ramon.realestate_menu_visits
 msgid "Visits"
 msgstr "Visitas"
+
+#. module: real_estate_ramon
+#: model:ir.model,name:real_estate_ramon.model_realestate_offer
+msgid "offer"
+msgstr ""
+
+#. module: real_estate_ramon
+#: model:ir.model,name:real_estate_ramon.model_realestate_contract
+msgid "realestate.property"
+msgstr ""

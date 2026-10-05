@@ -21,7 +21,7 @@
             <list string="Offers">
                 <field name="property_id"/>
                 <field name="buyer"/>
-                <field name="amount"/>
+                <field name="amount" widget="monetary"/>
                 <field name="date"/>
                 <field name="status"/>
             </list>
@@ -41,7 +41,7 @@
                             <field name="date"/>
                         </group>
                         <group>
-                            <field name="amount"/>
+                            <field name="amount" widget="monetary"/>
                             <field name="currency_id"/>
                             <field name="status"/>
                             <field name="category_id" readonly="1"/>
@@ -71,7 +71,7 @@
         <field name="model">realestate.offer</field>
         <field name="arch" type="xml">
             <kanban default_group_by="status">
-                <field name="amount"/>
+                <field name="amount" widget="monetary"/>
                 <field name="property_id"/>
                 <field name="buyer"/>
                 <field name="date"/>

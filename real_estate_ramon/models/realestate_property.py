@@ -6,9 +6,11 @@ class RealEstateProperty(models.Model):
 
     name = fields.Char(string="Name", required=True)
     description = fields.Text(string="Description")
-    value = fields.Float(string="Value")
+    value = fields.Monetary(string="Value", currency_field="currency_id",)
+    currency_id = fields.Many2one(comodel_name="res.currency", string="Currency")
     area = fields.Float(string="Area")
     availability = fields.Boolean(string="Availability", default=True)
+    active = fields.Boolean(string="Active", default=True)
     user_id = fields.Many2one(
         comodel_name="res.users",
         string="User",
@@ -36,9 +38,42 @@ class RealEstateProperty(models.Model):
         string="Offers",
     )
 
+    visit_ids = fields.One2many(
+        comodel_name="realestate.visit",
+        inverse_name="property_id",
+        string="Visits",
+    )
+
+    contract_ids = fields.One2many(
+        comodel_name="realestate.contract",
+        inverse_name="property_id",
+        string="Contracts",
+    )
+
+    contract_count = fields.Integer(
+        string="Contracts",
+        compute="_compute_contract_count",
+    )
+
     next_visit_date = fields.Datetime(
         string="Next Visit Date",
         compute="_compute_next_visit_date",
+    )
+
+    company_id = fields.Many2one(
+        comodel_name="res.company",
+        string="Company",
+        required=True,
+    )
+
+    internalnote = fields.Text(
+        string="Internal Note",
+        company_dependent=True,
+    )
+
+    stage_id = fields.Many2one(
+        comodel_name="realestate",
+        string="Stage",
     )
 
     def action_reserve(self):
@@ -88,3 +123,33 @@ class RealEstateProperty(models.Model):
         ])
 
         visits.write({"status": "canceled"})
+
+    def action_view_incidences(self):
+        return {
+            "type": "ir.action.act_window",
+            "name": "incidences",
+            "res_model": "realestate.property.incidence",
+            "view_mode": "list,form",
+            "domain": [("property_id", "=", self.id)],
+            "context": {
+                "default_property_id": self.id,
+            },
+        }
+
+    def _compute_contract_count(self):
+        for property in self:
+            property.contract_count = self.env["realestate.contract"].search_count([
+                ("property_id", "=", property.id),
+            ])
+
+    def action_view_contracts(self):
+        return {
+            "type": "ir.actions.act_window",
+            "name": "Contracts",
+            "res_model": "realestate.contract",
+            "view_mode": "list, form",
+            "domain": [("property_id", "=", self.id)],
+            "context": {
+                "default_property_id": self.id,
+            },
+        }

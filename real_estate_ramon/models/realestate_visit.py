@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 class RealEstateVisit(models.Model):
     _name = "realestate.visit"
@@ -11,7 +11,10 @@ class RealEstateVisit(models.Model):
         required="True",
     )
 
-    datetime = fields.Datetime(string="Visit Date")
+    datetime = fields.Datetime(
+        string="Visit Date",
+        default=fields.Datetime.now
+        )
 
     partner_id = fields.Many2one(
         comodel_name="res.partner",
@@ -49,3 +52,14 @@ class RealEstateVisit(models.Model):
 
     def action_cancel(self):
         self.status = "canceled"
+
+    @api.model
+    def _cron_update_visits(self):
+        visits = self.search([
+            ("status", "=", "scheduled"),
+            ("datetime", "<=", fields.Datetime.now()),
+        ])
+
+        visits.write({
+            "status": "done",
+        })

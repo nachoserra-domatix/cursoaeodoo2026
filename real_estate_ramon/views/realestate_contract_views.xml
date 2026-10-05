@@ -26,8 +26,8 @@
                 <field name="user_id"/>
                 <field name="begin_date"/>
                 <field name="end_date"/>
-                <field name="rent"/>
-                <field name="bail"/>
+                <field name="rent" widget="monetary"/>
+                <field name="bail" widget="monetary"/>
                 <field name="status"/>
             </list>
         </field>

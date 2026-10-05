@@ -1,10 +1,19 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class RealEstateContract(models.Model):
     _name = "realestate.contract"
     _description = "realestate.property"
 
-    name = fields.Char(string="Name", required=True)
+    _sql_constraints = [
+        (
+            "unique_contract_name",
+            "UNIQUE(name)",
+            "El nombre del contrato debe ser único"
+        )
+    ]
+
+    name = fields.Char(string="Name", required=True, copy=False)
     type = fields.Selection(
         selection=[
             ("rent", "Rent"),
@@ -17,7 +26,7 @@ class RealEstateContract(models.Model):
     property_id = fields.Many2one(
         comodel_name="realestate.property",
         string="Property",
-        required = "True",
+        required = True,
     )
 
     resident = fields.Many2one(
@@ -114,3 +123,15 @@ class RealEstateContract(models.Model):
 
     def action_canceled(self):
         self.status = 'canceled'
+
+    @api.constrains('begin_date', 'end_date')
+    def _check_dates(self):
+        for record in self:
+            if record.begin_date and record.end_date:
+                if record.end_date < record.begin_date:
+                    raise ValidationError("La fecha de fin no puede ser anterior a la fecha de inicio")
+
+    @api.onchange('property_id')
+    def _onchange_property_id(self):
+        if self.property_id:
+            self.rent = self.property_id.value

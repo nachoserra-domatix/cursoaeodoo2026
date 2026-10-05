@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Paperformat del informe de propiedades -->
+    <record id="paperformat_realestate_property" model="report.paperformat">
+        <field name="name">Real Estate Property Report</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">20</field>
+        <field name="margin_bottom">20</field>
+        <field name="margin_left">15</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">10</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- Acción del informe -->
+    <record id="action_report_realestate_property"
+            model="ir.actions.report">
+        <field name="name">Property Report</field>
+        <field name="model">realestate.property</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">real_estate_ramon.report_realestate_property</field>
+        <field name="report_file">real_estate_ramon.report_realestate_property</field>
+        <field name="paperformat_id"
+               ref="paperformat_realestate_property"/>
+        <field name="binding_model_id"
+               ref="model_realestate_property"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

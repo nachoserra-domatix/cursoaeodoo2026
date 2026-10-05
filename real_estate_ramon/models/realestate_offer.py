@@ -26,7 +26,10 @@ class RealEstateOffer(models.Model):
         currency_field="currency_id",
     )
 
-    date = fields.Datetime(string="Offer Date")
+    date = fields.Datetime(
+        string="Offer Date",
+        default=fields.Datetime.now,
+        )
 
     status = fields.Selection(
         selection=[

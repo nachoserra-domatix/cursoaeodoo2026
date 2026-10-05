@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="report_realestate_property">
+        <t t-call="web.html_container">
+
+            <t t-foreach="docs" t-as="property">
+                <t t-call="web.external_layout">
+
+                    <div class="page">
+
+                        <!-- CABECERA -->
+                        <h2>
+                            <span t-field="property.name"/>
+                        </h2>
+
+                        <table class="table table-sm">
+                            <tr>
+                                <td><strong>Referencia</strong></td>
+                                <td>
+                                    <span t-field="property.id"/>
+                                </td>
+
+                                <td><strong>Categoría</strong></td>
+                                <td>
+                                    <span t-field="property.category_id"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Etapa</strong></td>
+                                <td>
+                                    <span t-field="property.stage_id"/>
+                                </td>
+
+                                <td><strong>Precio</strong></td>
+                                <td>
+                                    <span t-field="property.value"
+                                          t-options='{"widget": "monetary", "display_currency": property.currency_id}'/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Responsable</strong></td>
+                                <td colspan="3">
+                                    <span t-field="property.user_id"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- DESCRIPCIÓN -->
+                        <h3>Descripción</h3>
+
+                        <div>
+                            <span t-field="property.description"/>
+                        </div>
+
+                        <!-- IMÁGENES -->
+                        <h3>Imágenes</h3>
+
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Miniatura</th>
+                                    <th>Nombre</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr t-foreach="property.image_ids"
+                                    t-as="image">
+
+                                    <td>
+                                        <img t-if="image.image"
+                                             t-att-src="'data:image/png;base64,%s' % image.image.decode('utf-8')"
+                                             style="width: 100px; height: 70px; object-fit: contain;"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-field="image.name"/>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- VISITAS -->
+                        <h3>Visitas</h3>
+
+                        <t t-if="property.visit_ids">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha</th>
+                                        <th>Visitante</th>
+                                        <th>Teléfono</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr t-foreach="property.visit_ids"
+                                        t-as="visit">
+
+                                        <td>
+                                            <span t-field="visit.datetime"/>
+                                        </td>
+
+                                        <td>
+                                            <span t-field="visit.partner_id"/>
+                                        </td>
+
+                                        <td>
+                                            <span t-field="visit.phone_number"/>
+                                        </td>
+
+                                        <td>
+                                            <span t-field="visit.status"/>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+
+                        <t t-else="">
+                            <div class="alert alert-info">
+                                Esta propiedad no tiene visitas.
+                            </div>
+                        </t>
+
+                    </div>
+
+                </t>
+            </t>
+
+        </t>
+    </template>
+
+</odoo>

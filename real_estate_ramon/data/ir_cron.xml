@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="ir_cron_update_visits" model="ir.cron">
+        <field name="name">Update Scheduled Visits</field>
+        <field name="model_id" ref="model_realestate_visit"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_update_visits()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="active">True</field>
+    </record>
+
+</odoo>

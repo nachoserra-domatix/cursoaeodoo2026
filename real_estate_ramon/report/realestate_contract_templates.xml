@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="report_realestate_contract">
+        <t t-call="web.html_container">
+
+            <t t-foreach="docs" t-as="contract">
+                <t t-call="web.external_layout">
+
+                    <div class="page">
+
+                        <h2>Contract</h2>
+
+                        <h3>Partes</h3>
+
+                        <table class="table table-sm">
+                            <tr>
+                                <td><strong>Property</strong></td>
+                                <td>
+                                    <span t-field="contract.property_id"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Resident / Buyer</strong></td>
+                                <td>
+                                    <span t-field="contract.resident"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <h3>Contract Information</h3>
+
+                        <table class="table table-sm">
+                            <tr>
+                                <td><strong>Type</strong></td>
+                                <td>
+                                    <span t-field="contract.type"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Begin Date</strong></td>
+                                <td>
+                                    <span t-field="contract.begin_date"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>End Date</strong></td>
+                                <td>
+                                    <span t-field="contract.end_date"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Rent</strong></td>
+                                <td>
+                                    <span t-field="contract.rent"
+                                          t-options='{"widget": "monetary", "display_currency": contract.currency_id}'/>
+                                </td>
+                            </tr>
+
+                            <t t-if="contract.type == 'rent'">
+                                <tr>
+                                    <td><strong>Bail</strong></td>
+                                    <td>
+                                        <span t-field="contract.bail"
+                                              t-options='{"widget": "monetary", "display_currency": contract.currency_id}'/>
+                                    </td>
+                                </tr>
+                            </t>
+
+                            <tr>
+                                <td><strong>Status</strong></td>
+                                <td>
+                                    <span t-field="contract.status"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                </t>
+            </t>
+
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="report_realestate_property_simple">
+        <t t-call="web.html_container">
+
+            <div class="page">
+
+                <h2>Properties Report</h2>
+
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Reference</th>
+                            <th>Price</th>
+                            <th>Stage</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <t t-foreach="docs" t-as="property">
+                            <tr>
+                                <td>
+                                    <span t-field="property.name"/>
+                                </td>
+
+                                <td>
+                                    <span t-field="property.id"/>
+                                </td>
+
+                                <td>
+                                    <span t-field="property.value"
+                                          t-options='{"widget": "monetary", "display_currency": property.currency_id}'/>
+                                </td>
+
+                                <td>
+                                    <span t-field="property.stage_id"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </t>
+    </template>
+
+</odoo>

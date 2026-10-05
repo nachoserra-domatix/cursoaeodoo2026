@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="realestate_visit_status_wizard_form" model="ir.ui.view">
+        <field name="name">realestate.visit.status.wizard.form</field>
+        <field name="model">realestate.visit.status.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Change Visit Status">
+                <group>
+                    <field name="status"/>
+                </group>
+
+                <footer>
+                    <button name="action_apply"
+                            string="Apply"
+                            type="object"
+                            class="btn-primary"/>
+                    <button string="Cancel"
+                            special="cancel"
+                            class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="realestate_visit_status_wizard_action" model="ir.actions.act_window">
+        <field name="name">Change Visit Status</field>
+        <field name="res_model">realestate.visit.status.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_realestate_visit"/>
+        <field name="binding_view_types">list</field>
+    </record>
+</odoo>
