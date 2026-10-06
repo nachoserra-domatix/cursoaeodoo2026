@@ -32,6 +32,11 @@ class RealEstateProperty(models.Model):
         string="Category",
     )
 
+    owner_id = fields.Many2one(
+        comodel_name="realestate.owner",
+        string="Owner",
+    )
+
     user_id = fields.Many2one(
         comodel_name="res.users",
         string="User",

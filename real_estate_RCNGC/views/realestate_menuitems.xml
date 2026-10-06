@@ -10,6 +10,7 @@
             <menuitem id="realestate_menu_contracts" name="Contracts" action="realestate_contract_action"/>
         </menuitem>
         <menuitem id="realestate_menu_configuration" name="Configuration">
+            <menuitem id="realestate_menu_owners" name="Owners" action="realestate_owner_action"/>
             <menuitem id="realestate_menu_agents" name="Agents" action="realestate_agent_action"/>
             <menuitem id="realestate_menu_categories" name="Categories" action="realestate_category_action"/>
             <menuitem id="realestate_menu_tags" name="Tags" action="realestate_property_tag_action"/>

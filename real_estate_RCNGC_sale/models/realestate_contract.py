@@ -65,5 +65,17 @@ class RealEstateContract(models.Model):
                 'res_id': order_id.id,
             }
 
+    def action_cancelled(self):
+        res= super().action_cancelled()
+        self.order_ids.filtered(lambda o: o.state != 'done').action_cancel()
+        return res
+
+    def action_confirm_and_invoice(self):
+        for record in self:
+            orders = record.order_ids.filtered(lambda o: o.state in ("draft"))
+            if not orders:
+                continue
+            orders.action_confirm( )
+            orders._create_invoices()
     
         
