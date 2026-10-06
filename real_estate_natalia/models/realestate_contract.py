@@ -3,6 +3,7 @@ from odoo.exceptions import ValidationError
 
 class RealEstateContract(models.Model):
     _name = "realestate.contract"
+    _inherit =['mail.thread', 'mail.activity.mixin']
     _description = "Contract"
 
     name = fields.Char(string = "Name", copy=False)
@@ -63,6 +64,7 @@ class RealEstateContract(models.Model):
         ],
         string = "State",
         default = "draft",
+        tracking=True
     )
 
     has_deposit = fields.Boolean(string="Has Deposit", compute="_compute_has_deposit", store=True)

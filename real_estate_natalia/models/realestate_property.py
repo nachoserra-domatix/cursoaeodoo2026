@@ -1,13 +1,14 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 
 class RealEstateProperty(models.Model):
     _name = "realestate.property"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Property"
 
     name = fields.Char(string="Name", required=True)
     description = fields.Text(string="Description")
 
-    price = fields.Monetary(string="Price", currency_field='currency_id')
+    price = fields.Monetary(string="Price", currency_field='currency_id', tracking=True)
     currency_id = fields.Many2one(
         comodel_name="res.currency",
         string="Currency",
@@ -15,7 +16,7 @@ class RealEstateProperty(models.Model):
     )
 
     reference = fields.Char(string="Reference", copy=False)
-    availability = fields.Boolean(string="Availability", default=True)
+    availability = fields.Boolean(string="Availability", default=True, tracking=True)
     active = fields.Boolean(string="Active", default=True)    
 
     user_id = fields.Many2one(
@@ -53,7 +54,8 @@ class RealEstateProperty(models.Model):
     stage_id = fields.Many2one(
         comodel_name ="realestate.property.stage",
         string="Stage",
-        group_expand="_read_group_stage_ids"
+        group_expand="_read_group_stage_ids",
+        tracking=True,
     )
 
     image_ids = fields.One2many(
@@ -136,7 +138,7 @@ class RealEstateProperty(models.Model):
             'res_model': 'realestate.visit',
             'view_mode': 'list,form',
             'domain': [('property_id', '=', self.id)],
-            'context': {'default_property_id': self.id}
+            'context': {'default_property_id': self.id, 'search_default_confirmed': 1}
         }
 
     def action_view_contracts(self):
@@ -189,6 +191,7 @@ class RealEstateProperty(models.Model):
         best_offer = self.env['realestate.offer'].search([('property_id', '=', self.id),('state','=','sent')], order='amount desc', limit=1)
         if best_offer:
             best_offer.action_accept()
+        self.message_post(body=_("Best offer has been accepted."))
 
     # Botón Nos elimina las ofertas que han sido rechazadas
     def action_delete_refused_offers(self):

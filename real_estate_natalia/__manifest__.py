@@ -5,7 +5,7 @@
     "description": "This module allows you to manage real estate properties, including listings, sales, and rentals.",
     "author": "Natalia",
     "category": "Real Estate",
-    "depends": ["base"],
+    "depends": ["base", "mail"],
     "data": [
         "data/ir.cron.xml",
         "data/ir_sequence.xml",
