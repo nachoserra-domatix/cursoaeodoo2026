@@ -19,7 +19,7 @@ class RealEstateProperty(models.Model):
     description = fields.Text(string="Description")
     price = fields.Monetary(string="Price", currency_field='currency_id', tracking=True)
     reference = fields.Char(string="Reference", copy=False)
-    availability = fields.Boolean(string="Availability", default=True)
+    availability = fields.Boolean(string="Availability", default=True, tracking=True)
     color = fields.Integer(string="Color")
     internal_note = fields.Text(string="Internal Note", company_dependent=True)
 
@@ -203,7 +203,9 @@ class RealEstateProperty(models.Model):
             'amount': self.price,
         }
         offer = self.env['realestate.offer'].create(vals)
-        # offer.message_post_with_source('mail.message_origin')
+        offer.message_post_with_source('mail.message_origin_link',
+                                        render_values={'self':offer, 'origin': self},
+                                        subtype_xmlid='mail.mt_note')
         offer.action_send()
 
     def action_cancel_pending_visits(self):
@@ -222,7 +224,8 @@ class RealEstateProperty(models.Model):
             'res_model': 'realestate.visit',
             'view_mode': 'list,form',   
             'domain': [('property_id', '=', self.id)],
-            'context': {'default_property_id': self.id},
+            'context': {'default_property_id': self.id,
+                        'search_default_Scheduled': 1},
         }
 
     def action_open_incidents(self):    
