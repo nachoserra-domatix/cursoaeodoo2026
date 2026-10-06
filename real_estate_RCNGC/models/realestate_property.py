@@ -4,6 +4,7 @@ from odoo import models, fields, api
 class RealEstateProperty(models.Model):
     _name = 'realestate.property'
     _description = 'Real Estate Property'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     # ---------------------------------------------------------------------------------------
     # Defaults
@@ -16,7 +17,7 @@ class RealEstateProperty(models.Model):
     name = fields.Char(string="Name", required=True)
     active = fields.Boolean(string="Active", default=True)
     description = fields.Text(string="Description")
-    price = fields.Monetary(string="Price", currency_field='currency_id')
+    price = fields.Monetary(string="Price", currency_field='currency_id', tracking=True)
     reference = fields.Char(string="Reference", copy=False)
     availability = fields.Boolean(string="Availability", default=True)
     color = fields.Integer(string="Color")
@@ -40,7 +41,8 @@ class RealEstateProperty(models.Model):
     stage_id = fields.Many2one(
         comodel_name="realestate.property.stage",
         string="Stage",
-        group_expand="_read_group_stage_ids"
+        group_expand="_read_group_stage_ids",
+        tracking=True,
     )
 
     currency_id = fields.Many2one(
@@ -62,6 +64,11 @@ class RealEstateProperty(models.Model):
         column2='tag_id',
         string='Tags'
     )   
+
+    agent_id = fields.Many2one(
+        comodel_name="realestate.agent",
+        string="Agent",
+    )
 
     # ---------------------------------------------------------------------------------------
     # Relations O2M (One2many)
@@ -179,6 +186,7 @@ class RealEstateProperty(models.Model):
         best_offer = self.env['realestate.offer'].search([('property_id', '=', self.id),('state', '=', 'sent')], order='amount desc', limit=1)
         if best_offer:
             best_offer.action_accept()
+        self.message_post(body="Best offer has been accepted.")
 
     def action_delete_refused_offers(self):
         refused_offers = self.env['realestate.offer'].search([('property_id', '=', self.id),('state', '=', 'refused')])
@@ -190,6 +198,7 @@ class RealEstateProperty(models.Model):
             'amount': self.price,
         }
         offer = self.env['realestate.offer'].create(vals)
+        # offer.message_post_with_source('mail.message_origin')
         offer.action_send()
 
     def action_cancel_pending_visits(self):

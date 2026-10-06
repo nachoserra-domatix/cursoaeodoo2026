@@ -56,6 +56,13 @@ class RealEstateContract(models.Model):
     has_deposit = fields.Boolean(string="Has Deposit", compute="_compute_has_deposit", store=True)
 
     # Compute methods
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+           if not vals.get('name'):
+                vals['name'] = self.env['ir.sequence'].next_by_code('realestate.contract')
+        return super().create(vals_list)
+
     @api.depends('start_date', 'end_date')
     def _compute_duration_days(self):
         for record in self:
@@ -127,3 +134,11 @@ class RealEstateContract(models.Model):
         #    if record.state == 'progress' and record.end_date and record.end_date <= fields.Date.today():   
         #        record.state = 'done'
         #        self.env.cr.commit()     
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        records = super(RealEstateContract, self).create(vals_list)
+        for record in records:
+            if not record.name:
+                record.name = self.env['ir.sequence'].next_by_code('realestate.contract')
+        return records

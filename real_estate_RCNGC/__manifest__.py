@@ -7,8 +7,10 @@
     'description': 'Real Estate RCNGC',
     'author': 'RCNGC',
     'category': 'Real Estate',
-    'depends': ['base'],
+    'depends': ['base', 'mail'],
     'data': [
+        'data/ir_cron.xml',
+        'data/ir_sequence.xml',
         'security/real_estate_security.xml',
         'security/ir.model.access.csv',
         'views/realestate_property_views.xml',
@@ -17,6 +19,7 @@
         "views/realestate_category_views.xml",
         "views/realestate_contract_views.xml",
         "views/realestate_property_tag_views.xml",
+        "views/realestate_agent_views.xml",
         'views/realestate_menuitems.xml',
         'wizard/realestate_property_change_stage.xml',
         'wizard/realestate_property_schedule_visits.xml',
@@ -26,7 +29,6 @@
         'report/realestate_properties_simple_report.xml',
         'report/realestate_contract_report.xml',
         'report/realestate_offer_report.xml',
-        'data/ir_cron.xml',
     ],
     'installable': True,
     'application': True

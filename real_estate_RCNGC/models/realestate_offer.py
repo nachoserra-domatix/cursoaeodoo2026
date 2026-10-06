@@ -5,6 +5,7 @@ class RealEstateOffer(models.Model):
     _name = "realestate.offer"
     _description = "Offer"
     _rec_name = "partner_id"
+    inherit = ['mail.thread', 'mail.activity.mixin']
 
     # ---------------------------------------------------------------------------------------
     # Defaults

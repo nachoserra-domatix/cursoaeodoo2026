@@ -125,6 +125,7 @@
                             <field name="availability" widget="boolean_toggle"/>
                             <field name="next_visit_date"/>
                             <field name="user_id" widget="many2one_avatar_user"/>
+                            <field name="agent_id"/>
                             <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                             <field name="company_id"/>
                         </group>
@@ -190,6 +191,7 @@
                         </page>
                     </notebook>
                 </sheet>
+                <chatter/>
             </form>
         </field>
     </record>
@@ -223,6 +225,7 @@
         <field name="name">Properties</field>
         <field name="res_model">realestate.property</field>
         <field name="view_mode">kanban,list,pivot,graph,form</field>
+        <field name="context">{'search_default_availability': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
             Create a new property
