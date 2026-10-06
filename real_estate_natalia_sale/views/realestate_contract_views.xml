@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="realestate_contract_sale_form" model="ir.ui.view">
+        <field name="name">realestate.contract.sale.form</field>
+        <field name="model">realestate.contract</field>
+        <field name="inherit_id" ref="real_estate_natalia.realestate_contract_form_view"></field>
+        <field name="arch" type="xml">
+            <!-- smartbutton dentro del button_box -->
+            <div name="button_box" position="inside">
+                <button name="action_view_orders" type="object" class="oe_stat_button" icon="fa-shopping-cart">
+                    <field name="order_count" widget="statinfo" string="Orders"/>
+                </button>
+            </div>
+            <!-- producto después de la propiedad -->
+            <field name="property_id" position="after">
+                <field name="product_id"/>
+            </field>
+            <!-- botón en el header, después de botón Start -->
+            <button name="action_start" position="after">
+                <button name="action_create_sale_order" type="object" string="Create Order" class="btn-primary" invisible="not product_id or state == 'cancelled'"/>
+                <button name="action_confirm_and_invoice" type="object" string="Confirm and Invoice" class="btn-primary"/>                    
+            </button>
+        </field>        
+    </record>
+</odoo>

@@ -8,6 +8,8 @@
     "depends": ["base"],
     "data": [
         "data/ir.cron.xml",
+        "data/ir_sequence.xml",
+        "views/realestate_agent_views.xml", 
         "security/real_estate_security.xml",
         "security/ir.model.access.csv",
         "views/realestate_property_views.xml",
@@ -15,7 +17,8 @@
         "views/realestate_visit_views.xml",
         "views/realestate_category_views.xml",
         "views/realestate_offer_views.xml",
-        "views/realestate_contract_views.xml",        
+        "views/realestate_contract_views.xml", 
+         "views/realestate_owner_views.xml",  
         "views/realestate_menuitems.xml",
         "wizard/realestate_property_change_stage.xml",
         "wizard/realestate_property_confirmed_visits.xml",
@@ -23,7 +26,7 @@
         "report/realestate_property_simple_report.xml",
         "report/realestate_contract_report.xml",
         "wizard/realestate_visit_change_state.xml",
-        "report/realestate_offer_report.xml"
+        "report/realestate_offer_report.xml"       
     ],
     "license": "LGPL-3",
     "installable": True,

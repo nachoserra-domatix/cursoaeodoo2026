@@ -33,6 +33,14 @@ class RealEstateContract(models.Model):
         'The contract name must be unique.'
     )
 
+    # (HERENCIA) Añado el método create
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if not vals.get('name'):
+                vals['name']=self.env['ir.sequence'].next_by_code('realestate.contract')
+        return super().create(vals_list)
+
     # Cuando se cree un contrato que se ponga la fecha de hoy como fecha de inicio.
     start_date = fields.Date(string ="Start Date", default= fields.Date.context_today)
     end_date = fields.Date(string ="End Date")

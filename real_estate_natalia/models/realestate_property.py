@@ -24,6 +24,19 @@ class RealEstateProperty(models.Model):
         # La propiedad cuando se cree que tenga un usuario asignado
         default= lambda self: self.env.user.id
     )
+
+    # HERENCIA
+    agent_id = fields.Many2one(
+        comodel_name="realestate.agent",
+        string="Agent"
+    )
+
+    # HERENCIA
+    owner_id = fields.Many2one(
+        comodel_name="realestate.owner",
+        string="Owner"
+    )
+
     category_id = fields.Many2one(
         comodel_name="realestate.category",
         string="Category",

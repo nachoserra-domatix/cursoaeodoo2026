@@ -30,7 +30,9 @@
         <field name="availability" widget="boolean_toggle" optional="show"></field>
         <field name="next_visit_date" optional="show"></field>  
         <field name="stage_id" optional="show"></field>
-        <field name="user_id" widget="many2one_avatar_user" optional="show"/>       
+        <field name="user_id" widget="many2one_avatar_user" optional="show"/>   
+        <field name="agent_id"></field>    
+        <field name="owner_id"></field>
       </list>
     </field>
   </record>
@@ -79,6 +81,8 @@
                         <group> 
                           <field name="availability" widget="boolean_toggle"></field>                         
                           <field name="user_id" widget="many2one_avatar_user"></field> 
+                          <field name="agent_id"></field>
+                          <field name="owner_id"></field>
                           <field name="next_visit_date"></field>    
                           <field name="active" invisible="1"></field>     
                           <field name="company_id"></field>               
