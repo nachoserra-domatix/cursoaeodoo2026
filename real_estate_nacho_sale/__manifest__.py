@@ -4,6 +4,7 @@
     "depends": ["sale", "rsr"],
     "data": [
         "data/ir_sequence.xml",
+        "views/estate_product_view.xml",
         "views/estate_contract_view.xml"
     ],
     "installable": True,
