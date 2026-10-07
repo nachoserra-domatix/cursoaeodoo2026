@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <record id="action_report_realestate_offer" model="ir.actions.report">
+      <field name="name">Offer</field>
+      <field name="model">realestate.offer</field>
+      <field name="report_type">qweb-pdf</field>
+      <field name="report_name">real_estate_david.report_realestate_offer</field>
+      <field name="report_file">real_estate_david.report_realestate_offer</field>
+      <field name="print_report_name">'Offer - %s' % (object.property_id.name)</field>
+      <field name="binding_model_id" ref="model_realestate_offer"/>
+      <field name="binding_type">report</field>
+   </record>
+
+   <template id="report_realestate_offer">
+      <t t-call="web.html_container">
+         <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+               <div class="page">
+                  <h1>Offer</h1>
+                  <hr />
+                  <div class="row">
+                     <div class="col-12">
+                        <p>Property: <strong t-field="o.property_id" /></p>
+                        <p>Buyer: <strong t-field="o.partner_id" /></p>
+                        <p>Amount: <strong t-field="o.amount" /></p>
+                        <p>Date: <strong t-field="o.date" /></p>
+                        <p>State: <strong t-field="o.state" /></p>
+                     </div>
+                  </div>
+               </div>
+            </t>
+         </t>
+      </t>
+   </template>
+
+</odoo>

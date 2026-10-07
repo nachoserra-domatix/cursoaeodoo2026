@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <!-- En contratos añade un selector de productos -->
+   <record id="realestate_contract_sale_form" model="ir.ui.view">
+      <field name="name">realestate.contract.sale.form</field>
+      <field name="model">realestate.contract</field>
+      <field name="inherit_id" ref="real_estate_david.realestate_contract_form_view" />
+      <field name="arch" type="xml">
+        
+         <div name="button_box" position="inside">
+            <button name="action_view_orders" type="object" class="oe_state_button" icon="fa-shopping-cart">
+               <field name="order_count" widget="statinfo" string="Orders"/>
+            </button>
+
+         </div>
+         <field name="property_id" position="after">
+            <field name="product_id" />
+         </field>
+
+         <button name="action_canceled" position="after">
+            <button name="action_create_order" type="object" class="btn-primary" string="Create order" />
+            <button name="action_confirm_and_invoice" type="object" class="btn-primary" string="Confirm and Invoice" />
+         </button>
+      </field>
+   </record>
+</odoo>
