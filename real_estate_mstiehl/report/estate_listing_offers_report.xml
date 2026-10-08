@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_listing_offers" model="ir.actions.report">
+        <field name="name">Listing Offers</field>
+        <field name="model">estate.listing</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">real_estate_mstiehl.estate_listing_offers_report</field>
+        <field name="report_file">real_estate_mstiehl.estate_listing_offers_report</field>
+        <field name="print_report_name">'Offers - %s' % (object.listing_ref_code)</field>
+        <field name="paperformat_id" ref="real_estate_mstiehl.estate_paperformat_a4"/>
+        <field name="binding_model_id" ref="model_estate_listing"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="estate_listing_offers_report" name="Estate Listing Offers Report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2 t-field="o.name"/>
+                                <p class="text-muted mb-0" t-field="o.listing_ref_code"/>
+                            </div>
+                            <div class="col-6 text-end">
+                                <span class="badge rounded-pill text-bg-secondary" t-field="o.state"/>
+                            </div>
+                        </div>
+
+                        <hr class="mt-3 mb-4"/>
+
+                        <div class="row mb-4">
+                            <div class="col-4">
+                                <strong>Property</strong>
+                                <p class="mb-0" t-field="o.property_id"/>
+                            </div>
+                            <div class="col-4">
+                                <strong>Expected Price</strong>
+                                <p class="mb-0" t-field="o.expected_price"/>
+                            </div>
+                            <div class="col-4">
+                                <strong>Selling Price</strong>
+                                <p class="mb-0" t-field="o.selling_price"/>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <strong>Seller</strong>
+                                <p class="mb-0" t-field="o.seller_id"/>
+                            </div>
+                            <div class="col-6">
+                                <strong>Agent</strong>
+                                <p class="mb-0" t-field="o.agent_id"/>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <strong>Offers</strong>
+                                <table class="table table-sm table-bordered mt-2">
+                                    <thead>
+                                        <tr>
+                                            <th>Partner</th>
+                                            <th>Offer</th>
+                                            <th>Date</th>
+                                            <th>Valid Until</th>
+                                            <th>Agent</th>
+                                            <th>State</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="o.offer_ids" t-as="offer">
+                                            <tr>
+                                                <td><span t-field="offer.partner_id"/></td>
+                                                <td><span t-field="offer.offer_value"/></td>
+                                                <td><span t-field="offer.date"/></td>
+                                                <td><span t-field="offer.valid_until"/></td>
+                                                <td><span t-field="offer.agent_id"/></td>
+                                                <td><span t-field="offer.state"/></td>
+                                            </tr>
+                                        </t>
+                                        <tr t-if="not o.offer_ids">
+                                            <td colspan="6" class="text-muted">No offers registered.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,1227 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* real_estate_mstiehl
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-18 15:12+0000\n"
+"PO-Revision-Date: 2026-09-18 15:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_listing_offer_view_form
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_form
+msgid "Accept"
+msgstr "Aceptar"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_form
+msgid "Accept this field"
+msgstr "Aceptar esta oferta"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_listing_offer__state__accepted
+msgid "Accepted"
+msgstr "Aceptada"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__message_needaction
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__message_needaction
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__message_needaction
+msgid "Action Needed"
+msgstr "Acción requerida"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__active
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_type__active
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__active
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__active
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__active
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_type__active
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_tag__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__activity_ids
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__activity_ids
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__activity_exception_decoration
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__activity_exception_decoration
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__activity_state
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__activity_state
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__activity_type_icon
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__activity_type_icon
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono del tipo de actividad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__address
+msgid "Address"
+msgstr "Dirección"
+
+#. module: real_estate_mstiehl
+#: model:res.groups,name:real_estate_mstiehl.group_real_estate_manager
+msgid "Administrator"
+msgstr "Administrador"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__agent_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__agent_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__agent_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__agent_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__agent_id
+msgid "Agent"
+msgstr "Agente"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_listing_offer_view_form
+msgid "Analyse"
+msgstr "Analizar"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_form
+msgid "Are you sure you want to accept this offer?"
+msgstr "¿Seguro que desea aceptar esta oferta?"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__message_attachment_count
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__message_attachment_count
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__message_attachment_count
+msgid "Attachment Count"
+msgstr "Número de archivos adjuntos"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__available
+msgid "Available"
+msgstr "Disponible"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__bathrooms
+msgid "Bathrooms"
+msgstr "Baños"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__bedrooms
+msgid "Bedrooms"
+msgstr "Dormitorios"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__buyer_ids
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_contract_form
+msgid "Buyers"
+msgstr "Compradores"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_visit_view_form
+msgid "Cancel"
+msgstr "Cancelada"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_contract__state__canceled
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_listing__state__canceled
+msgid "Canceled"
+msgstr "Cancelada"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__city
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_view_form
+msgid "City"
+msgstr "Ciudad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_type__code
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_type__code
+msgid "Code"
+msgstr "Código"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__color
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__color
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_tag__color
+msgid "Color"
+msgstr "Color"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_visit_view_form
+msgid "Confirm"
+msgstr "Confirmada"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__cunstruction_year
+msgid "Construction Year"
+msgstr "Año de construcción"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__contacts_ids
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_view_form
+msgid "Contacts"
+msgstr "Contactos"
+
+#. module: real_estate_mstiehl
+#. odoo-python
+#: code:addons/real_estate_mstiehl/models/estate_listing.py:0
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_buyer__contract_id
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_form
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__contract_ref_code
+msgid "Contract Code"
+msgstr "Código del contrato"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__contract_count
+msgid "Contract Count"
+msgstr "Número de contratos"
+
+#. module: real_estate_mstiehl
+#: model:ir.ui.menu,name:real_estate_mstiehl.estate_menu_contract_type
+msgid "Contract Type"
+msgstr "Tipo de contrato"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__contract_ids
+#: model:ir.ui.menu,name:real_estate_mstiehl.estate_menu_contracts
+msgid "Contracts"
+msgstr "Contratos"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__country_id
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_view_form
+msgid "Country"
+msgstr "País"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__country_code
+msgid "Country Code"
+msgstr "Código de país"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__create_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_buyer__create_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_type__create_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__create_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__create_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__create_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts__create_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts_role__create_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_gallery__create_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_type__create_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__create_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_tag__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__create_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_buyer__create_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_type__create_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__create_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__create_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__create_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts__create_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts_role__create_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_gallery__create_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_type__create_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__create_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_tag__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__date_accepted
+msgid "Date Accepted"
+msgstr "Fecha de aceptación"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__date_canceled
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__date_canceled
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__date_canceled
+msgid "Date Canceled"
+msgstr "Fecha de cancelación"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__date_confirmed
+msgid "Date Confirmed"
+msgstr "Fecha de confirmación"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__date_done
+msgid "Date Done"
+msgstr "Fecha de realización"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__date_expired
+msgid "Date Expired"
+msgstr "Fecha de caducidad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__date_in_analysis
+msgid "Date In Analysis"
+msgstr "Fecha en análisis"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__date_offer_accepted
+msgid "Date Offer Accepted"
+msgstr "Fecha de aceptación de la oferta"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__date_offer_received
+msgid "Date Offer Received"
+msgstr "Fecha de recepción de la oferta"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__date_published
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__date_published
+msgid "Date Published"
+msgstr "Fecha de publicación"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__date_refused
+msgid "Date Refused"
+msgstr "Fecha de rechazo"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__date_register
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__date_register
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__date_register
+msgid "Date Register"
+msgstr "Fecha de registro"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__date_reserved
+msgid "Date Reserved"
+msgstr "Fecha de reserva"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__date_signed
+msgid "Date Signed"
+msgstr "Fecha de firma"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__date_sold
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__date_sold
+msgid "Date Sold"
+msgstr "Fecha de venta"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__valid_until
+msgid "Date Valid"
+msgstr "Fecha de validez"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_contract_form
+msgid "Dates"
+msgstr "Fechas"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_buyer__denominator
+msgid "Denominator"
+msgstr "Denominador"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__description
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__description
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__description
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_gallery__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_view_form
+msgid "Details"
+msgstr "Detalles"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__display_name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_buyer__display_name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_type__display_name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__display_name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__display_name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__display_name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts__display_name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts_role__display_name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_gallery__display_name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_type__display_name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__display_name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_tag__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_visit_view_form
+msgid "Done"
+msgstr "Realizada"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_contract__state__draft
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_listing__state__draft
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_visit_view_form
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_property__garden_orientation__east
+msgid "East"
+msgstr "Este"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__date_end
+msgid "End Date"
+msgstr "Fecha de finalización"
+
+#. module: real_estate_mstiehl
+#: model:ir.model,name:real_estate_mstiehl.model_estate_contract
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_contract_form
+msgid "Estate Contract"
+msgstr "Contrato inmobiliario"
+
+#. module: real_estate_mstiehl
+#: model:ir.model,name:real_estate_mstiehl.model_estate_contract_buyer
+msgid "Estate Contract Buyer"
+msgstr "Comprador del contrato inmobiliario"
+
+#. module: real_estate_mstiehl
+#: model:ir.actions.act_window,name:real_estate_mstiehl.estate_contract_type_view_action
+#: model:ir.model,name:real_estate_mstiehl.model_estate_contract_type
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_contract_type_form
+msgid "Estate Contract Type"
+msgstr "Tipo de contrato inmobiliario"
+
+#. module: real_estate_mstiehl
+#: model:ir.actions.act_window,name:real_estate_mstiehl.estate_contract_view_action
+msgid "Estate Contracts"
+msgstr "Contratos inmobiliarios"
+
+#. module: real_estate_mstiehl
+#: model:ir.actions.act_window,name:real_estate_mstiehl.estate_listing_view_action
+#: model:ir.model,name:real_estate_mstiehl.model_estate_listing
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_form
+msgid "Estate Listing"
+msgstr "Anuncio inmobiliario"
+
+#. module: real_estate_mstiehl
+#: model:ir.model,name:real_estate_mstiehl.model_estate_listing_offer
+msgid "Estate Listing Offer"
+msgstr "Oferta del anuncio inmobiliario"
+
+#. module: real_estate_mstiehl
+#: model:ir.model,name:real_estate_mstiehl.model_estate_property_contacts
+msgid "Estate Property Contacts"
+msgstr "Contactos de la propiedad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model,name:real_estate_mstiehl.model_estate_property_contacts_role
+msgid "Estate Property Contacts Role"
+msgstr "Rol de contacto de la propiedad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model,name:real_estate_mstiehl.model_estate_property_gallery
+msgid "Estate Property Gallery"
+msgstr "Galería de la propiedad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model,name:real_estate_mstiehl.model_estate_property_type
+msgid "Estate Property Type"
+msgstr "Tipo de propiedad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model,name:real_estate_mstiehl.model_estate_property_visit
+msgid "Estate Property Visit"
+msgstr "Visita a la propiedad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model,name:real_estate_mstiehl.model_estate_tag
+msgid "Estate Tag"
+msgstr "Etiqueta inmobiliaria"
+
+#. module: real_estate_mstiehl
+#: model:ir.actions.act_window,name:real_estate_mstiehl.estate_tag_view_action
+msgid "Estate Tags"
+msgstr "Etiquetas inmobiliarias"
+
+#. module: real_estate_mstiehl
+#: model:ir.actions.act_window,name:real_estate_mstiehl.estate_property_visit_view_action
+msgid "Estate property.visits"
+msgstr "Visitas a propiedades"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__expected_price
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__expected_price
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__expected_price
+msgid "Expected Price"
+msgstr "Precio esperado"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_listing_offer__state__expired
+msgid "Expired"
+msgstr "Caducada"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__external_url
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__external_url
+msgid "External URL"
+msgstr "URL externa"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__message_follower_ids
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__message_follower_ids
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__message_partner_ids
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__message_partner_ids
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Contactos)"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_contract__activity_type_icon
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_listing__activity_type_icon
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_property__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono Font Awesome, p. ej. fa-tasks"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__gallery_ids
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_view_form
+msgid "Gallery"
+msgstr "Galería"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__garage
+msgid "Garage"
+msgstr "Garaje"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__garden
+msgid "Garden"
+msgstr "Jardín"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__garden_area
+msgid "Garden Area"
+msgstr "Superficie del jardín"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__garden_orientation
+msgid "Garden Orientation"
+msgstr "Orientación del jardín"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__partner_latitude
+msgid "Geo Latitude"
+msgstr "Latitud geográfica"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__partner_longitude
+msgid "Geo Longitude"
+msgstr "Longitud geográfica"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__google_maps_url
+msgid "Google Maps URL"
+msgstr "URL de Google Maps"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__has_message
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__has_message
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_buyer__id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_type__id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts__id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts_role__id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_gallery__id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_type__id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_tag__id
+msgid "ID"
+msgstr "ID"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__activity_exception_icon
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__activity_exception_icon
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_contract__activity_exception_icon
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_listing__activity_exception_icon
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_property__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_contract__message_needaction
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_listing__message_needaction
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_property__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_contract__message_has_error
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_listing__message_has_error
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_property__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen un error de envío."
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_gallery__image
+msgid "Image"
+msgstr "Imagen"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_listing_offer__state__in_analysis
+msgid "In Analysis"
+msgstr "En análisis"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__message_is_follower
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__message_is_follower
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__write_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_buyer__write_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_type__write_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__write_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__write_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__write_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts__write_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts_role__write_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_gallery__write_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_type__write_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__write_uid
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_tag__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__write_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_buyer__write_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_type__write_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__write_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__write_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__write_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts__write_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts_role__write_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_gallery__write_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_type__write_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__write_date
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_tag__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__listing_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__listing_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__listing_id
+msgid "Listing"
+msgstr "Anuncio"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__listing_ref_code
+msgid "Listing Code"
+msgstr "Código del anuncio"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_form
+msgid "Listing Details"
+msgstr "Detalles del anuncio"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_form
+msgid "Listing Prices"
+msgstr "Precios del anuncio"
+
+#. module: real_estate_mstiehl
+#: model:ir.ui.menu,name:real_estate_mstiehl.estate_menu_listing
+#: model:ir.ui.menu,name:real_estate_mstiehl.estate_menu_listing_root
+msgid "Listings"
+msgstr "Anuncios"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__living_area
+msgid "Living Area"
+msgstr "Superficie habitable"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__message_has_error
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__message_has_error
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de envío del mensaje"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__message_ids
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__message_ids
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__my_activity_date_deadline
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__my_activity_date_deadline
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Fecha límite de mi actividad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_type__name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts_role__name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_gallery__name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_type__name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__name
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_tag__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__activity_calendar_event_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__activity_calendar_event_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Próximo evento de calendario de la actividad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__activity_date_deadline
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__activity_date_deadline
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite de la próxima actividad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__activity_summary
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__activity_summary
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la próxima actividad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__activity_type_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__activity_type_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo de la próxima actividad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_property__garden_orientation__north
+msgid "North"
+msgstr "Norte"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__note
+msgid "Note"
+msgstr "Nota"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_buyer__notes
+msgid "Notes"
+msgstr "Notas"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__message_needaction_counter
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__message_needaction_counter
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__message_has_error_counter
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__message_has_error_counter
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_contract__message_needaction_counter
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_listing__message_needaction_counter
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_property__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_contract__message_has_error_counter
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_listing__message_has_error_counter
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_property__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_buyer__numerator
+msgid "Numerator"
+msgstr "Numerador"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__offer_id
+msgid "Offer"
+msgstr "Oferta"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_listing__state__offer_accepted
+msgid "Offer Accepted"
+msgstr "Oferta aceptada"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_listing__state__offer_received
+msgid "Offer Received"
+msgstr "Oferta recibida"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__offer_ids
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_listing_offer_view_list
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_form
+msgid "Offers"
+msgstr "Ofertas"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_buyer__partner_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__partner_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts__partner_id
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__postcode
+msgid "Postcode"
+msgstr "Código postal"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__price
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__price
+msgid "Price"
+msgstr "Precio"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__image_1920
+msgid "Primary Image"
+msgstr "Imagen principal"
+
+#. module: real_estate_mstiehl
+#: model:ir.actions.act_window,name:real_estate_mstiehl.estate_property_view_action
+#: model:ir.ui.menu,name:real_estate_mstiehl.estate_menu_properties
+msgid "Properties"
+msgstr "Propiedades"
+
+#. module: real_estate_mstiehl
+#: model:ir.model,name:real_estate_mstiehl.model_estate_property
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__property_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__property_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__property_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts__property_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_gallery__property_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__property_id
+msgid "Property"
+msgstr "Propiedad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__property_ref_code
+msgid "Property Code"
+msgstr "Código de la propiedad"
+
+#. module: real_estate_mstiehl
+#: model:ir.actions.act_window,name:real_estate_mstiehl.estate_listing_offer_view_action
+msgid "Property Offers"
+msgstr "Ofertas de la propiedad"
+
+#. module: real_estate_mstiehl
+#: model:ir.actions.act_window,name:real_estate_mstiehl.estate_property_type_view_action
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__property_type_id
+msgid "Property Type"
+msgstr "Tipo de propiedad"
+
+#. module: real_estate_mstiehl
+#: model:ir.ui.menu,name:real_estate_mstiehl.estate_menu_property_type
+msgid "Property Types"
+msgstr "Tipos de propiedad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_contract__state__published
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_listing__state__published
+msgid "Published"
+msgstr "Publicada"
+
+#. module: real_estate_mstiehl
+#: model:ir.module.category,name:real_estate_mstiehl.module_category_real_estate
+#: model:ir.ui.menu,name:real_estate_mstiehl.estate_menu_root
+#: model:res.groups.privilege,name:real_estate_mstiehl.res_groups_privilege_real_estate
+msgid "Real Estate"
+msgstr "Inmobiliaria"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_listing_offer_view_form
+msgid "Real Estate Listing Offer"
+msgstr "Oferta del anuncio inmobiliario"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_view_list
+msgid "Real Estate Properties"
+msgstr "Propiedades inmobiliarias"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_view_form
+msgid "Real Estate Property"
+msgstr "Propiedad inmobiliaria"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_tag_view_form
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_tag_view_list
+msgid "Real Estate Property Tag"
+msgstr "Etiqueta de la propiedad inmobiliaria"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_type_view_form
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_type_view_list
+msgid "Real Estate Property Type"
+msgstr "Tipo de propiedad inmobiliaria"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_visit_view_form
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_visit_view_list
+msgid "Real Estate Property Visit"
+msgstr "Visita a la propiedad inmobiliaria"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_listing_offer_view_form
+msgid "Refuse"
+msgstr "Rechazar"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_listing_offer__state__refused
+msgid "Refused"
+msgstr "Rechazada"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_form
+msgid "Reject"
+msgstr "Rechazar"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_form
+msgid "Reject this field"
+msgstr "Rechazar esta oferta"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_listing__state__reserved
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_view_form
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_form
+msgid "Reserved"
+msgstr "Reservada"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__activity_user_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__activity_user_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_contacts__role_id
+msgid "Role"
+msgstr "Rol"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__seller_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__seller_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__seller_id
+msgid "Seller"
+msgstr "Vendedor"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__selling_price
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__selling_price
+msgid "Selling Price"
+msgstr "Precio de venta"
+
+#. module: real_estate_mstiehl
+#: model:ir.ui.menu,name:real_estate_mstiehl.estate_menu_settings
+msgid "Settings"
+msgstr "Configuración"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_contract__state__signed
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_contract_form
+msgid "Signed"
+msgstr "Firmado"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_listing__state__sold
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_form
+msgid "Sold"
+msgstr "Vendida"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_property__garden_orientation__south
+msgid "South"
+msgstr "Sur"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__date_start
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__state
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__state
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__state
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__state_id
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_view_form
+msgid "State"
+msgstr "Estado"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_contract__activity_state
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_listing__activity_state
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_property__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en las actividades\n"
+"Atrasada: la fecha límite ya ha pasado\n"
+"Hoy: la fecha de la actividad es hoy\n"
+"Planificada: actividades futuras."
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__street
+msgid "Street"
+msgstr "Calle"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_view_form
+msgid "Street 2..."
+msgstr "Calle 2..."
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_view_form
+msgid "Street..."
+msgstr "Calle..."
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__street2
+msgid "Street2"
+msgstr "Calle 2"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_listing_offer__state__submitted
+msgid "Submitted"
+msgstr "Enviada"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__tags_ids
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__tags_ids
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__tags_ids
+#: model:ir.ui.menu,name:real_estate_mstiehl.estate_menu_tag
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_property__country_code
+msgid ""
+"The ISO country code in two chars. \n"
+"You can use this field for quick search."
+msgstr ""
+"El código de país ISO de dos caracteres. \n"
+"Puede utilizar este campo para búsquedas rápidas."
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.actions.act_window,help:real_estate_mstiehl.estate_contract_type_view_action
+msgid "There is no examples click here to add new Estate Contract Type."
+msgstr "No hay ejemplos. Haga clic aquí para añadir un nuevo tipo de contrato inmobiliario."
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.actions.act_window,help:real_estate_mstiehl.estate_contract_view_action
+msgid "There is no examples click here to add new Estate Contract."
+msgstr "No hay ejemplos. Haga clic aquí para añadir un nuevo contrato inmobiliario."
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.actions.act_window,help:real_estate_mstiehl.estate_listing_view_action
+msgid "There is no examples click here to add new Estate Listing."
+msgstr ""
+"No hay ejemplos. Haga clic aquí para añadir un nuevo anuncio inmobiliario."
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract_buyer__total_share
+msgid "Total"
+msgstr "Total"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__total_area
+msgid "Total Area"
+msgstr "Superficie total"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_contract__type_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__type_id
+msgid "Type"
+msgstr "Tipo"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_contract__activity_exception_decoration
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_listing__activity_exception_decoration
+#: model:ir.model.fields,help:real_estate_mstiehl.field_estate_property__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de la actividad de excepción registrada."
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__user_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__user_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__user_id
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__user_id
+#: model:res.groups,name:real_estate_mstiehl.group_real_estate_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing_offer__valid
+msgid "Valid"
+msgstr "Válida"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property_visit__visitor_id
+msgid "Visitor"
+msgstr "Visitante"
+
+#. module: real_estate_mstiehl
+#: model:ir.ui.menu,name:real_estate_mstiehl.estate_menu_visits
+msgid "Visits"
+msgstr "Visitas"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields.selection,name:real_estate_mstiehl.selection__estate_property__garden_orientation__west
+msgid "West"
+msgstr "Oeste"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_view_form
+msgid "ZIP"
+msgstr "C.P."
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_property__zip
+msgid "Zip"
+msgstr "Código postal"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__property_image
+msgid "Property Image"
+msgstr "Imagen de la propiedad"
+
+#. module: real_estate_mstiehl
+#: model:ir.model.fields,field_description:real_estate_mstiehl.field_estate_listing__next_visit_date
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_kanban
+msgid "Next Visit Date"
+msgstr "Fecha de la próxima visita"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_form
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_kanban
+msgid "Accept Best Offer"
+msgstr "Aceptar la mejor oferta"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_kanban
+msgid "Expected:"
+msgstr "Esperado:"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_kanban
+msgid "Selling:"
+msgstr "Venta:"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_kanban
+msgid "Are you sure you want to mark this listing as sold? A contract will be created."
+msgstr "¿Seguro que quieres marcar este anuncio como vendido? Se creará un contrato."
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_visit_view_kanban
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_kanban
+msgid "Edit"
+msgstr "Editar"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_visit_view_kanban
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.view_estate_listing_kanban
+msgid "Delete"
+msgstr "Eliminar"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_listing_offer_view_search
+msgid "My Offers"
+msgstr "Mis ofertas"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_listing_offer_view_search
+msgid "Expiring This Week"
+msgstr "Vencen esta semana"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_listing_offer_view_search
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_property_visit_view_search
+msgid "Status"
+msgstr "Estado"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.ui.view,arch_db:real_estate_mstiehl.estate_listing_offer_view_kanban
+msgid "Valid Until"
+msgstr "Válida hasta"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.actions.act_window,help:real_estate_mstiehl.estate_listing_offer_view_action
+msgid "No offers yet"
+msgstr "Todavía no hay ofertas"
+
+#. module: real_estate_mstiehl
+#: model_terms:ir.actions.act_window,help:real_estate_mstiehl.estate_listing_offer_view_action
+msgid "Offers are registered from each listing."
+msgstr "Las ofertas se registran desde cada anuncio."

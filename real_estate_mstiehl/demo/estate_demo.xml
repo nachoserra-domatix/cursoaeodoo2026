@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- ===================================================================== -->
+        <!-- CONTACT ROLES                                                         -->
+        <!-- ===================================================================== -->
+
+        <record id="demo_contacts_role_notary" model="estate.property.contacts.role">
+            <field name="name">Notary</field>
+        </record>
+        <record id="demo_contacts_role_architect" model="estate.property.contacts.role">
+            <field name="name">Architect</field>
+        </record>
+        <record id="demo_contacts_role_tenant" model="estate.property.contacts.role">
+            <field name="name">Tenant</field>
+        </record>
+
+        <!-- ===================================================================== -->
+        <!-- CONTACTS: Sellers / Buyers / Visitors used across the demo scenario   -->
+        <!-- ===================================================================== -->
+
+        <record id="demo_partner_seller_marc" model="res.partner">
+            <field name="name">Marcos Jimenez</field>
+            <field name="street">Calle Mayor 12</field>
+            <field name="city">Madrid</field>
+            <field name="zip">28013</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="phone">+34 91 123 45 67</field>
+            <field name="email">marcos.jimenez@example.com</field>
+            <field name="company_type">person</field>
+        </record>
+
+        <record id="demo_partner_seller_laura" model="res.partner">
+            <field name="name">Laura Fernandez</field>
+            <field name="street">Passeig de Gracia 45</field>
+            <field name="city">Barcelona</field>
+            <field name="zip">08007</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="phone">+34 93 123 45 67</field>
+            <field name="email">laura.fernandez@example.com</field>
+            <field name="company_type">person</field>
+        </record>
+
+        <record id="demo_partner_seller_antonio" model="res.partner">
+            <field name="name">Antonio Ruiz</field>
+            <field name="street">Calle de la Paz 10</field>
+            <field name="city">Valencia</field>
+            <field name="zip">46003</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="phone">+34 96 123 45 67</field>
+            <field name="email">antonio.ruiz@example.com</field>
+            <field name="company_type">person</field>
+        </record>
+
+        <!-- ===================================================================== -->
+        <!-- OWNERS (estate.owner, delegating to the seller partners above)       -->
+        <!-- ===================================================================== -->
+
+        <record id="demo_owner_marc" model="estate.owner">
+            <field name="partner_id" ref="demo_partner_seller_marc"/>
+        </record>
+        <record id="demo_owner_laura" model="estate.owner">
+            <field name="partner_id" ref="demo_partner_seller_laura"/>
+        </record>
+        <record id="demo_owner_antonio" model="estate.owner">
+            <field name="partner_id" ref="demo_partner_seller_antonio"/>
+        </record>
+
+        <record id="demo_partner_buyer_sophie" model="res.partner">
+            <field name="name">Sofia Morales</field>
+            <field name="street">Calle Sierpes 8</field>
+            <field name="city">Sevilla</field>
+            <field name="zip">41004</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="phone">+34 95 412 34 56</field>
+            <field name="email">sofia.morales@example.com</field>
+            <field name="company_type">person</field>
+        </record>
+
+        <record id="demo_partner_buyer_igor" model="res.partner">
+            <field name="name">Ignacio Vargas</field>
+            <field name="street">Gran Via 28</field>
+            <field name="city">Bilbao</field>
+            <field name="zip">48001</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="phone">+34 94 412 34 56</field>
+            <field name="email">ignacio.vargas@example.com</field>
+            <field name="company_type">person</field>
+        </record>
+
+        <record id="demo_partner_buyer_helen" model="res.partner">
+            <field name="name">Elena Castro</field>
+            <field name="street">Calle Alcala 5</field>
+            <field name="city">Madrid</field>
+            <field name="zip">28014</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="phone">+34 91 765 43 21</field>
+            <field name="email">elena.castro@example.com</field>
+            <field name="company_type">person</field>
+        </record>
+
+        <record id="demo_partner_buyer_thomas" model="res.partner">
+            <field name="name">Tomas Navarro</field>
+            <field name="street">Rambla Catalunya 9</field>
+            <field name="city">Barcelona</field>
+            <field name="zip">08008</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="phone">+34 93 765 43 21</field>
+            <field name="email">tomas.navarro@example.com</field>
+            <field name="company_type">person</field>
+        </record>
+
+        <record id="demo_partner_buyer_ines" model="res.partner">
+            <field name="name">Ines Alvarez</field>
+            <field name="street">Calle Colon 110</field>
+            <field name="city">Valencia</field>
+            <field name="zip">46004</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="phone">+34 96 765 43 21</field>
+            <field name="email">ines.alvarez@example.com</field>
+            <field name="company_type">person</field>
+        </record>
+
+        <record id="demo_partner_visitor_paul" model="res.partner">
+            <field name="name">Pablo Gil</field>
+            <field name="city">Sevilla</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="phone">+34 95 412 99 00</field>
+            <field name="email">pablo.gil@example.com</field>
+            <field name="company_type">person</field>
+        </record>
+
+        <record id="demo_partner_visitor_anna" model="res.partner">
+            <field name="name">Ana Santos</field>
+            <field name="city">Bilbao</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="phone">+34 94 412 99 00</field>
+            <field name="email">ana.santos@example.com</field>
+            <field name="company_type">person</field>
+        </record>
+
+        <record id="demo_partner_notary_bernard" model="res.partner">
+            <field name="name">Bernardo Lacroix (Notario)</field>
+            <field name="city">Madrid</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="phone">+34 91 445 56 67</field>
+            <field name="email">bernardo.lacroix@example.com</field>
+            <field name="company_type">person</field>
+        </record>
+
+        <!-- ===================================================================== -->
+        <!-- PROPERTIES (5)                                                        -->
+        <!-- ===================================================================== -->
+
+        <!-- 1. Madrid apartment - fully sold, with signed contract -->
+        <record id="demo_property_paris_apartment" model="estate.property">
+            <field name="name">Charming 3-Bedroom Apartment in Madrid Centro</field>
+            <field name="description">Bright and elegant apartment on the 3rd floor of a historic building, fully renovated, close to shops and metro.</field>
+            <field name="cunstruction_year">1890</field>
+            <field name="owner_id" ref="demo_owner_marc"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="street">Calle Mayor 12</field>
+            <field name="city">Madrid</field>
+            <field name="zip">28013</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="google_maps_url">https://maps.google.com/?q=Calle+Mayor+12+Madrid</field>
+            <field name="expected_price">620000</field>
+            <field name="selling_price">605000</field>
+            <field name="total_area">95</field>
+            <field name="living_area">88</field>
+            <field name="bedrooms">3</field>
+            <field name="bathrooms">2</field>
+            <field name="garage">0</field>
+            <field name="garden">0</field>
+            <field name="property_type_id" ref="property_type_apartment"/>
+            <field name="date_sold" eval="(datetime.today() - timedelta(days=15)).strftime('%Y-%m-%d')"/>
+            <field name="tags_ids" eval="[(6, 0, [ref('tag_renovated'), ref('tag_elevator'), ref('tag_exclusive')])]"/>
+        </record>
+
+        <record id="demo_property_paris_gallery_1" model="estate.property.gallery">
+            <field name="name">Living Room</field>
+            <field name="description">Spacious living room with original parquet flooring</field>
+            <field name="property_id" ref="demo_property_paris_apartment"/>
+        </record>
+        <record id="demo_property_paris_gallery_2" model="estate.property.gallery">
+            <field name="name">Kitchen</field>
+            <field name="description">Fully equipped open kitchen</field>
+            <field name="property_id" ref="demo_property_paris_apartment"/>
+        </record>
+
+        <record id="demo_property_paris_contact_notary" model="estate.property.contacts">
+            <field name="partner_id" ref="demo_partner_notary_bernard"/>
+            <field name="property_id" ref="demo_property_paris_apartment"/>
+            <field name="role_id" ref="demo_contacts_role_notary"/>
+        </record>
+
+        <!-- 2. Barcelona house - reserved, offer accepted -->
+        <record id="demo_property_madrid_house" model="estate.property">
+            <field name="name">Modern 4-Bedroom House with Garden in Barcelona</field>
+            <field name="description">Detached house with private garden and garage, built in a quiet residential area close to the city center.</field>
+            <field name="cunstruction_year">2015</field>
+            <field name="owner_id" ref="demo_owner_laura"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="street">Passeig de Gracia 45</field>
+            <field name="city">Barcelona</field>
+            <field name="zip">08007</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="google_maps_url">https://maps.google.com/?q=Passeig+de+Gracia+45+Barcelona</field>
+            <field name="expected_price">450000</field>
+            <field name="total_area">220</field>
+            <field name="living_area">180</field>
+            <field name="bedrooms">4</field>
+            <field name="bathrooms">3</field>
+            <field name="garage">1</field>
+            <field name="garden">1</field>
+            <field name="garden_orientation">south</field>
+            <field name="garden_area">150</field>
+            <field name="property_type_id" ref="property_type_house"/>
+            <field name="tags_ids" eval="[(6, 0, [ref('tag_new_build'), ref('tag_parking'), ref('tag_luxury')])]"/>
+        </record>
+
+        <record id="demo_property_madrid_gallery_1" model="estate.property.gallery">
+            <field name="name">Garden View</field>
+            <field name="description">South-facing private garden</field>
+            <field name="property_id" ref="demo_property_madrid_house"/>
+        </record>
+
+        <record id="demo_property_madrid_contact_architect" model="estate.property.contacts">
+            <field name="partner_id" ref="demo_partner_seller_laura"/>
+            <field name="property_id" ref="demo_property_madrid_house"/>
+            <field name="role_id" ref="demo_contacts_role_architect"/>
+        </record>
+
+        <!-- 3. Valencia villa - published listing, offers pending -->
+        <record id="demo_property_rome_villa" model="estate.property">
+            <field name="name">Luxury Villa with Pool near Valencia</field>
+            <field name="description">Stunning villa with private pool, terrace and panoramic views over the countryside.</field>
+            <field name="cunstruction_year">2005</field>
+            <field name="owner_id" ref="demo_owner_antonio"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="street">Calle de la Paz 10</field>
+            <field name="city">Valencia</field>
+            <field name="zip">46003</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="google_maps_url">https://maps.google.com/?q=Calle+de+la+Paz+10+Valencia</field>
+            <field name="expected_price">980000</field>
+            <field name="total_area">450</field>
+            <field name="living_area">320</field>
+            <field name="bedrooms">5</field>
+            <field name="bathrooms">4</field>
+            <field name="garage">2</field>
+            <field name="garden">1</field>
+            <field name="garden_orientation">west</field>
+            <field name="garden_area">1200</field>
+            <field name="property_type_id" ref="property_type_villa"/>
+            <field name="tags_ids" eval="[(6, 0, [ref('tag_pool'), ref('tag_terrace'), ref('tag_luxury'), ref('tag_sea_view')])]"/>
+        </record>
+
+        <record id="demo_property_rome_gallery_1" model="estate.property.gallery">
+            <field name="name">Pool Area</field>
+            <field name="description">Private pool surrounded by Mediterranean garden</field>
+            <field name="property_id" ref="demo_property_rome_villa"/>
+        </record>
+
+        <!-- 4. Sevilla studio - draft listing, not yet published -->
+        <record id="demo_property_lisbon_studio" model="estate.property">
+            <field name="name">Cozy Studio in Downtown Sevilla</field>
+            <field name="description">Compact and well-located studio apartment, perfect as a rental investment or first home.</field>
+            <field name="cunstruction_year">1960</field>
+            <field name="owner_id" ref="demo_owner_marc"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="street">Calle Sierpes 8</field>
+            <field name="city">Sevilla</field>
+            <field name="zip">41004</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="google_maps_url">https://maps.google.com/?q=Calle+Sierpes+8+Sevilla</field>
+            <field name="expected_price">185000</field>
+            <field name="total_area">38</field>
+            <field name="living_area">35</field>
+            <field name="bedrooms">1</field>
+            <field name="bathrooms">1</field>
+            <field name="garage">0</field>
+            <field name="garden">0</field>
+            <field name="property_type_id" ref="property_type_studio"/>
+            <field name="tags_ids" eval="[(6, 0, [ref('tag_needs_renovation')])]"/>
+        </record>
+
+        <record id="demo_property_lisbon_contact_tenant" model="estate.property.contacts">
+            <field name="partner_id" ref="demo_partner_buyer_ines"/>
+            <field name="property_id" ref="demo_property_lisbon_studio"/>
+            <field name="role_id" ref="demo_contacts_role_tenant"/>
+        </record>
+
+        <!-- 5. Bilbao loft - listing canceled -->
+        <record id="demo_property_munich_loft" model="estate.property">
+            <field name="name">Industrial Loft in Bilbao</field>
+            <field name="description">Open-plan loft with high ceilings and large windows, located in a converted factory building.</field>
+            <field name="cunstruction_year">1925</field>
+            <field name="owner_id" ref="demo_owner_laura"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="street">Gran Via 28</field>
+            <field name="city">Bilbao</field>
+            <field name="zip">48001</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="google_maps_url">https://maps.google.com/?q=Gran+Via+28+Bilbao</field>
+            <field name="expected_price">340000</field>
+            <field name="total_area">110</field>
+            <field name="living_area">105</field>
+            <field name="bedrooms">2</field>
+            <field name="bathrooms">1</field>
+            <field name="garage">0</field>
+            <field name="garden">0</field>
+            <field name="property_type_id" ref="property_type_loft"/>
+            <field name="tags_ids" eval="[(6, 0, [ref('tag_exclusive')])]"/>
+        </record>
+
+        <!-- ===================================================================== -->
+        <!-- LISTINGS (5) - one per property, spanning the full state lifecycle   -->
+        <!-- ===================================================================== -->
+
+        <!-- Listing 1: Madrid apartment -> SOLD -->
+        <record id="demo_listing_paris_apartment" model="estate.listing">
+            <field name="property_id" ref="demo_property_paris_apartment"/>
+            <field name="type_id" ref="contract_type_sale"/>
+            <field name="description">Charming 3-bedroom apartment in Madrid Centro, fully renovated.</field>
+            <field name="seller_id" ref="demo_partner_seller_marc"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="expected_price">620000</field>
+            <field name="state">sold</field>
+            <field name="date_published" eval="(datetime.today() - timedelta(days=60)).strftime('%Y-%m-%d')"/>
+            <field name="date_offer_received" eval="(datetime.today() - timedelta(days=40)).strftime('%Y-%m-%d')"/>
+            <field name="date_offer_accepted" eval="(datetime.today() - timedelta(days=30)).strftime('%Y-%m-%d')"/>
+            <field name="date_reserved" eval="(datetime.today() - timedelta(days=28)).strftime('%Y-%m-%d')"/>
+            <field name="date_sold" eval="(datetime.today() - timedelta(days=15)).strftime('%Y-%m-%d')"/>
+            <field name="tags_ids" eval="[(6, 0, [ref('tag_renovated'), ref('tag_elevator'), ref('tag_exclusive')])]"/>
+        </record>
+
+        <!-- Listing 2: Barcelona house -> RESERVED (offer accepted, not yet sold) -->
+        <record id="demo_listing_madrid_house" model="estate.listing">
+            <field name="property_id" ref="demo_property_madrid_house"/>
+            <field name="type_id" ref="contract_type_sale"/>
+            <field name="description">Modern 4-bedroom house with garden and garage in Barcelona.</field>
+            <field name="seller_id" ref="demo_partner_seller_laura"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="expected_price">450000</field>
+            <field name="state">reserved</field>
+            <field name="date_published" eval="(datetime.today() - timedelta(days=35)).strftime('%Y-%m-%d')"/>
+            <field name="date_offer_received" eval="(datetime.today() - timedelta(days=20)).strftime('%Y-%m-%d')"/>
+            <field name="date_offer_accepted" eval="(datetime.today() - timedelta(days=10)).strftime('%Y-%m-%d')"/>
+            <field name="date_reserved" eval="(datetime.today() - timedelta(days=9)).strftime('%Y-%m-%d')"/>
+            <field name="tags_ids" eval="[(6, 0, [ref('tag_new_build'), ref('tag_parking'), ref('tag_luxury')])]"/>
+        </record>
+
+        <!-- Listing 3: Valencia villa -> OFFER_RECEIVED (two competing offers) -->
+        <record id="demo_listing_rome_villa" model="estate.listing">
+            <field name="property_id" ref="demo_property_rome_villa"/>
+            <field name="type_id" ref="contract_type_sale"/>
+            <field name="description">Luxury villa with pool near Valencia, panoramic countryside views.</field>
+            <field name="seller_id" ref="demo_partner_seller_antonio"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="expected_price">980000</field>
+            <field name="state">offer_received</field>
+            <field name="date_published" eval="(datetime.today() - timedelta(days=25)).strftime('%Y-%m-%d')"/>
+            <field name="date_offer_received" eval="(datetime.today() - timedelta(days=5)).strftime('%Y-%m-%d')"/>
+            <field name="tags_ids" eval="[(6, 0, [ref('tag_pool'), ref('tag_terrace'), ref('tag_luxury'), ref('tag_sea_view')])]"/>
+        </record>
+
+        <!-- Listing 4: Sevilla studio -> PUBLISHED (no offers yet) -->
+        <record id="demo_listing_lisbon_studio" model="estate.listing">
+            <field name="property_id" ref="demo_property_lisbon_studio"/>
+            <field name="type_id" ref="contract_type_rent"/>
+            <field name="description">Cozy studio apartment in downtown Sevilla, ideal rental investment.</field>
+            <field name="seller_id" ref="demo_partner_seller_marc"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="expected_price">185000</field>
+            <field name="state">published</field>
+            <field name="date_published" eval="(datetime.today() - timedelta(days=3)).strftime('%Y-%m-%d')"/>
+            <field name="tags_ids" eval="[(6, 0, [ref('tag_needs_renovation')])]"/>
+        </record>
+
+        <!-- Listing 5: Bilbao loft -> CANCELED -->
+        <record id="demo_listing_munich_loft" model="estate.listing">
+            <field name="property_id" ref="demo_property_munich_loft"/>
+            <field name="type_id" ref="contract_type_sale"/>
+            <field name="description">Industrial loft in Bilbao, seller withdrew the listing.</field>
+            <field name="seller_id" ref="demo_partner_seller_laura"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="expected_price">340000</field>
+            <field name="state">canceled</field>
+            <field name="date_published" eval="(datetime.today() - timedelta(days=50)).strftime('%Y-%m-%d')"/>
+            <field name="date_canceled" eval="(datetime.today() - timedelta(days=12)).strftime('%Y-%m-%d')"/>
+            <field name="tags_ids" eval="[(6, 0, [ref('tag_exclusive')])]"/>
+        </record>
+
+        <!-- ===================================================================== -->
+        <!-- OFFERS                                                                -->
+        <!-- ===================================================================== -->
+
+        <!-- Offers on Madrid apartment (sold): one refused, one accepted -->
+        <record id="demo_offer_paris_igor" model="estate.listing.offer">
+            <field name="listing_id" ref="demo_listing_paris_apartment"/>
+            <field name="partner_id" ref="demo_partner_buyer_igor"/>
+            <field name="offer_value">580000</field>
+            <field name="state">refused</field>
+            <field name="date" eval="(datetime.today() - timedelta(days=40)).strftime('%Y-%m-%d')"/>
+            <field name="date_refused" eval="(datetime.today() - timedelta(days=30)).strftime('%Y-%m-%d')"/>
+        </record>
+        <record id="demo_offer_paris_sophie" model="estate.listing.offer">
+            <field name="listing_id" ref="demo_listing_paris_apartment"/>
+            <field name="partner_id" ref="demo_partner_buyer_sophie"/>
+            <field name="offer_value">605000</field>
+            <field name="state">accepted</field>
+            <field name="date" eval="(datetime.today() - timedelta(days=38)).strftime('%Y-%m-%d')"/>
+            <field name="date_accepted" eval="(datetime.today() - timedelta(days=30)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <!-- Offers on Barcelona house (reserved): one accepted -->
+        <record id="demo_offer_madrid_thomas" model="estate.listing.offer">
+            <field name="listing_id" ref="demo_listing_madrid_house"/>
+            <field name="partner_id" ref="demo_partner_buyer_thomas"/>
+            <field name="offer_value">440000</field>
+            <field name="state">accepted</field>
+            <field name="date" eval="(datetime.today() - timedelta(days=20)).strftime('%Y-%m-%d')"/>
+            <field name="date_accepted" eval="(datetime.today() - timedelta(days=10)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <!-- Offers on Valencia villa (offer_received): two competing, still open -->
+        <record id="demo_offer_rome_helen" model="estate.listing.offer">
+            <field name="listing_id" ref="demo_listing_rome_villa"/>
+            <field name="partner_id" ref="demo_partner_buyer_helen"/>
+            <field name="offer_value">930000</field>
+            <field name="state">submitted</field>
+            <field name="date" eval="(datetime.today() - timedelta(days=5)).strftime('%Y-%m-%d')"/>
+        </record>
+        <record id="demo_offer_rome_ines" model="estate.listing.offer">
+            <field name="listing_id" ref="demo_listing_rome_villa"/>
+            <field name="partner_id" ref="demo_partner_buyer_ines"/>
+            <field name="offer_value">955000</field>
+            <field name="state">in_analysis</field>
+            <field name="date" eval="(datetime.today() - timedelta(days=3)).strftime('%Y-%m-%d')"/>
+            <field name="date_in_analysis" eval="(datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <!-- ===================================================================== -->
+        <!-- VISITS                                                                -->
+        <!-- ===================================================================== -->
+
+        <!-- Madrid apartment: past visits, all done -->
+        <record id="demo_visit_paris_1" model="estate.property.visit">
+            <field name="listing_id" ref="demo_listing_paris_apartment"/>
+            <field name="visitor_id" ref="demo_partner_buyer_sophie"/>
+            <field name="date" eval="(datetime.today() - timedelta(days=42)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="stage_visit_done"/>
+            <field name="date_done" eval="(datetime.today() - timedelta(days=42)).strftime('%Y-%m-%d')"/>
+            <field name="note">Visitor loved the renovated kitchen, submitted an offer shortly after.</field>
+        </record>
+        <record id="demo_visit_paris_2" model="estate.property.visit">
+            <field name="listing_id" ref="demo_listing_paris_apartment"/>
+            <field name="visitor_id" ref="demo_partner_buyer_igor"/>
+            <field name="date" eval="(datetime.today() - timedelta(days=41)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="stage_visit_done"/>
+            <field name="date_done" eval="(datetime.today() - timedelta(days=41)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <!-- Barcelona house: one done, one canceled -->
+        <record id="demo_visit_madrid_1" model="estate.property.visit">
+            <field name="listing_id" ref="demo_listing_madrid_house"/>
+            <field name="visitor_id" ref="demo_partner_buyer_thomas"/>
+            <field name="date" eval="(datetime.today() - timedelta(days=22)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="stage_visit_done"/>
+            <field name="date_done" eval="(datetime.today() - timedelta(days=22)).strftime('%Y-%m-%d')"/>
+        </record>
+        <record id="demo_visit_madrid_2" model="estate.property.visit">
+            <field name="listing_id" ref="demo_listing_madrid_house"/>
+            <field name="visitor_id" ref="demo_partner_buyer_helen"/>
+            <field name="date" eval="(datetime.today() - timedelta(days=18)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="stage_visit_canceled"/>
+            <field name="date_canceled" eval="(datetime.today() - timedelta(days=19)).strftime('%Y-%m-%d')"/>
+            <field name="note">Visitor rescheduled then canceled; house was already reserved.</field>
+        </record>
+
+        <!-- Valencia villa: one confirmed (upcoming), one done -->
+        <record id="demo_visit_rome_1" model="estate.property.visit">
+            <field name="listing_id" ref="demo_listing_rome_villa"/>
+            <field name="visitor_id" ref="demo_partner_buyer_helen"/>
+            <field name="date" eval="(datetime.today() - timedelta(days=6)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="stage_visit_done"/>
+            <field name="date_done" eval="(datetime.today() - timedelta(days=6)).strftime('%Y-%m-%d')"/>
+        </record>
+        <record id="demo_visit_rome_2" model="estate.property.visit">
+            <field name="listing_id" ref="demo_listing_rome_villa"/>
+            <field name="visitor_id" ref="demo_partner_visitor_anna"/>
+            <field name="date" eval="(datetime.today() + timedelta(days=4)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="stage_visit_confirmed"/>
+            <field name="date_confirmed" eval="(datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d')"/>
+            <field name="note">Second viewing scheduled, interested in a quick decision.</field>
+        </record>
+
+        <!-- Sevilla studio: one draft (not yet confirmed), upcoming -->
+        <record id="demo_visit_lisbon_1" model="estate.property.visit">
+            <field name="listing_id" ref="demo_listing_lisbon_studio"/>
+            <field name="visitor_id" ref="demo_partner_visitor_paul"/>
+            <field name="date" eval="(datetime.today() + timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="stage_visit_draft"/>
+        </record>
+
+        <!-- Bilbao loft: a visit that was canceled when the listing was withdrawn -->
+        <record id="demo_visit_munich_1" model="estate.property.visit">
+            <field name="listing_id" ref="demo_listing_munich_loft"/>
+            <field name="visitor_id" ref="demo_partner_visitor_anna"/>
+            <field name="date" eval="(datetime.today() - timedelta(days=14)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="stage_visit_canceled"/>
+            <field name="date_canceled" eval="(datetime.today() - timedelta(days=12)).strftime('%Y-%m-%d')"/>
+            <field name="note">Listing was withdrawn by the seller before this visit took place.</field>
+        </record>
+
+        <!-- ===================================================================== -->
+        <!-- CONTRACTS                                                             -->
+        <!-- ===================================================================== -->
+
+        <!-- Contract for the sold Madrid apartment: fully signed -->
+        <record id="demo_contract_paris_apartment" model="estate.contract">
+            <field name="listing_id" ref="demo_listing_paris_apartment"/>
+            <field name="offer_id" ref="demo_offer_paris_sophie"/>
+            <field name="type_id" ref="contract_type_sale"/>
+            <field name="description">Sale contract for the Madrid Centro apartment.</field>
+            <field name="seller_id" ref="demo_partner_seller_marc"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="expected_price">620000</field>
+            <field name="price">605000</field>
+            <field name="security_deposit">0</field>
+            <field name="state">signed</field>
+            <field name="date_published" eval="(datetime.today() - timedelta(days=28)).strftime('%Y-%m-%d')"/>
+            <field name="date_signed" eval="(datetime.today() - timedelta(days=15)).strftime('%Y-%m-%d')"/>
+            <field name="date_start" eval="(datetime.today() - timedelta(days=15)).strftime('%Y-%m-%d')"/>
+            <field name="tags_ids" eval="[(6, 0, [ref('tag_renovated'), ref('tag_exclusive')])]"/>
+        </record>
+        <record id="demo_contract_buyer_paris_sophie" model="estate.contract.buyer">
+            <field name="contract_id" ref="demo_contract_paris_apartment"/>
+            <field name="partner_id" ref="demo_partner_buyer_sophie"/>
+            <field name="numerator">1</field>
+            <field name="denominator">1</field>
+            <field name="notes">Sole buyer, full ownership.</field>
+        </record>
+
+        <!-- Contract for the reserved Barcelona house: published, pending signature -->
+        <record id="demo_contract_madrid_house" model="estate.contract">
+            <field name="listing_id" ref="demo_listing_madrid_house"/>
+            <field name="offer_id" ref="demo_offer_madrid_thomas"/>
+            <field name="type_id" ref="contract_type_sale"/>
+            <field name="description">Sale contract for the Barcelona house, pending notary signature.</field>
+            <field name="seller_id" ref="demo_partner_seller_laura"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="expected_price">450000</field>
+            <field name="price">440000</field>
+            <field name="security_deposit">22000</field>
+            <field name="state">published</field>
+            <field name="date_published" eval="(datetime.today() - timedelta(days=8)).strftime('%Y-%m-%d')"/>
+            <field name="date_start" eval="(datetime.today() + timedelta(days=15)).strftime('%Y-%m-%d')"/>
+            <field name="tags_ids" eval="[(6, 0, [ref('tag_new_build'), ref('tag_luxury')])]"/>
+        </record>
+        <record id="demo_contract_buyer_madrid_thomas" model="estate.contract.buyer">
+            <field name="contract_id" ref="demo_contract_madrid_house"/>
+            <field name="partner_id" ref="demo_partner_buyer_thomas"/>
+            <field name="numerator">1</field>
+            <field name="denominator">1</field>
+        </record>
+
+        <!-- Draft contract prepared ahead of time for the Valencia villa (offer still under negotiation) -->
+        <record id="demo_contract_rome_villa" model="estate.contract">
+            <field name="listing_id" ref="demo_listing_rome_villa"/>
+            <field name="type_id" ref="contract_type_sale"/>
+            <field name="description">Draft sale contract prepared while offers are being compared.</field>
+            <field name="seller_id" ref="demo_partner_seller_antonio"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="expected_price">980000</field>
+            <field name="state">draft</field>
+            <field name="tags_ids" eval="[(6, 0, [ref('tag_luxury'), ref('tag_pool')])]"/>
+        </record>
+        <record id="demo_contract_buyer_rome_ines" model="estate.contract.buyer">
+            <field name="contract_id" ref="demo_contract_rome_villa"/>
+            <field name="partner_id" ref="demo_partner_buyer_ines"/>
+            <field name="numerator">1</field>
+            <field name="denominator">2</field>
+            <field name="notes">Co-buyer pending agreement on final share split.</field>
+        </record>
+        <record id="demo_contract_buyer_rome_helen" model="estate.contract.buyer">
+            <field name="contract_id" ref="demo_contract_rome_villa"/>
+            <field name="partner_id" ref="demo_partner_buyer_helen"/>
+            <field name="numerator">1</field>
+            <field name="denominator">2</field>
+            <field name="notes">Co-buyer pending agreement on final share split.</field>
+        </record>
+
+        <!-- Canceled contract for the withdrawn Bilbao loft listing -->
+        <record id="demo_contract_munich_loft" model="estate.contract">
+            <field name="listing_id" ref="demo_listing_munich_loft"/>
+            <field name="type_id" ref="contract_type_sale"/>
+            <field name="description">Contract draft canceled after the seller withdrew the listing.</field>
+            <field name="seller_id" ref="demo_partner_seller_laura"/>
+            <field name="agent_id" ref="base.user_admin"/>
+            <field name="expected_price">340000</field>
+            <field name="state">canceled</field>
+            <field name="date_canceled" eval="(datetime.today() - timedelta(days=12)).strftime('%Y-%m-%d')"/>
+            <field name="tags_ids" eval="[(6, 0, [ref('tag_exclusive')])]"/>
+        </record>
+
+        <!-- ===================================================================== -->
+        <!-- PROPERTY TICKETS                                                      -->
+        <!-- ===================================================================== -->
+
+        <record id="demo_ticket_paris_1" model="estate.property.ticket">
+            <field name="property_id" ref="demo_property_paris_apartment"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+            <field name="description">Leaking faucet in the main bathroom needs repair before handover.</field>
+            <field name="ticket_type">issue</field>
+            <field name="priority">3</field>
+            <field name="state">done</field>
+            <field name="date_done" eval="(datetime.today() - timedelta(days=16)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        </record>
+
+        <record id="demo_ticket_madrid_1" model="estate.property.ticket">
+            <field name="property_id" ref="demo_property_madrid_house"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+            <field name="description">Buyer requested a professional cleaning before the signature appointment.</field>
+            <field name="ticket_type">request</field>
+            <field name="priority">2</field>
+            <field name="state">in_progress</field>
+            <field name="date_in_progress" eval="(datetime.today() - timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        </record>
+
+        <record id="demo_ticket_rome_1" model="estate.property.ticket">
+            <field name="property_id" ref="demo_property_rome_villa"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+            <field name="description">Schedule pool maintenance ahead of the next buyer visit.</field>
+            <field name="ticket_type">task</field>
+            <field name="priority">2</field>
+            <field name="state">new</field>
+        </record>
+
+        <record id="demo_ticket_rome_2" model="estate.property.ticket">
+            <field name="property_id" ref="demo_property_rome_villa"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+            <field name="description">Urgent: fix the broken gate intercom reported by the seller.</field>
+            <field name="ticket_type">issue</field>
+            <field name="priority">4</field>
+            <field name="state">in_progress</field>
+            <field name="date_in_progress" eval="(datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        </record>
+
+        <record id="demo_ticket_lisbon_1" model="estate.property.ticket">
+            <field name="property_id" ref="demo_property_lisbon_studio"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+            <field name="description">Prepare renovation quote before the next publication push.</field>
+            <field name="ticket_type">task</field>
+            <field name="priority">1</field>
+            <field name="state">new</field>
+        </record>
+
+        <record id="demo_ticket_munich_1" model="estate.property.ticket">
+            <field name="property_id" ref="demo_property_munich_loft"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+            <field name="description">Listing canceled, follow up with the seller on next steps.</field>
+            <field name="ticket_type">task</field>
+            <field name="priority">1</field>
+            <field name="state">canceled</field>
+            <field name="date_canceled" eval="(datetime.today() - timedelta(days=12)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        </record>
+
+    </data>
+</odoo>

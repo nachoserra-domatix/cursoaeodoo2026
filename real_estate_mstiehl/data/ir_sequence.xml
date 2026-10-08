@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="ir_sequence_estate_contract" model="ir.sequence">
+        <field name="name">Estate Contract</field>
+        <field name="code">estate.contract</field>
+        <field name="prefix">CONT/%(year)s/</field>
+        <field name="padding">5</field>
+    </record>
+</odoo>
