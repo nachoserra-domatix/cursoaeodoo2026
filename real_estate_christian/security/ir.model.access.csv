@@ -1,0 +1,24 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_real_estate_property_user,real.estate.property_user,model_real_estate_property,base.group_user,1,1,1,0
+access_real_estate_property_manager,real.estate.property_manager,model_real_estate_property,group_real_estate_manager,1,1,1,1
+access_real_estate_visit_user,real.estate.visit_user,model_real_estate_visit,base.group_user,1,1,1,0
+access_real_estate_visit_manager,real.estate.visit_manager,model_real_estate_visit,group_real_estate_manager,1,1,1,1
+access_real_estate_category_user,real.estate.category_user,model_real_estate_category,base.group_user,1,1,1,0
+access_real_estate_category_manager,real.estate.category_manager,model_real_estate_category,group_real_estate_manager,1,1,1,1
+access_real_estate_offer_user,real.estate.offer_user,model_real_estate_offer,base.group_user,1,1,1,0
+access_real_estate_offer_manager,real.estate.offer_manager,model_real_estate_offer,group_real_estate_manager,1,1,1,1
+access_real_estate_contract_user,real.estate.contract_user,model_real_estate_contract,base.group_user,1,1,1,0
+access_real_estate_contract_manager,real.estate.contract_manager,model_real_estate_contract,group_real_estate_manager,1,1,1,1
+access_real_estate_property_stage_user,real.estate.property.stage_user,model_real_estate_property_stage,base.group_user,1,0,0,0
+access_real_estate_property_stage_manager,real.estate.property.stage_manager,model_real_estate_property_stage,group_real_estate_manager,1,1,1,1
+access_real_estate_property_image_user,real.estate.property.image_user,model_real_estate_property_image,base.group_user,1,1,1,0
+access_real_estate_property_image_manager,real.estate.property.image_manager,model_real_estate_property_image,group_real_estate_manager,1,1,1,1
+access_real_estate_property_incidence_user,real.estate.property.incidence_user,model_real_estate_property_incidence,base.group_user,1,1,1,0
+access_real_estate_property_incidence_manager,real.estate.property.incidence_manager,model_real_estate_property_incidence,group_real_estate_manager,1,1,1,1
+access_real_estate_property_stage_wizard_user,real.estate.property.stage.wizard_user,model_real_estate_property_stage_wizard,base.group_user,1,1,1,0
+access_real_estate_visit_batch_wizard_user,real.estate.property.batch.wizard_user,model_real_estate_property_batch_wizard,base.group_user,1,1,1,0
+access_real_estate_visit_stage_wizard_user, real.estate.visit.stage.wizard_user,model_real_estate_visit_stage_wizard,base.group_user,1,1,1,0
+access_real_estate_agent_user,real.estate.agent_user,model_real_estate_agent,base.group_user,1,1,1,0
+access_real_estate_agent_manager,real.estate.agent_manager,model_real_estate_agent,group_real_estate_manager,1,1,1,1
+access_real_estate_owner_user,real.estate.owner_user,model_real_estate_owner,base.group_user,1,1,1,0
+access_real_estate_owner_manager,real.estate.owner_manager,model_real_estate_owner,group_real_estate_manager,1,1,1,1
