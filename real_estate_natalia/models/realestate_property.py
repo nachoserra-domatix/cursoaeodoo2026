@@ -26,13 +26,13 @@ class RealEstateProperty(models.Model):
         default= lambda self: self.env.user.id
     )
 
-    # HERENCIA
+    # HERENCIA POR DELEGACIÓN
     agent_id = fields.Many2one(
         comodel_name="realestate.agent",
         string="Agent"
     )
 
-    # HERENCIA
+    # HERENCIA POR DELEGACIÓN
     owner_id = fields.Many2one(
         comodel_name="realestate.owner",
         string="Owner"

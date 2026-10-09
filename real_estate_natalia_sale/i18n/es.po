@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 17:27+0000\n"
-"PO-Revision-Date: 2026-10-06 17:27+0000\n"
+"POT-Creation-Date: 2026-10-09 10:00+0000\n"
+"PO-Revision-Date: 2026-10-09 10:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,16 +32,24 @@ msgid "Create Order"
 msgstr "Crear pedido"
 
 #. module: real_estate_natalia_sale
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_product_template__display_name
 #: model:ir.model.fields,field_description:real_estate_natalia_sale.field_realestate_contract__display_name
 #: model:ir.model.fields,field_description:real_estate_natalia_sale.field_sale_order__display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr "Nombre para mostrar"
 
 #. module: real_estate_natalia_sale
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_product_template__id
 #: model:ir.model.fields,field_description:real_estate_natalia_sale.field_realestate_contract__id
 #: model:ir.model.fields,field_description:real_estate_natalia_sale.field_sale_order__id
 msgid "ID"
 msgstr "ID"
+
+#. module: real_estate_natalia_sale
+#. odoo-python
+#: code:addons/real_estate_natalia_sale/models/sale_order.py:0
+msgid "Only one rental product is allowed per order."
+msgstr "Solo se permite un producto de alquiler por pedido."
 
 #. module: real_estate_natalia_sale
 #: model:ir.model.fields,field_description:real_estate_natalia_sale.field_realestate_contract__order_count
@@ -55,9 +63,22 @@ msgid "Orders"
 msgstr "Pedidos"
 
 #. module: real_estate_natalia_sale
+#: model:ir.model,name:real_estate_natalia_sale.model_product_template
 #: model:ir.model.fields,field_description:real_estate_natalia_sale.field_realestate_contract__product_id
 msgid "Product"
 msgstr "Producto"
+
+#. module: real_estate_natalia_sale
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_product_product__property_id
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_product_template__property_id
+msgid "Property"
+msgstr "Propiedad"
+
+#. module: real_estate_natalia_sale
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_product_product__rental_ok
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_product_template__rental_ok
+msgid "Rental"
+msgstr "Alquiler"
 
 #. module: real_estate_natalia_sale
 #: model:ir.model,name:real_estate_natalia_sale.model_sale_order

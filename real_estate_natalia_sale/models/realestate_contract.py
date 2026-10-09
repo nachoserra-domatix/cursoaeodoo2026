@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+# from odoo import Command -> Habría que importar esta libreria si utilizo lo comentado en el metodo action_create_sale_order
 
 class RealEstateContract(models.Model):
     _inherit = 'realestate.contract'

@@ -8,7 +8,8 @@
     "depends": ["real_estate_natalia", "sale"],
     "data": [
         "views/realestate_contract_views.xml",
-        "views/sale_order_views.xml"
+        "views/sale_order_views.xml",
+        "views/product_template_views.xml"
     ],
     "license": "LGPL-3"
 }

@@ -16,7 +16,7 @@
             <field name="property_id" position="after">
                 <field name="product_id"/>
             </field>
-            <!-- botón en el header, después de botón Start -->
+            <!-- botón en el header, después de botón action_start -->
             <button name="action_start" position="after">
                 <button name="action_create_sale_order" type="object" string="Create Order" class="btn-primary" invisible="not product_id or state == 'cancelled'"/>
                 <button name="action_confirm_and_invoice" type="object" string="Confirm and Invoice" class="btn-primary"/>                    

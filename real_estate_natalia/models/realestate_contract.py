@@ -34,7 +34,7 @@ class RealEstateContract(models.Model):
         'The contract name must be unique.'
     )
 
-    # (HERENCIA) Añado el método create
+    # (HERENCIA de core de Odoo) Añado el método create (lo sobreescribo) para añadir la secuencia del nombre del contrato
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
