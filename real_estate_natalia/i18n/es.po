@@ -1,0 +1,1966 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* real_estate_natalia
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 17:24+0000\n"
+"PO-Revision-Date: 2026-10-06 17:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__meeting_count
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__meeting_count
+msgid "# Meetings"
+msgstr "Nº de reuniones"
+
+#. module: real_estate_natalia
+#: model:ir.actions.report,print_report_name:real_estate_natalia.action_report_realestate_contract
+msgid "'Contract - %s' % (object.name or '')"
+msgstr "'Contrato - %s' % (object.name or '')"
+
+#. module: real_estate_natalia
+#: model:ir.actions.report,print_report_name:real_estate_natalia.action_report_realestate_offer
+msgid "'Offer - %s' % (object.property_id.name or '')"
+msgstr "'Oferta - %s' % (object.property_id.name or '')"
+
+#. module: real_estate_natalia
+#: model:ir.actions.report,print_report_name:real_estate_natalia.action_report_realestate_property_simple
+msgid "'Properties'"
+msgstr "'Propiedades'"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+msgid "<strong>Category</strong>"
+msgstr "<strong>Categoría</strong>"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+msgid "<strong>Price</strong>"
+msgstr "<strong>Precio</strong>"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_contract
+msgid "<strong>Property</strong>"
+msgstr "<strong>Propiedad</strong>"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+msgid "<strong>Reference</strong>"
+msgstr "<strong>Referencia</strong>"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+msgid "<strong>Responsible</strong>"
+msgstr "<strong>Responsable</strong>"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+msgid "<strong>Stage</strong>"
+msgstr "<strong>Etapa</strong>"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_form_view
+msgid "Accept"
+msgstr "Aceptar"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+msgid "Accept Best Offer"
+msgstr "Aceptar mejor oferta"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_offer__state__accepted
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_search_view
+msgid "Accepted"
+msgstr "Aceptado"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__message_needaction
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__message_needaction
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__message_needaction
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__message_needaction
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__active
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_category__active
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__active
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__active_lang_count
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__active_lang_count
+msgid "Active Lang Count"
+msgstr "Número de idiomas activos"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__activity_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__activity_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__activity_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__activity_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__activity_exception_decoration
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__activity_exception_decoration
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__activity_exception_decoration
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__activity_exception_decoration
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__activity_state
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__activity_state
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__activity_state
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__activity_state
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__activity_type_icon
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__activity_type_icon
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__activity_type_icon
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__activity_type_icon
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono del tipo de actividad"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__type
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__type
+msgid "Address Type"
+msgstr "Tipo de dirección"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__type_address_label
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__type_address_label
+msgid "Address Type Description"
+msgstr "Descripción del tipo de dirección"
+
+#. module: real_estate_natalia
+#: model:ir.model,name:real_estate_natalia.model_realestate_agent
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__agent_id
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_agent_form_view
+msgid "Agent"
+msgstr "Agente"
+
+#. module: real_estate_natalia
+#: model:ir.actions.act_window,name:real_estate_natalia.realestate_agent_action
+#: model:ir.ui.menu,name:real_estate_natalia.realestate_menu_agents
+msgid "Agents"
+msgstr "Agentes"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__lang
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__lang
+msgid ""
+"All the emails and documents sent to this contact will be translated in this"
+" language."
+msgstr ""
+"Todos los correos y documentos enviados a este contacto se traducirán a este"
+" idioma."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__amount
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_offer
+msgid "Amount"
+msgstr "Importe"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_category_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_category_search_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_search_view
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__message_attachment_count
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__message_attachment_count
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__message_attachment_count
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__message_attachment_count
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__message_attachment_count
+msgid "Attachment Count"
+msgstr "Número de adjuntos"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__availability
+msgid "Availability"
+msgstr "Disponibilidad"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_search_view
+msgid "Available"
+msgstr "Disponible"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__avatar_1920
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__avatar_1920
+msgid "Avatar"
+msgstr "Avatar"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__avatar_1024
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__avatar_1024
+msgid "Avatar 1024"
+msgstr "Avatar 1024"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__avatar_128
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__avatar_128
+msgid "Avatar 128"
+msgstr "Avatar 128"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__avatar_256
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__avatar_256
+msgid "Avatar 256"
+msgstr "Avatar 256"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__avatar_512
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__avatar_512
+msgid "Avatar 512"
+msgstr "Avatar 512"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__bank_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__bank_ids
+msgid "Banks"
+msgstr "Bancos"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__barcode
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__barcode
+msgid "Barcode"
+msgstr "Código de barras"
+
+#. module: real_estate_natalia
+#. odoo-python
+#: code:addons/real_estate_natalia/models/realestate_property.py:0
+msgid "Best offer has been accepted."
+msgstr "Se ha aceptado la mejor oferta."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__is_blacklisted
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__is_blacklisted
+msgid "Blacklist"
+msgstr "Lista negra"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__phone_blacklisted
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__phone_blacklisted
+msgid "Blacklisted Phone is Phone"
+msgstr "El teléfono en lista negra es fijo"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__message_bounce
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__message_bounce
+msgid "Bounce"
+msgstr "Rebotado"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__partner_id
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_contract
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_offer
+msgid "Buyer"
+msgstr "Comprador"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_contract_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_change_stage_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_confirmed_visits_view_form
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_change_state_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+msgid "Cancel Visits"
+msgstr "Cancelar visitas"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_contract__state__cancelled
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_property_incident__state__cancelled
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_visit__state__cancelled
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_visit_change_state__state__cancelled
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_kanban_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_search_view
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: real_estate_natalia
+#: model:ir.actions.act_window,name:real_estate_natalia.realestate_category_action
+#: model:ir.ui.menu,name:real_estate_natalia.realestate_menu_categories
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_category_list_view
+msgid "Categories"
+msgstr "Categorías"
+
+#. module: real_estate_natalia
+#: model:ir.model,name:real_estate_natalia.model_realestate_category
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__category_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__category_id
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_category_form_view
+msgid "Category"
+msgstr "Categoría"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_category_form_view
+msgid "Category Name"
+msgstr "Nombre de la categoría"
+
+#. module: real_estate_natalia
+#: model:ir.actions.act_window,name:real_estate_natalia.realestate_property_change_stage_action
+#: model:ir.model,name:real_estate_natalia.model_realestate_property_change_stage
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_change_stage_form_view
+msgid "Change Property Stage"
+msgstr "Cambiar etapa de la propiedad"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_change_stage_form_view
+msgid "Change Stage"
+msgstr "Cambiar etapa"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_change_state_form_view
+msgid "Change State"
+msgstr "Cambiar estado"
+
+#. module: real_estate_natalia
+#: model:ir.actions.act_window,name:real_estate_natalia.realestate_visit_change_state_action
+#: model:ir.model,name:real_estate_natalia.model_realestate_visit_change_state
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_change_state_form_view
+msgid "Change Visit State"
+msgstr "Cambiar estado de la visita"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__channel_member_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__channel_member_ids
+msgid "Channel Member"
+msgstr "Miembro del canal"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__channel_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__channel_ids
+msgid "Channels"
+msgstr "Canales"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__is_company
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "Marcar si el contacto es una empresa; si no, es una persona"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__employee
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__employee
+msgid "Check this box if this contact is an Employee."
+msgstr "Marque esta casilla si este contacto es un empleado."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__city
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__city
+msgid "City"
+msgstr "Ciudad"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__color
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__color
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_tag__color
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit__color
+msgid "Color"
+msgstr "Color"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__color
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__color
+msgid "Color Index"
+msgstr "Índice de color"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__comission
+msgid "Comission (%)"
+msgstr "Comisión (%)"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__commercial_partner_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__commercial_partner_id
+msgid "Commercial Entity"
+msgstr "Entidad comercial"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__company_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__company_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__company_registry
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__company_registry
+msgid "Company ID"
+msgstr "ID de la empresa"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__company_registry_label
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__company_registry_label
+msgid "Company ID Label"
+msgstr "Etiqueta del ID de la empresa"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__company_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__company_name
+msgid "Company Name"
+msgstr "Nombre de la empresa"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__commercial_company_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__commercial_company_name
+msgid "Company Name Entity"
+msgstr "Entidad del nombre de la empresa"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__company_registry_placeholder
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__company_registry_placeholder
+msgid "Company Registry Placeholder"
+msgstr "Marcador del registro mercantil"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__company_type
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__company_type
+msgid "Company Type"
+msgstr "Tipo de empresa"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__contact_address
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__contact_address
+msgid "Complete Address"
+msgstr "Dirección completa"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__complete_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__complete_name
+msgid "Complete Name"
+msgstr "Nombre completo"
+
+#. module: real_estate_natalia
+#: model:ir.ui.menu,name:real_estate_natalia.realestate_menu_configuration
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_form_view
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_visit__state__confirmed
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_visit_change_state__state__confirmed
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_search_view
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: real_estate_natalia
+#: model:ir.model,name:real_estate_natalia.model_realestate_property_confirmed_visits
+msgid "Confirmed Property Visits"
+msgstr "Visitas confirmadas de la propiedad"
+
+#. module: real_estate_natalia
+#: model:ir.actions.act_window,name:real_estate_natalia.realestate_property_confirmed_visits_action
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_confirmed_visits_view_form
+msgid "Confirmed Visits"
+msgstr "Visitas confirmadas"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__child_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__child_ids
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: real_estate_natalia
+#: model:ir.actions.report,name:real_estate_natalia.action_report_realestate_contract
+#: model:ir.model,name:real_estate_natalia.model_realestate_contract
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_contract_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_contract
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__contract_count
+msgid "Contract Count"
+msgstr "Número de contratos"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_contract_form_view
+msgid "Contract Name"
+msgstr "Nombre del contrato"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__contract_type
+msgid "Contract Type"
+msgstr "Tipo de contrato"
+
+#. module: real_estate_natalia
+#: model:ir.actions.act_window,name:real_estate_natalia.realestate_contract_action
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__contract_ids
+#: model:ir.ui.menu,name:real_estate_natalia.realestate_menu_contracts
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+msgid "Contracts"
+msgstr "Contratos"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__message_bounce
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__message_bounce
+msgid "Counter of the number of bounced emails for this contact"
+msgstr "Contador del número de correos rebotados de este contacto"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__country_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__country_id
+msgid "Country"
+msgstr "País"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__country_code
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__country_code
+msgid "Country Code"
+msgstr "Código de país"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_form_view
+msgid "Create Contract"
+msgstr "Crear contrato"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+msgid "Create Offer"
+msgstr "Crear oferta"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+msgid "Create Visit"
+msgstr "Crear visita"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_confirmed_visits_view_form
+msgid "Create Visits"
+msgstr "Crear visitas"
+
+#. module: real_estate_natalia
+#: model_terms:ir.actions.act_window,help:real_estate_natalia.realestate_category_action
+msgid "Create a new category"
+msgstr "Crear una nueva categoría"
+
+#. module: real_estate_natalia
+#: model_terms:ir.actions.act_window,help:real_estate_natalia.realestate_contract_action
+msgid "Create a new contract"
+msgstr "Crear un nuevo contrato"
+
+#. module: real_estate_natalia
+#: model_terms:ir.actions.act_window,help:real_estate_natalia.realestate_offer_action
+msgid "Create a new offer"
+msgstr "Crear una nueva oferta"
+
+#. module: real_estate_natalia
+#: model_terms:ir.actions.act_window,help:real_estate_natalia.realestate_property_action
+msgid "Create a new property"
+msgstr "Crear una nueva propiedad"
+
+#. module: real_estate_natalia
+#: model_terms:ir.actions.act_window,help:real_estate_natalia.realestate_property_tag_action
+msgid "Create a new tag"
+msgstr "Crea una nueva etiqueta"
+
+#. module: real_estate_natalia
+#: model_terms:ir.actions.act_window,help:real_estate_natalia.realestate_visit_action
+msgid "Create a new visit"
+msgstr "Crear una nueva visita"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__create_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_category__create_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__create_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__create_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__create_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__create_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_change_stage__create_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_confirmed_visits__create_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_image__create_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_incident__create_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_stage__create_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_tag__create_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit__create_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit_change_state__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__create_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_category__create_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__create_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__create_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__create_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__create_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_change_stage__create_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_confirmed_visits__create_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_image__create_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_incident__create_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_stage__create_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_tag__create_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit__create_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit_change_state__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__currency_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__currency_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_incident__date
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_offer
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+msgid "Date"
+msgstr "Fecha"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__days_in_progress
+msgid "Days in Progress"
+msgstr "Días en progreso"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__days_to_end
+msgid "Days to End"
+msgstr "Días hasta el fin"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_kanban_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_kanban_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_kanban_view
+msgid "Delete"
+msgstr "Eliminar"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+msgid "Delete Refused Offers"
+msgstr "Eliminar ofertas rechazadas"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__deposit
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_contract
+msgid "Deposit"
+msgstr "Fianza"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_category__description
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__description
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_incident__description
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+msgid "Description"
+msgstr "Descripción"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_category__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_change_stage__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_confirmed_visits__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_image__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_incident__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_stage__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_tag__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit_change_state__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_contract__state__done
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_visit__state__done
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_visit_change_state__state__done
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_contract_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_search_view
+msgid "Done"
+msgstr "Realizado"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_contract__state__draft
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_offer__state__draft
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_visit__state__draft
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_visit_change_state__state__draft
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_contract_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_search_view
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__duration_days
+msgid "Duration (Days)"
+msgstr "Duración (días)"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_kanban_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_kanban_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_kanban_view
+msgid "Edit"
+msgstr "Editar"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__partner_share
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__partner_share
+msgid ""
+"Either customer (not a user), either shared user. Indicated the current "
+"partner is a customer without access or with a limited access created for "
+"sharing data."
+msgstr ""
+"O bien cliente (no usuario), o bien usuario compartido. Indica que el "
+"contacto actual es un cliente sin acceso o con acceso limitado a los "
+"documentos compartidos."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__email
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__email
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__employee
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__end_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_confirmed_visits__end_date
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_contract
+msgid "End Date"
+msgstr "Fecha de fin"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__phone_sanitized
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__phone_sanitized
+msgid ""
+"Field used to store sanitized phone number. Helps speeding up searches and "
+"comparisons."
+msgstr ""
+"Campo usado para guardar el número de teléfono normalizado. Ayuda a acelerar"
+" búsquedas y comparaciones."
+
+#. module: real_estate_natalia
+#: model_terms:ir.actions.act_window,help:real_estate_natalia.realestate_category_action
+msgid ""
+"Fill in the details of the category you want to add, such as its name and "
+"description."
+msgstr ""
+"Rellena los datos de la categoría que quieres añadir, como su nombre y "
+"descripción."
+
+#. module: real_estate_natalia
+#: model_terms:ir.actions.act_window,help:real_estate_natalia.realestate_contract_action
+msgid ""
+"Fill in the details of the contract you want to add, such as the property, "
+"tenant, dates, and rent."
+msgstr ""
+"Rellena los datos del contrato que quieres añadir, como la propiedad, el "
+"inquilino, las fechas y el alquiler."
+
+#. module: real_estate_natalia
+#: model_terms:ir.actions.act_window,help:real_estate_natalia.realestate_offer_action
+msgid ""
+"Fill in the details of the offer you want to add, such as the property, "
+"buyer, amount, and date."
+msgstr ""
+"Rellena los datos de la oferta que quieres añadir, como la propiedad, el "
+"comprador, el importe y la fecha."
+
+#. module: real_estate_natalia
+#: model_terms:ir.actions.act_window,help:real_estate_natalia.realestate_property_action
+msgid ""
+"Fill in the details of the property you want to add, such as its name and "
+"description."
+msgstr ""
+"Rellena los datos de la propiedad que quieres añadir, como su nombre y "
+"descripción."
+
+#. module: real_estate_natalia
+#: model_terms:ir.actions.act_window,help:real_estate_natalia.realestate_visit_action
+msgid ""
+"Fill in the details of the visit you want to add, such as the property, "
+"visitor, and date."
+msgstr ""
+"Rellena los datos de la visita que quieres añadir, como la propiedad, el "
+"visitante y la fecha."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__message_follower_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__message_follower_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__message_follower_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__message_follower_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__message_partner_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__message_partner_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__message_partner_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__message_partner_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (contactos)"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__activity_type_icon
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_contract__activity_type_icon
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_offer__activity_type_icon
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__activity_type_icon
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_property__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de Font Awesome, p. ej. fa-tasks"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__email_formatted
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__email_formatted
+msgid "Format email address \"Name <email@domain>\""
+msgstr "Formato de dirección de correo \"Nombre <correo@dominio>\""
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__email_formatted
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__email_formatted
+msgid "Formatted Email"
+msgstr "Correo con formato"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__partner_latitude
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__partner_latitude
+msgid "Geo Latitude"
+msgstr "Latitud geográfica"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__partner_longitude
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__partner_longitude
+msgid "Geo Longitude"
+msgstr "Longitud geográfica"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_search_view
+msgid "Group by Category"
+msgstr "Agrupar por categoría"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__has_deposit
+msgid "Has Deposit"
+msgstr "Tiene fianza"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__has_message
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__has_message
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__has_message
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__has_message
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_property_incident__priority__2
+msgid "High"
+msgstr "Alta"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_category__id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_change_stage__id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_confirmed_visits__id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_image__id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_incident__id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_stage__id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_tag__id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit__id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit_change_state__id
+msgid "ID"
+msgstr "ID"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__im_status
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__im_status
+msgid "IM Status"
+msgstr "Estado de mensajería instantánea"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__activity_exception_icon
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__activity_exception_icon
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__activity_exception_icon
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__activity_exception_icon
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__activity_exception_icon
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_contract__activity_exception_icon
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_offer__activity_exception_icon
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__activity_exception_icon
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_property__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono que indica una actividad de excepción."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__message_needaction
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_contract__message_needaction
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_offer__message_needaction
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__message_needaction
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_property__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay mensajes nuevos que requieren su atención."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__message_has_error
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_contract__message_has_error
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_offer__message_has_error
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__message_has_error
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_property__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__is_blacklisted
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__is_blacklisted
+msgid ""
+"If the email address is on the blacklist, the contact won't receive mass "
+"mailing anymore, from any list"
+msgstr ""
+"Si la dirección de correo está en la lista negra, el contacto ya no recibirá"
+" envíos masivos de ninguna lista"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__phone_sanitized_blacklisted
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__phone_sanitized_blacklisted
+msgid ""
+"If the sanitized phone number is on the blacklist, the contact won't receive"
+" mass mailing sms anymore, from any list"
+msgstr ""
+"Si el número de teléfono normalizado está en la lista negra, el contacto ya "
+"no recibirá SMS masivos de ninguna lista"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__image_1920
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__image_1920
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_image__image
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+msgid "Image"
+msgstr "Imagen"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__image_1024
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__image_1024
+msgid "Image 1024"
+msgstr "Imagen 1024"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__image_128
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__image_128
+msgid "Image 128"
+msgstr "Imagen 128"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__image_256
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__image_256
+msgid "Image 256"
+msgstr "Imagen 256"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__image_512
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__image_512
+msgid "Image 512"
+msgstr "Imagen 512"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__image_ids
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+msgid "Images"
+msgstr "Imágenes"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_contract__state__in_progress
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_property_incident__state__in_progress
+msgid "In Progress"
+msgstr "En progreso"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__incident_count
+msgid "Incident Count"
+msgstr "Número de incidencias"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__incident_ids
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+msgid "Incidents"
+msgstr "Incidencias"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__phone_blacklisted
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__phone_blacklisted
+msgid ""
+"Indicates if a blacklisted sanitized phone number is a phone number. Helps "
+"distinguish which number is blacklisted             when there is both a "
+"mobile and phone field in a model."
+msgstr ""
+"Indica si un número de teléfono normalizado en lista negra es un teléfono. "
+"Ayuda a distinguir qué número está en la lista negra cuando el modelo tiene "
+"tanto un campo de móvil como de teléfono."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__industry_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__industry_id
+msgid "Industry"
+msgstr "Sector"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_category_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+msgid "Information"
+msgstr "Información"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__contact_address_inline
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__contact_address_inline
+msgid "Inlined Complete Address"
+msgstr "Dirección completa en una línea"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__internal_note
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+msgid "Internal Note"
+msgstr "Nota interna"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__message_is_follower
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__message_is_follower
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__message_is_follower
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__message_is_follower
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__is_in_call
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__is_in_call
+msgid "Is In Call"
+msgstr "Está en una llamada"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__is_public
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__is_public
+msgid "Is Public"
+msgstr "Es público"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__is_company
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__is_company
+msgid "Is a Company"
+msgstr "Es una empresa"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__function
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__function
+msgid "Job Position"
+msgstr "Puesto de trabajo"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__lang
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__lang
+msgid "Language"
+msgstr "Idioma"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__write_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_category__write_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__write_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__write_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__write_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__write_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_change_stage__write_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_confirmed_visits__write_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_image__write_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_incident__write_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_stage__write_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_tag__write_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit__write_uid
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit_change_state__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__write_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_category__write_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__write_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__write_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__write_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__write_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_change_stage__write_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_confirmed_visits__write_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_image__write_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_incident__write_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_stage__write_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_tag__write_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit__write_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit_change_state__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__calendar_last_notif_ack
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__calendar_last_notif_ack
+msgid "Last notification marked as read from base Calendar"
+msgstr "Última notificación marcada como leída en el Calendario"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_property_incident__priority__0
+msgid "Low"
+msgstr "Baja"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__main_user_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__main_user_id
+msgid "Main User"
+msgstr "Usuario principal"
+
+#. module: real_estate_natalia
+#: model:res.groups,name:real_estate_natalia.group_real_estate_manager
+msgid "Manager"
+msgstr "Gestor"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_property_incident__priority__1
+msgid "Medium"
+msgstr "Media"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__meeting_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__meeting_ids
+msgid "Meetings"
+msgstr "Reuniones"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__message_has_error
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__message_has_error
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__message_has_error
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__message_has_error
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega del mensaje"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__message_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__message_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__message_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__message_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__my_activity_date_deadline
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__my_activity_date_deadline
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__my_activity_date_deadline
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__my_activity_date_deadline
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Fecha límite de mi actividad"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_category__name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_image__name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_incident__name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_tag__name
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property_simple
+msgid "Name"
+msgstr "Nombre"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_property_incident__state__new
+msgid "New"
+msgstr "Nuevo"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__activity_calendar_event_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__activity_calendar_event_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__activity_calendar_event_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__activity_calendar_event_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Evento de calendario de la próxima actividad"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__activity_date_deadline
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__activity_date_deadline
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__activity_date_deadline
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__activity_date_deadline
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite de la próxima actividad"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__activity_summary
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__activity_summary
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__activity_summary
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__activity_summary
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la próxima actividad"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__activity_type_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__activity_type_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__activity_type_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__activity_type_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo de la próxima actividad"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__next_visit_date
+msgid "Next Visit Date"
+msgstr "Fecha de la próxima visita"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__email_normalized
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__email_normalized
+msgid "Normalized Email"
+msgstr "Correo normalizado"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__comment
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__notes
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__comment
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_form_view
+msgid "Notes"
+msgstr "Notas"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__message_needaction_counter
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__message_needaction_counter
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__message_needaction_counter
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__message_needaction_counter
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__message_has_error_counter
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__message_has_error_counter
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__message_has_error_counter
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__message_has_error_counter
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__message_needaction_counter
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_contract__message_needaction_counter
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_offer__message_needaction_counter
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__message_needaction_counter
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_property__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__message_has_error_counter
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_contract__message_has_error_counter
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_offer__message_has_error_counter
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__message_has_error_counter
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_property__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: real_estate_natalia
+#: model:ir.actions.report,name:real_estate_natalia.action_report_realestate_offer
+#: model:ir.model,name:real_estate_natalia.model_realestate_offer
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_offer
+msgid "Offer"
+msgstr "Oferta"
+
+#. module: real_estate_natalia
+#: model:ir.actions.act_window,name:real_estate_natalia.realestate_offer_action
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__offer_ids
+#: model:ir.ui.menu,name:real_estate_natalia.realestate_menu_offers
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_calendar_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_search_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+msgid "Offers"
+msgstr "Ofertas"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__offline_since
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__offline_since
+msgid "Offline since"
+msgstr "Desconectado desde"
+
+#. module: real_estate_natalia
+#: model:ir.ui.menu,name:real_estate_natalia.realestate_menu_operations
+msgid "Operations"
+msgstr "Operaciones"
+
+#. module: real_estate_natalia
+#: model:ir.model,name:real_estate_natalia.model_realestate_owner
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__owner_id
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_owner_form_view
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: real_estate_natalia
+#: model:ir.actions.act_window,name:real_estate_natalia.realestate_owner_action
+#: model:ir.ui.menu,name:real_estate_natalia.realestate_menu_owners
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_owner_list_view
+msgid "Owners"
+msgstr "Propietarios"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__parent_name
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__parent_name
+msgid "Parent name"
+msgstr "Nombre del padre"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__partner_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__partner_id
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__same_company_registry_partner_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__same_company_registry_partner_id
+msgid "Partner with same Company Registry"
+msgstr "Contacto con el mismo registro mercantil"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__same_vat_partner_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__same_vat_partner_id
+msgid "Partner with same Tax ID"
+msgstr "Contacto con el mismo NIF"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit__personal_email
+msgid "Personal Email"
+msgstr "Correo personal"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__phone
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__phone
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit__phone
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__phone_sanitized_blacklisted
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__phone_sanitized_blacklisted
+msgid "Phone Blacklisted"
+msgstr "Teléfono en lista negra"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__phone_mobile_search
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__phone_mobile_search
+msgid "Phone Number"
+msgstr "Número de teléfono"
+
+#. module: real_estate_natalia
+#: model:ir.ui.menu,name:real_estate_natalia.realestate_menu_portfolio
+msgid "Portfolio"
+msgstr "Inmuebles"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__price
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property_simple
+msgid "Price"
+msgstr "Precio"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__property_product_pricelist
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__property_product_pricelist
+msgid "Pricelist"
+msgstr "Tarifa"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_incident__priority
+msgid "Priority"
+msgstr "Prioridad"
+
+#. module: real_estate_natalia
+#: model:ir.actions.act_window,name:real_estate_natalia.realestate_property_action
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__properties
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__properties
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_tag__property_ids
+#: model:ir.ui.menu,name:real_estate_natalia.realestate_menu_properties
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_list_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property_simple
+msgid "Properties"
+msgstr "Propiedades"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__properties_base_definition_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__properties_base_definition_id
+msgid "Properties Base Definition"
+msgstr "Definición base de propiedades"
+
+#. module: real_estate_natalia
+#: model:ir.actions.report,name:real_estate_natalia.action_report_realestate_property
+#: model:ir.model,name:real_estate_natalia.model_realestate_property
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__property_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__property_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_image__property_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_incident__property_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit__property_id
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_search_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_search_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_search_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_offer
+msgid "Property"
+msgstr "Propiedad"
+
+#. module: real_estate_natalia
+#: model:ir.model,name:real_estate_natalia.model_realestate_property_image
+msgid "Property Image"
+msgstr "Imagen de la propiedad"
+
+#. module: real_estate_natalia
+#: model:ir.model,name:real_estate_natalia.model_realestate_property_incident
+msgid "Property Incident"
+msgstr "Incidencia de la propiedad"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+msgid "Property Name"
+msgstr "Nombre de la propiedad"
+
+#. module: real_estate_natalia
+#: model:ir.actions.report,name:real_estate_natalia.action_report_realestate_property_simple
+msgid "Property Simplified"
+msgstr "Propiedad simplificada"
+
+#. module: real_estate_natalia
+#: model:ir.model,name:real_estate_natalia.model_realestate_property_tag
+msgid "Property Tag"
+msgstr "Etiqueta de propiedad"
+
+#. module: real_estate_natalia
+#: model:ir.actions.act_window,name:real_estate_natalia.realestate_property_tag_action
+msgid "Property Tags"
+msgstr "Etiquetas de propiedad"
+
+#. module: real_estate_natalia
+#: model:ir.module.category,name:real_estate_natalia.module_category_real_estate
+#: model:ir.ui.menu,name:real_estate_natalia.realestate_menu_root
+#: model:res.groups.privilege,name:real_estate_natalia.res_groups_privilege_real_estate
+msgid "Real Estate"
+msgstr "Inmobiliaria"
+
+#. module: real_estate_natalia
+#: model:res.groups,comment:real_estate_natalia.group_real_estate_manager
+msgid "Real Estate Manager Group"
+msgstr "Grupo de gestores inmobiliarios"
+
+#. module: real_estate_natalia
+#: model:ir.model,name:real_estate_natalia.model_realestate_property_stage
+msgid "Real Estate Property Stage"
+msgstr "Etapa de la propiedad inmobiliaria"
+
+#. module: real_estate_natalia
+#: model:res.groups,comment:real_estate_natalia.group_real_estate_user
+msgid "Real Estate User Group"
+msgstr "Grupo de usuarios inmobiliarios"
+
+#. module: real_estate_natalia
+#: model:ir.actions.server,name:real_estate_natalia.realestate_visit_done_cron_ir_actions_server
+msgid "Real Estate: done visits with date passed"
+msgstr "Inmobiliaria: finalizar visitas con fecha pasada"
+
+#. module: real_estate_natalia
+#: model:ir.actions.server,name:real_estate_natalia.realestate_contract_finish_cron_ir_actions_server
+msgid "Real Estate: finish contracts with end date passed"
+msgstr "Inmobiliaria: finalizar contratos con fecha de fin pasada"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__ref
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__ref
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__reference
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property_simple
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_form_view
+msgid "Reject"
+msgstr "Rechazar"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_offer__state__rejected
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_search_view
+msgid "Rejected"
+msgstr "Rechazado"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__parent_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__parent_id
+msgid "Related Company"
+msgstr "Empresa relacionada"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__rent
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_contract
+msgid "Rent"
+msgstr "Alquiler"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_contract__contract_type__rental
+msgid "Rental"
+msgstr "Alquiler"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+msgid "Reserve"
+msgstr "Reservar"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_kanban_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_search_view
+msgid "Reserved"
+msgstr "Reservado"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_property_incident__state__resolved
+msgid "Resolved"
+msgstr "Resuelto"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__activity_user_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__activity_user_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__activity_user_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__activity_user_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__rtc_session_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__rtc_session_ids
+msgid "Rtc Session"
+msgstr "Sesión RTC"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_contract__contract_type__sale
+msgid "Sale"
+msgstr "Venta"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__user_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__user_id
+msgid "Salesperson"
+msgstr "Comercial"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__phone_sanitized
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__phone_sanitized
+msgid "Sanitized Number"
+msgstr "Número normalizado"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__self
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__self
+msgid "Self"
+msgstr "Sí mismo"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_form_view
+msgid "Send"
+msgstr "Enviar"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_offer__state__sent
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_offer_search_view
+msgid "Sent"
+msgstr "Enviado"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_image__sequence
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_incident__sequence
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_stage__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__partner_share
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__partner_share
+msgid "Share Partner"
+msgstr "Contacto compartido"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__signup_type
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__signup_type
+msgid "Signup Token Type"
+msgstr "Tipo de token de registro"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__specific_property_product_pricelist
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__specific_property_product_pricelist
+msgid "Specific Property Product Pricelist"
+msgstr "Tarifa específica del producto"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__stage_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_change_stage__stage_id
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property_simple
+msgid "Stage"
+msgstr "Etapa"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_stage__name
+msgid "Stage Name"
+msgstr "Nombre de la etapa"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_contract_form_view
+msgid "Start"
+msgstr "Iniciar"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__start_date
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_confirmed_visits__start_date
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_contract
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__state_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__state
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_offer__state
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__state_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_incident__state
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit__state
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit_change_state__state
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_search_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_contract
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_offer
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+msgid "State"
+msgstr "Estado"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__application_statistics
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__application_statistics
+msgid "Stats"
+msgstr "Estadísticas"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__activity_state
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_contract__activity_state
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_offer__activity_state
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__activity_state
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_property__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en las actividades\n"
+"Vencida: la fecha límite ya ha pasado\n"
+"Hoy: la fecha de la actividad es hoy\n"
+"Planificada: actividades futuras."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__street
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__street
+msgid "Street"
+msgstr "Calle"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__street2
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__street2
+msgid "Street2"
+msgstr "Calle 2"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_tag_form_view
+msgid "Tag"
+msgstr "Etiqueta"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_tag_form_view
+msgid "Tag Name"
+msgstr "Nombre de la etiqueta"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__category_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__category_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__tag_ids
+#: model:ir.ui.menu,name:real_estate_natalia.realestate_menu_tags
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_tag_list_view
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: real_estate_natalia
+#: model_terms:ir.actions.act_window,help:real_estate_natalia.realestate_property_tag_action
+msgid ""
+"Tags help you classify and filter your properties, for example: \"Sea "
+"view\", \"Pool\" or \"Newly built\"."
+msgstr ""
+"Las etiquetas te ayudan a clasificar y filtrar tus propiedades, por ejemplo:"
+" \"Vistas al mar\", \"Piscina\" u \"Obra nueva\"."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__vat
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__vat
+msgid "Tax ID"
+msgstr "NIF"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__vat_label
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__vat_label
+msgid "Tax ID Label"
+msgstr "Etiqueta del NIF"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_contract__partner_id
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_contract
+msgid "Tenant"
+msgstr "Inquilino"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__country_code
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__country_code
+msgid ""
+"The ISO country code in two chars. \n"
+"You can use this field for quick search."
+msgstr ""
+"El código ISO del país en dos caracteres.\n"
+"Puede usar este campo para búsquedas rápidas."
+
+#. module: real_estate_natalia
+#: model:ir.model.constraint,message:real_estate_natalia.constraint_realestate_contract_name_unique
+msgid "The contract name must be unique."
+msgstr "El nombre del contrato debe ser único."
+
+#. module: real_estate_natalia
+#. odoo-python
+#: code:addons/real_estate_natalia/models/realestate_contract.py:0
+msgid "The end date cannot be earlier than the start date."
+msgstr "La fecha de fin no puede ser anterior a la fecha de inicio."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__user_id
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__user_id
+msgid "The internal user in charge of this contact."
+msgstr "El usuario interno a cargo de este contacto."
+
+#. module: real_estate_natalia
+#. odoo-python
+#: code:addons/real_estate_natalia/models/realestate_offer.py:0
+msgid "The offer amount cannot be negative"
+msgstr "El importe de la oferta no puede ser negativo"
+
+#. module: real_estate_natalia
+#: model:ir.model.constraint,message:real_estate_natalia.constraint_realestate_property_reference_unique
+msgid "The property reference must be unique."
+msgstr "La referencia de la propiedad debe ser única."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__company_registry
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__company_registry
+msgid ""
+"The registry number of the company. Use it if it is different from the Tax "
+"ID. It must be unique across all partners of a same country"
+msgstr ""
+"El número de registro de la empresa. Úselo si es distinto del NIF. Debe ser "
+"único entre todos los contactos de un mismo país."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__main_user_id
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__main_user_id
+msgid ""
+"There can be several users related to the same partner. When a single user "
+"is needed, this field attempts to find the most appropriate one."
+msgstr ""
+"Puede haber varios usuarios relacionados con el mismo contacto. Cuando se "
+"necesita uno solo, este campo intenta encontrar el más adecuado."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__email_normalized
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__email_normalized
+msgid ""
+"This field is used to search on email address as the primary email field can"
+" contain more than strictly an email address."
+msgstr ""
+"Este campo se usa para buscar por dirección de correo, ya que el campo de "
+"correo principal puede contener más que una dirección estricta."
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+msgid "This property has no visits."
+msgstr "Esta propiedad no tiene visitas."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__tz
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__tz
+msgid "Timezone"
+msgstr "Zona horaria"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__tz_offset
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__tz_offset
+msgid "Timezone offset"
+msgstr "Diferencia horaria"
+
+#. module: real_estate_natalia
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_contract
+msgid "Type"
+msgstr "Tipo"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__activity_exception_decoration
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_contract__activity_exception_decoration
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_offer__activity_exception_decoration
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__activity_exception_decoration
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_property__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de la actividad de excepción del registro."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__barcode
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__barcode
+msgid "Use a barcode to identify this contact."
+msgstr "Use un código de barras para identificar este contacto."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__property_product_pricelist
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__property_product_pricelist
+msgid "Used for sales to the current partner"
+msgstr "Se usa para las ventas a este contacto"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__user_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property_incident__user_id
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit__user_id
+#: model:res.groups,name:real_estate_natalia.group_real_estate_user
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_search_view
+msgid "User"
+msgstr "Usuario"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__user_ids
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__user_ids
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields.selection,name:real_estate_natalia.selection__realestate_property_incident__priority__3
+msgid "Very High"
+msgstr "Muy alta"
+
+#. module: real_estate_natalia
+#: model:ir.model,name:real_estate_natalia.model_realestate_visit
+msgid "Visit"
+msgstr "Visita"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__visit_count
+msgid "Visit Count"
+msgstr "Número de visitas"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit__date
+msgid "Visit Date"
+msgstr "Fecha de visita"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_visit__partner_id
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+msgid "Visitor"
+msgstr "Visitante"
+
+#. module: real_estate_natalia
+#: model:ir.actions.act_window,name:real_estate_natalia.realestate_visit_action
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_property__visit_ids
+#: model:ir.ui.menu,name:real_estate_natalia.realestate_menu_visits
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_property_form_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_calendar_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.realestate_visit_search_view
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia.report_realestate_property
+msgid "Visits"
+msgstr "Visitas"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__website
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__website
+msgid "Website Link"
+msgstr "Enlace al sitio web"
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__tz
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__tz
+msgid ""
+"When printing documents and exporting/importing data, time values are computed according to this timezone.\n"
+"If the timezone is not set, UTC (Coordinated Universal Time) is used.\n"
+"Anywhere else, time values are computed according to the time offset of your web client."
+msgstr ""
+"Al imprimir documentos y exportar/importar datos, las horas se calculan según esta zona horaria.\n"
+"Si no se indica zona horaria, se usa UTC (hora universal coordinada).\n"
+"En el resto de casos, las horas se calculan según la zona horaria del usuario conectado."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_agent__vat
+#: model:ir.model.fields,help:real_estate_natalia.field_realestate_owner__vat
+msgid "You can use '/' to indicate that the customer has no Tax ID."
+msgstr "Puede usar '/' para indicar que el cliente no tiene NIF."
+
+#. module: real_estate_natalia
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_agent__zip
+#: model:ir.model.fields,field_description:real_estate_natalia.field_realestate_owner__zip
+msgid "Zip"
+msgstr "Código postal"
+
+#. module: real_estate_natalia
+#: model:ir.actions.report,print_report_name:real_estate_natalia.action_report_realestate_property
+msgid "object.reference"
+msgstr ""

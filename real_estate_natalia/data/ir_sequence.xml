@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- Cron para que cuando se cree un contrato nuevo, al darle a 
+guardar el nombre del contrato se añada automáticamente siguiendo 
+la secuencia que le hemos dicho --> 
+
+    <record id="seq_realestate_contract" model="ir.sequence">
+        <field name="name">Real Estate Contract</field>
+        <field name="code">realestate.contract</field>
+        <field name="prefix">CTR/%(year)s/</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+</odoo>

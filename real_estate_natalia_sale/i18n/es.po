@@ -1,0 +1,86 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* real_estate_natalia_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-09 10:00+0000\n"
+"PO-Revision-Date: 2026-10-09 10:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: real_estate_natalia_sale
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia_sale.realestate_contract_sale_form
+msgid "Confirm and Invoice"
+msgstr "Confirmar y facturar"
+
+#. module: real_estate_natalia_sale
+#: model:ir.model,name:real_estate_natalia_sale.model_realestate_contract
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_sale_order__contract_id
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: real_estate_natalia_sale
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia_sale.realestate_contract_sale_form
+msgid "Create Order"
+msgstr "Crear pedido"
+
+#. module: real_estate_natalia_sale
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_product_template__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_realestate_contract__display_name
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: real_estate_natalia_sale
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_product_template__id
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_realestate_contract__id
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_sale_order__id
+msgid "ID"
+msgstr "ID"
+
+#. module: real_estate_natalia_sale
+#. odoo-python
+#: code:addons/real_estate_natalia_sale/models/sale_order.py:0
+msgid "Only one rental product is allowed per order."
+msgstr "Solo se permite un producto de alquiler por pedido."
+
+#. module: real_estate_natalia_sale
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_realestate_contract__order_count
+msgid "Order Count"
+msgstr "Número de pedidos"
+
+#. module: real_estate_natalia_sale
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_realestate_contract__order_ids
+#: model_terms:ir.ui.view,arch_db:real_estate_natalia_sale.realestate_contract_sale_form
+msgid "Orders"
+msgstr "Pedidos"
+
+#. module: real_estate_natalia_sale
+#: model:ir.model,name:real_estate_natalia_sale.model_product_template
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_realestate_contract__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: real_estate_natalia_sale
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_product_product__property_id
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_product_template__property_id
+msgid "Property"
+msgstr "Propiedad"
+
+#. module: real_estate_natalia_sale
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_product_product__rental_ok
+#: model:ir.model.fields,field_description:real_estate_natalia_sale.field_product_template__rental_ok
+msgid "Rental"
+msgstr "Alquiler"
+
+#. module: real_estate_natalia_sale
+#: model:ir.model,name:real_estate_natalia_sale.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
